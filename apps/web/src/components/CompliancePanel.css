@@ -25,6 +25,11 @@
   color: var(--alert-red);
 }
 
+.compliance__count--neutral {
+  color: var(--text-tertiary);
+  opacity: 0.6;
+}
+
 .compliance__subtitle {
   color: var(--text-tertiary);
   margin-bottom: var(--space-lg);
@@ -57,6 +62,16 @@
 .compliance__rule--fail {
   border-left: 3px solid var(--alert-red);
   background: var(--alert-red-bg);
+}
+
+.compliance__rule--neutral {
+  border-left: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.badge--neutral {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-tertiary);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .compliance__rule-icon {
