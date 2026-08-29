@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/images/vaapsi-logo.png" alt="Vaapsi (वापसी) Emblem" width="140" style="border-radius: 50%; border: 2px solid #FFB066; box-shadow: 0 0 20px rgba(255, 176, 102, 0.4);" />
+  <img src="docs/images/vaapsi-logo.png" alt="Vaapsi (वापसी) Emblem" width="220" style="border-radius: 50%; border: 3px solid #FFB066; box-shadow: 0 0 30px rgba(255, 176, 102, 0.5);" />
   <h1>🔄 Vaapsi (वापसी)</h1>
   <p><strong><em>"Jo paisa gaya, wapas aayega."</em></strong></p>
   <p><em>Autonomous, Explainable, Compliance-Bounded Revenue Recovery Agent for Indian Merchants</em></p>

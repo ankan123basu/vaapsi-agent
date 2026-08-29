@@ -4,21 +4,21 @@ export default function Header() {
   return (
     <header className="layout__header" id="main-header">
       <div className="header__left">
-        <div className="header__brand" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div className="header__brand" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
           <img
             src="/images/vaapsi-logo.png"
             alt="Vaapsi (वापसी) Emblem"
             style={{
-              width: '36px',
-              height: '36px',
+              width: '52px',
+              height: '52px',
               borderRadius: '50%',
               objectFit: 'cover',
-              boxShadow: '0 0 14px rgba(255, 176, 102, 0.5)',
-              border: '1.5px solid rgba(255, 176, 102, 0.4)',
+              boxShadow: '0 0 20px rgba(255, 176, 102, 0.6)',
+              border: '2px solid rgba(255, 176, 102, 0.6)',
             }}
           />
-          <span className="header__title" style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-            Vaapsi <span style={{ fontSize: '0.85rem', opacity: 0.8, fontWeight: 500, fontFamily: 'var(--font-body)' }}>(वापसी)</span>
+          <span className="header__title" style={{ display: 'flex', alignItems: 'baseline', gap: '8px', fontSize: '1.5rem' }}>
+            Vaapsi <span style={{ fontSize: '0.95rem', opacity: 0.85, fontWeight: 600, fontFamily: 'var(--font-body)' }}>(वापसी)</span>
           </span>
         </div>
 
