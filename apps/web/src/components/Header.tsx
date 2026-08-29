@@ -9,16 +9,16 @@ export default function Header() {
             src="/images/vaapsi-logo.png"
             alt="Vaapsi (वापसी) Emblem"
             style={{
-              width: '52px',
-              height: '52px',
+              width: '64px',
+              height: '64px',
               borderRadius: '50%',
               objectFit: 'cover',
-              boxShadow: '0 0 20px rgba(255, 176, 102, 0.6)',
-              border: '2px solid rgba(255, 176, 102, 0.6)',
+              boxShadow: '0 0 24px rgba(255, 176, 102, 0.65)',
+              border: '2.5px solid rgba(255, 176, 102, 0.7)',
             }}
           />
-          <span className="header__title" style={{ display: 'flex', alignItems: 'baseline', gap: '8px', fontSize: '1.5rem' }}>
-            Vaapsi <span style={{ fontSize: '0.95rem', opacity: 0.85, fontWeight: 600, fontFamily: 'var(--font-body)' }}>(वापसी)</span>
+          <span className="header__title" style={{ display: 'flex', alignItems: 'baseline', gap: '8px', fontSize: '1.65rem' }}>
+            Vaapsi <span style={{ fontSize: '1rem', opacity: 0.85, fontWeight: 600, fontFamily: 'var(--font-body)' }}>(वापसी)</span>
           </span>
         </div>
 
