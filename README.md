@@ -16,7 +16,11 @@
 
 **Vaapsi (वापसी)** is an autonomous AI agent that detects revenue leaking out of a merchant's payment funnel — failed payments, abandoned checkouts, and failed subscription mandates — diagnoses *why* it leaked, chooses the right recovery intervention, executes it through Razorpay's test-mode APIs, synthesizes Hinglish voice calls, and proves in hard numbers how much money it got back.
 
-**Built for:** Razorpay AI Buildathon — Track 03 (AI Revenue Recovery)
+<div align="center" style="margin-top: 16px; margin-bottom: 24px;">
+  <span style="background: linear-gradient(135deg, #0C2340 0%, #1A365D 100%); color: #FFB066; padding: 10px 24px; border-radius: 30px; font-weight: 700; font-size: 1.05rem; border: 1.5px solid #FFB066; box-shadow: 0 0 18px rgba(255, 176, 102, 0.35); display: inline-block;">
+    🏆 Built for: Razorpay AI Buildathon — Track 03 (AI Revenue Recovery)
+  </span>
+</div>
 
 ---
 
