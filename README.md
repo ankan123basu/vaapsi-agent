@@ -1,7 +1,9 @@
-# 🔄 Vaapsi (वापसी)
-
-> **"Jo paisa gaya, wapas aayega."**
-> *Autonomous, Explainable, Compliance-Bounded Revenue Recovery Agent for Indian Merchants*
+<div align="center">
+  <img src="docs/images/vaapsi-logo.png" alt="Vaapsi (वापसी) Emblem" width="140" style="border-radius: 50%; border: 2px solid #FFB066; box-shadow: 0 0 20px rgba(255, 176, 102, 0.4);" />
+  <h1>🔄 Vaapsi (वापसी)</h1>
+  <p><strong><em>"Jo paisa gaya, wapas aayega."</em></strong></p>
+  <p><em>Autonomous, Explainable, Compliance-Bounded Revenue Recovery Agent for Indian Merchants</em></p>
+</div>
 
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)

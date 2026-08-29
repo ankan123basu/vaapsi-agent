@@ -1,14 +1,24 @@
-import VaapsiLogo from './VaapsiLogo';
 import './Header.css';
 
 export default function Header() {
   return (
     <header className="layout__header" id="main-header">
       <div className="header__left">
-        <div className="header__brand" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <VaapsiLogo size={32} />
+        <div className="header__brand" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <img
+            src="/images/vaapsi-logo.png"
+            alt="Vaapsi (वापसी) Emblem"
+            style={{
+              width: '36px',
+              height: '36px',
+              borderRadius: '50%',
+              objectFit: 'cover',
+              boxShadow: '0 0 14px rgba(255, 176, 102, 0.5)',
+              border: '1.5px solid rgba(255, 176, 102, 0.4)',
+            }}
+          />
           <span className="header__title" style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-            Vaapsi <span style={{ fontSize: '0.8rem', opacity: 0.75, fontWeight: 500, fontFamily: 'var(--font-body)' }}>(वापसी)</span>
+            Vaapsi <span style={{ fontSize: '0.85rem', opacity: 0.8, fontWeight: 500, fontFamily: 'var(--font-body)' }}>(वापसी)</span>
           </span>
         </div>
 
