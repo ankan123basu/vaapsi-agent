@@ -32,17 +32,17 @@ graph TD
     end
 
     subgraph Classifiers ["3. Hybrid Classifier Engine"]
-        DAG -->|Node 2: Diagnoser| RULES["Deterministic Rules Engine (0.4ms)"]
-        RULES -->|Ambiguous Code| GROQ["Primary LLM: Groq (openai/gpt-oss-120b)"]
-        GROQ -->|Failure Fallback| GEMINI["Fallback LLM: Gemini (gemini-2.5-flash)"]
+        DAG -->|Node 2: Diagnoser| RULES["Deterministic Rules Engine - 0.4ms"]
+        RULES -->|Ambiguous Code| GROQ["Primary LLM: Groq - openai/gpt-oss-120b"]
+        GROQ -->|Failure Fallback| GEMINI["Fallback LLM: Gemini - gemini-2.5-flash"]
     end
 
     subgraph Actions ["4. Execution & Governance Layer"]
-        DAG -->|Node 4: Guardrail Gate| GATE["Compliance Gate (DND / Retries / ₹5,000 Threshold)"]
+        DAG -->|Node 4: Guardrail Gate| GATE["Compliance Gate - DND / Retries / INR 5,000 Threshold"]
         GATE -->|Needs Approval| QUEUE["Human Approval Queue"]
         GATE -->|Approved| EXEC["Node 5: Executor"]
-        EXEC -->|payment_link| RZP_API["Razorpay Payment Links API (rzp.io)"]
-        EXEC -->|voice| GTTS["gTTS Speech Synthesizer (en, hi, hinglish, ta, bn)"]
+        EXEC -->|payment_link| RZP_API["Razorpay Payment Links API - rzp.io"]
+        EXEC -->|voice| GTTS["gTTS Speech Synthesizer - en, hi, hinglish, ta, bn"]
     end
 
     subgraph Presentation ["5. Frontend Presentation Layer"]
@@ -62,14 +62,14 @@ The agent core is structured as a **LangGraph StateGraph** operating on an immut
 ```mermaid
 graph LR
     subgraph LangGraph DAG Pipeline
-        N1["1. Detector<br/><i>(Risk & Payload Ingestion)</i>"] --> N2["2. Diagnoser<br/><i>(Hybrid Rules + Groq LLM)</i>"]
-        N2 --> N3["3. Strategist<br/><i>(Policy Matrix Lookup)</i>"]
-        N3 --> N4["4. Guardrail Gate<br/><i>(Compliance Boundary Check)</i>"]
-        N4 -->|Approved| N5["5. Executor<br/><i>(Razorpay API / gTTS)</i>"]
+        N1["1. Detector<br/><i>Risk and Payload Ingestion</i>"] --> N2["2. Diagnoser<br/><i>Hybrid Rules + Groq LLM</i>"]
+        N2 --> N3["3. Strategist<br/><i>Policy Matrix Lookup</i>"]
+        N3 --> N4["4. Guardrail Gate<br/><i>Compliance Boundary Check</i>"]
+        N4 -->|Approved| N5["5. Executor<br/><i>Razorpay API / gTTS</i>"]
         N4 -->|Needs Approval| QUEUE["Human Approval Queue"]
         QUEUE -->|Approved| N5
-        N5 --> N6["6. Auditor<br/><i>(SQLite Ledger Logging)</i>"]
-        N6 --> N7["7. Reporter<br/><i>(Batch Metrics Aggregation)</i>"]
+        N5 --> N6["6. Auditor<br/><i>SQLite Ledger Logging</i>"]
+        N6 --> N7["7. Reporter<br/><i>Batch Metrics Aggregation</i>"]
     end
 ```
 
@@ -93,20 +93,20 @@ Root cause classification combines high-speed deterministic pattern matching wit
 
 ```mermaid
 flowchart TD
-    A["Incoming Transaction Event"] --> B{"Rules Engine Match?<br/>(Regex & Bank Error Codes)"}
-    B -->|Yes (92% of cases)| C["Return Rule Classification<br/>Latency: 0.4ms<br/>Provider: deterministic/rules_engine"]
-    B -->|No (8% of cases)| D["Invoke Primary LLM: Groq<br/>Model: openai/gpt-oss-120b"]
+    A["Incoming Transaction Event"] --> B{"Rules Engine Match?<br/>Regex and Bank Error Codes"}
+    B -->|"Yes - 92% of cases"| C["Return Rule Classification<br/>Latency: 0.4ms<br/>Provider: deterministic/rules_engine"]
+    B -->|"No - 8% of cases"| D["Invoke Primary LLM: Groq<br/>Model: openai/gpt-oss-120b"]
     D --> E{"Groq Success?"}
-    E -->|Yes| F["Extract Structured JSON<br/>Latency: ~1040ms<br/>Provider: groq/openai/gpt-oss-120b"]
-    E -->|No| G["Invoke Fallback LLM: Gemini<br/>Model: gemini-2.5-flash"]
+    E -->|"Yes"| F["Extract Structured JSON<br/>Latency: ~1040ms<br/>Provider: groq/openai/gpt-oss-120b"]
+    E -->|"No"| G["Invoke Fallback LLM: Gemini<br/>Model: gemini-2.5-flash"]
     G --> H{"Gemini Success?"}
-    H -->|Yes| I["Extract Structured JSON<br/>Provider: gemini/gemini-2.5-flash"]
-    H -->|No| J["Apply Fallback Policy<br/>(mandate_issue / issuer_unavailable)"]
-    F --> K{"Root Cause == 'unknown'?"}
+    H -->|"Yes"| I["Extract Structured JSON<br/>Provider: gemini/gemini-2.5-flash"]
+    H -->|"No"| J["Apply Fallback Policy<br/>mandate_issue / issuer_unavailable"]
+    F --> K{"Root Cause is unknown?"}
     I --> K
     J --> K
-    K -->|Yes| L["Zero-Unknown Policy Resolver<br/>Map to issuer_unavailable / checkout_friction"]
-    K -->|No| M["Final Classified Root Cause"]
+    K -->|"Yes"| L["Zero-Unknown Policy Resolver<br/>Map to issuer_unavailable / checkout_friction"]
+    K -->|"No"| M["Final Classified Root Cause"]
     L --> M
 ```
 

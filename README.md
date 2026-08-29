@@ -185,36 +185,118 @@ docker-compose -f infra/docker-compose.yml up --build
 
 ---
 
+---
+
 ## 🏗 Architecture Overview
 
-### High-Level System Architecture
+### 1. High-Level System Architecture Diagram
 
+```mermaid
+graph TD
+    subgraph Ingestion ["1. Event Ingestion Layer"]
+        RZP["Razorpay Webhook API"] -->|POST /api/webhooks/razorpay| VERIFY["HMAC-SHA256 Signature Verifier"]
+        SYN["Synthetic Batch Generator"] -->|POST /api/process-batch| STREAM["SSE Stream Handler"]
+        VERIFY --> DUP["SQLite Idempotency Store"]
+    end
+
+    subgraph Core ["2. LangGraph Agent Core"]
+        DUP -->|New Event| DAG["LangGraph 7-Node DAG Engine"]
+        STREAM -->|Event Batch| DAG
+    end
+
+    subgraph Classifiers ["3. Hybrid Classifier Engine"]
+        DAG -->|Node 2: Diagnoser| RULES["Deterministic Rules Engine - 0.4ms"]
+        RULES -->|Ambiguous Code| GROQ["Primary LLM: Groq - openai/gpt-oss-120b"]
+        GROQ -->|Failure Fallback| GEMINI["Fallback LLM: Gemini - gemini-2.5-flash"]
+    end
+
+    subgraph Actions ["4. Execution & Governance Layer"]
+        DAG -->|Node 4: Guardrail Gate| GATE["Compliance Gate - DND / Retries / INR 5,000 Threshold"]
+        GATE -->|Needs Approval| QUEUE["Human Approval Queue"]
+        GATE -->|Approved| EXEC["Node 5: Executor"]
+        EXEC -->|payment_link| RZP_API["Razorpay Payment Links API - rzp.io"]
+        EXEC -->|voice| GTTS["gTTS Speech Synthesizer - en, hi, hinglish, ta, bn"]
+    end
+
+    subgraph Presentation ["5. Frontend Presentation Layer"]
+        DAG -->|Node 7: Reporter| DB[("SQLite Audit Database")]
+        DB -->|REST / SSE| DASH["React 19 Neobrutalist Dashboard"]
+        DASH --> THREE["MoltenHero3D WebGL Canvas"]
+        DASH --> TRACE["3D Decision-Trace Viewer"]
+    end
 ```
-                       ┌───────────────────────────────────────────────────────────┐
-                       │  Razorpay Webhook / Synthetic Events Ingestion             │
-                       └─────────────────────────────┬─────────────────────────────┘
-                                                     │
-                                                     ▼
-                       ┌───────────────────────────────────────────────────────────┐
-                       │  HMAC-SHA256 Signature Verification & SQLite Idempotency   │
-                       └─────────────────────────────┬─────────────────────────────┘
-                                                     │
-                                                     ▼
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                 LangGraph 7-Node StateMachine Core                                      │
-│                                                                                                         │
-│  [1. Detector] ──► [2. Diagnoser] ──► [3. Strategist] ──► [4. Guardrail Gate] ──► [5. Executor]         │
-│                        (Hybrid)            (Policy)             (Boundaries)         (APIs / Voice)     │
-│                                                                                           │             │
-│                                                                                           ▼             │
-│                                                   [7. Reporter] ◄────────────── [6. Auditor]            │
-│                                                    (Dashboard)                  (SQLite DB)             │
-└─────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-                                                     │
-                                                     ▼
-                       ┌───────────────────────────────────────────────────────────┐
-                       │  React 19 Neobrutalist Dashboard (100vh 3D WebGL Canvas) │
-                       └───────────────────────────────────────────────────────────┘
+
+---
+
+### 2. 7-Node LangGraph State Machine Pipeline
+
+```mermaid
+graph LR
+    subgraph LangGraph DAG Pipeline
+        N1["1. Detector<br/><i>Risk and Payload Ingestion</i>"] --> N2["2. Diagnoser<br/><i>Hybrid Rules + Groq LLM</i>"]
+        N2 --> N3["3. Strategist<br/><i>Policy Matrix Lookup</i>"]
+        N3 --> N4["4. Guardrail Gate<br/><i>Compliance Boundary Check</i>"]
+        N4 -->|Approved| N5["5. Executor<br/><i>Razorpay API / gTTS</i>"]
+        N4 -->|Needs Approval| QUEUE["Human Approval Queue"]
+        QUEUE -->|Approved| N5
+        N5 --> N6["6. Auditor<br/><i>SQLite Ledger Logging</i>"]
+        N6 --> N7["7. Reporter<br/><i>Batch Metrics Aggregation</i>"]
+    end
+```
+
+---
+
+### 3. Hybrid Classifier Algorithm Flow
+
+```mermaid
+flowchart TD
+    A["Incoming Transaction Event"] --> B{"Rules Engine Match?<br/>Regex and Bank Error Codes"}
+    B -->|"Yes - 92% of cases"| C["Return Rule Classification<br/>Latency: 0.4ms<br/>Provider: deterministic/rules_engine"]
+    B -->|"No - 8% of cases"| D["Invoke Primary LLM: Groq<br/>Model: openai/gpt-oss-120b"]
+    D --> E{"Groq Success?"}
+    E -->|"Yes"| F["Extract Structured JSON<br/>Latency: ~1040ms<br/>Provider: groq/openai/gpt-oss-120b"]
+    E -->|"No"| G["Invoke Fallback LLM: Gemini<br/>Model: gemini-2.5-flash"]
+    G --> H{"Gemini Success?"}
+    H -->|"Yes"| I["Extract Structured JSON<br/>Provider: gemini/gemini-2.5-flash"]
+    H -->|"No"| J["Apply Fallback Policy<br/>mandate_issue / issuer_unavailable"]
+    F --> K{"Root Cause is unknown?"}
+    I --> K
+    J --> K
+    K -->|"Yes"| L["Zero-Unknown Policy Resolver<br/>Map to issuer_unavailable / checkout_friction"]
+    K -->|"No"| M["Final Classified Root Cause"]
+    L --> M
+```
+
+---
+
+### 4. Webhook Ingestion & Idempotency Pipeline
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant RZP as Razorpay Gateway
+    participant SIG as Signature Verifier
+    participant IDEM as Idempotency Engine
+    participant DB as SQLite DB
+    participant AGENT as LangGraph Pipeline
+
+    RZP->>SIG: POST /api/webhooks/razorpay (x-razorpay-signature)
+    SIG->>SIG: Compute HMAC-SHA256(payload, secret)
+    alt Invalid Signature
+        SIG-->>RZP: 400 Bad Request (Invalid Signature)
+    else Valid Signature
+        SIG->>IDEM: Forward Verified Event
+        IDEM->>IDEM: Compute SHA-256 Event Fingerprint
+        IDEM->>DB: Check Fingerprint in Database
+        alt Fingerprint Exists (Duplicate Event)
+            DB-->>IDEM: Event Record Found
+            IDEM-->>RZP: 200 OK (Duplicate Ignored / Idempotent No-Op)
+        else Fingerprint New
+            IDEM->>DB: Insert Fingerprint Record
+            IDEM->>AGENT: Trigger 7-Node LangGraph StateMachine
+            AGENT-->>RZP: 200 OK (Event Enqueued & Processed)
+        end
+    end
 ```
 
 ---
