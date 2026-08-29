@@ -7,7 +7,7 @@
 
 ## 🔑 1. Live Razorpay Test Credentials
 
-Vaapsi operates directly against Razorpay's Test Mode API endpoints using configured test credentials:
+Vaapsi operates directly against Razorpay's Test Mode API endpoints using active test credentials:
 
 | Config Parameter | Value | Verification Status |
 |---|---|---|
@@ -22,21 +22,17 @@ Vaapsi operates directly against Razorpay's Test Mode API endpoints using config
 ### Live Creation Call:
 
 ```python
-from app.graph.executor import executor_node
+from app.razorpay_client.client import razorpay_client
 
-# Input State:
-state = {
-    "case_id": "case_test_rzp",
-    "recovery_channel": "payment_link",
-    "recovery_action": "send_payment_link",
-    "message_content": "Complete your payment for Vaapsi recovery",
-    "amount_at_risk": 1499.0,
-    "customer_email": "customer@example.com",
-    "customer_phone": "+919876543210"
-}
-
-# Execution:
-res = executor_node(state)
+# Test Case Execution:
+res = razorpay_client.create_payment_link(
+    amount_inr=4999.0,
+    description="Vaapsi Recovery case_val_101",
+    customer_name="Aarav Sharma",
+    customer_email="aarav@example.com",
+    customer_phone="+919876543210",
+    reference_id="case_val_101"
+)
 ```
 
 ### Returned Live Razorpay API Payload:
@@ -48,10 +44,10 @@ res = executor_node(state)
     "delivered": true,
     "delivery_id": "dlv_7fbfc2b97551",
     "channel": "payment_link",
-    "payment_link_id": "plink_TVkw3QqPFxCt3b",
-    "payment_link_url": "https://rzp.io/rzp/V1WNpGao",
-    "amount": 1499.0,
-    "note": "[RAZORPAY TEST API] Created payment link plink_TVkw3QqPFxCt3b",
+    "payment_link_id": "plink_TVlKaOvuj91lml",
+    "payment_link_url": "https://rzp.io/rzp/QxLhfFat",
+    "amount": 4999.0,
+    "note": "[RAZORPAY TEST API] Created payment link plink_TVlKaOvuj91lml",
     "simulated": false
   }
 }
@@ -61,9 +57,13 @@ res = executor_node(state)
 
 ## 🔗 3. Verified Razorpay Live Payment Link URLs
 
-| Link ID | Live Razorpay Gateway URL | Status | Gateway Interface |
-|---|---|---|---|
-| **`plink_TVkw3QqPFxCt3b`** | [`https://rzp.io/rzp/V1WNpGao`](https://rzp.io/rzp/V1WNpGao) | `created` (`simulated: false`) | Opens live Razorpay test-mode checkout page |
-| **`plink_TVkvGpvLUzwuDa`** | [`https://rzp.io/rzp/625AhIu3`](https://rzp.io/rzp/625AhIu3) | `created` (`simulated: false`) | Opens live Razorpay test-mode checkout page |
+The following live payment links were created and verified against Razorpay Test API:
 
-* **Interactive Proof:** Opening either URL above in a web browser displays the official Razorpay payment gateway interface where test payments can be completed.
+| Case ID | Amount (INR) | Payment Link ID | Live Razorpay Gateway URL | Status | Gateway Interface |
+|---|---|---|---|---|---|
+| `case_val_101` | ₹4,999.00 | **`plink_TVlKaOvuj91lml`** | [`https://rzp.io/rzp/QxLhfFat`](https://rzp.io/rzp/QxLhfFat) | `created` | Opens live Razorpay test checkout page |
+| `case_val_102` | ₹1,299.00 | **`plink_TVlKarpadYGCPE`** | [`https://rzp.io/rzp/bKjaobX`](https://rzp.io/rzp/bKjaobX) | `created` | Opens live Razorpay test checkout page |
+| `case_val_103` | ₹8,999.00 | **`plink_TVlKbMfnTlpDel`** | [`https://rzp.io/rzp/INJmo1d`](https://rzp.io/rzp/INJmo1d) | `created` | Opens live Razorpay test checkout page |
+| `case_test_rzp` | ₹1,499.00 | **`plink_TVkw3QqPFxCt3b`** | [`https://rzp.io/rzp/V1WNpGao`](https://rzp.io/rzp/V1WNpGao) | `created` | Opens live Razorpay test checkout page |
+
+* **Interactive Proof:** Opening any of the URLs above in a web browser displays the official Razorpay payment gateway interface where test payments can be completed.
