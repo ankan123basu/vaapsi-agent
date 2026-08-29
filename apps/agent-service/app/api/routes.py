@@ -348,7 +348,7 @@ async def process_batch_stream_endpoint(count: int = 100):
 
     async def event_generator():
         for i, event in enumerate(batch, 1):
-            result = process_event(event)
+            result = await asyncio.to_thread(process_event, event)
             _cases_store[result["case_id"]] = result
 
             payload = {
@@ -366,7 +366,7 @@ async def process_batch_stream_endpoint(count: int = 100):
                 "amount": result["amount_at_risk"],
             }
             yield f"data: {json.dumps(payload)}\n\n"
-            await asyncio.sleep(0.005)
+            await asyncio.sleep(0.001)
 
         metrics = _compute_metrics()
         final_payload = {

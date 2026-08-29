@@ -200,7 +200,11 @@ export default function Dashboard() {
                 disabled={processing}
                 id="process-batch-btn"
               >
-                <span>{processing ? '⏳ RUNNING AGENT PIPELINE...' : '⚡ PROCESS 100 EVENTS'}</span>
+                <span>
+                  {processing
+                    ? `⏳ AGENT RUNNING: ${feedLogs.length}/100 (${Math.min(100, Math.round((feedLogs.length / 100) * 100))}%)`
+                    : '⚡ PROCESS 100 EVENTS'}
+                </span>
               </button>
 
               {metrics && metrics.total_cases > 0 && (

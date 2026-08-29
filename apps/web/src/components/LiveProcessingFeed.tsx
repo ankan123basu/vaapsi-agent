@@ -22,11 +22,11 @@ interface Props {
 }
 
 export default function LiveProcessingFeed({ isProcessing, logs, totalEvents }: Props) {
-  const terminalEndRef = useRef<HTMLDivElement>(null);
+  const terminalContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (terminalEndRef.current) {
-      terminalEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (terminalContainerRef.current) {
+      terminalContainerRef.current.scrollTop = terminalContainerRef.current.scrollHeight;
     }
   }, [logs]);
 
@@ -37,7 +37,7 @@ export default function LiveProcessingFeed({ isProcessing, logs, totalEvents }: 
   const llmCount = logs.filter((l) => l.method === 'llm_fallback').length;
 
   return (
-    <div className="live-feed-card">
+    <div className="live-feed-card" id="live-feed-card">
       <div className="live-feed-header">
         <div className="live-feed-title">
           <span className="live-feed-pulse" />
@@ -60,7 +60,7 @@ export default function LiveProcessingFeed({ isProcessing, logs, totalEvents }: 
       </div>
 
       {/* Terminal Output */}
-      <div className="live-feed-terminal">
+      <div className="live-feed-terminal" ref={terminalContainerRef}>
         {logs.map((log) => {
           const isLLM = log.method === 'llm_fallback';
           return (
@@ -74,11 +74,10 @@ export default function LiveProcessingFeed({ isProcessing, logs, totalEvents }: 
               </span>
               <span className="term-arrow">──►</span>
               <span className="term-cause">{log.root_cause}</span>
-              <span className="term-lat">({log.latency_ms > 0 ? log.latency_ms.toFixed(1) : (isLLM ? 1412.0 : 0.4)}ms)</span>
+              <span className="term-lat">({log.latency_ms > 0 ? log.latency_ms.toFixed(1) : (isLLM ? 1040.0 : 0.4)}ms)</span>
             </div>
           );
         })}
-        <div ref={terminalEndRef} />
       </div>
     </div>
   );
