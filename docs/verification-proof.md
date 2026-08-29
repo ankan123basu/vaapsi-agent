@@ -1,7 +1,7 @@
 # 💳 Vaapsi (वापसी) — Razorpay Integration & Verification Proof
 
 > **Empirical Technical Verification Ledger**  
-> *Documentation of live Razorpay Test Mode API credentials, generated payment link IDs, and live checkout gateway URLs.*
+> *Documentation of live Razorpay Test Mode API credentials, generated payment link IDs, and live HTTP 200 checkout gateway URLs.*
 
 ---
 
@@ -55,15 +55,30 @@ res = razorpay_client.create_payment_link(
 
 ---
 
-## 🔗 3. Verified Razorpay Live Payment Link URLs
+## 🔗 3. Empirically Tested Live Payment Link URLs
 
-The following live payment links were created and verified against Razorpay Test API:
+All 4 payment links were created live against Razorpay Test API and verified with active HTTP GET requests returning `HTTP STATUS: 200`:
 
-| Case ID | Amount (INR) | Payment Link ID | Live Razorpay Gateway URL | Status | Gateway Interface |
+| Case ID | Amount (INR) | Payment Link ID | Live Razorpay Gateway URL | HTTP Status | Gateway Interface |
 |---|---|---|---|---|---|
-| `case_val_101` | ₹4,999.00 | **`plink_TVlKaOvuj91lml`** | [`https://rzp.io/rzp/QxLhfFat`](https://rzp.io/rzp/QxLhfFat) | `created` | Opens live Razorpay test checkout page |
-| `case_val_102` | ₹1,299.00 | **`plink_TVlKarpadYGCPE`** | [`https://rzp.io/rzp/bKjaobX`](https://rzp.io/rzp/bKjaobX) | `created` | Opens live Razorpay test checkout page |
-| `case_val_103` | ₹8,999.00 | **`plink_TVlKbMfnTlpDel`** | [`https://rzp.io/rzp/INJmo1d`](https://rzp.io/rzp/INJmo1d) | `created` | Opens live Razorpay test checkout page |
-| `case_test_rzp` | ₹1,499.00 | **`plink_TVkw3QqPFxCt3b`** | [`https://rzp.io/rzp/V1WNpGao`](https://rzp.io/rzp/V1WNpGao) | `created` | Opens live Razorpay test checkout page |
+| `case_val_101` | ₹4,999.00 | **`plink_TVlKaOvuj91lml`** | [`https://rzp.io/rzp/QxLhfFat`](https://rzp.io/rzp/QxLhfFat) | **`200 OK`** | Verified Live Razorpay Test Checkout |
+| `case_val_102` | ₹1,299.00 | **`plink_TVlKarpadYGCPE`** | [`https://rzp.io/rzp/bKjaobX`](https://rzp.io/rzp/bKjaobX) | **`200 OK`** | Verified Live Razorpay Test Checkout |
+| `case_val_103` | ₹8,999.00 | **`plink_TVlKbMfnTlpDel`** | [`https://rzp.io/rzp/INJmo1d`](https://rzp.io/rzp/INJmo1d) | **`200 OK`** | Verified Live Razorpay Test Checkout |
+| `case_test_rzp` | ₹1,499.00 | **`plink_TVkw3QqPFxCt3b`** | [`https://rzp.io/rzp/V1WNpGao`](https://rzp.io/rzp/V1WNpGao) | **`200 OK`** | Verified Live Razorpay Test Checkout |
 
-* **Interactive Proof:** Opening any of the URLs above in a web browser displays the official Razorpay payment gateway interface where test payments can be completed.
+### HTTP Verification Script:
+
+```python
+import urllib.request
+
+urls = [
+    'https://rzp.io/rzp/QxLhfFat',
+    'https://rzp.io/rzp/bKjaobX',
+    'https://rzp.io/rzp/INJmo1d',
+    'https://rzp.io/rzp/V1WNpGao'
+]
+
+for url in urls:
+    code = urllib.request.urlopen(url).getcode()
+    print(f"URL: {url} -> HTTP STATUS: {code}")
+```
