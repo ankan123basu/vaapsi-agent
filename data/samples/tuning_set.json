@@ -1,0 +1,4796 @@
+[
+  {
+    "event_id": "evt_684a586e52a64c23",
+    "event_type": "payment_failed",
+    "payment_id": "pay_c4d752c13fbd4a",
+    "order_id": "order_98e6a9f838be46",
+    "amount": 924.74,
+    "currency": "INR",
+    "decline_reason": "Issuer is not available for authorization",
+    "decline_code": "ISSUER_NOT_AVAILABLE",
+    "method": "upi",
+    "bank": "Canara Bank",
+    "customer": {
+      "id": "cust_6db573a03acd4d",
+      "name": "Pooja Gupta",
+      "email": "pooja.gupta6@hotmail.com",
+      "phone": "+919642900640"
+    },
+    "timestamp": "2026-08-20T00:16:13+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_326d3a241f4e4399",
+    "event_type": "payment_failed",
+    "payment_id": "pay_e809aaa5e2a34f",
+    "order_id": "order_bfff594f68284a",
+    "amount": 7448.67,
+    "currency": "INR",
+    "decline_reason": "Non-sufficient funds",
+    "decline_code": "NSF",
+    "method": "card",
+    "bank": "Canara Bank",
+    "customer": {
+      "id": "cust_ef3fda3737df46",
+      "name": "Vihaan Mukherjee",
+      "email": "vihaan.mukherjee33@gmail.com",
+      "phone": "+918812140441"
+    },
+    "timestamp": "2026-08-20T02:13:14+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_b577e7bdeb554b56",
+    "event_type": "payment_failed",
+    "payment_id": "pay_2d88ff6d26b246",
+    "order_id": "order_d8d8def2f78049",
+    "amount": 544.13,
+    "currency": "INR",
+    "decline_reason": "Issuer is not available for authorization",
+    "decline_code": "ISSUER_NOT_AVAILABLE",
+    "method": "card",
+    "bank": "IndusInd Bank",
+    "customer": {
+      "id": "cust_53ad2446055040",
+      "name": "Riya Nair",
+      "email": "riya.nair627@hotmail.com",
+      "phone": "+917557363168"
+    },
+    "timestamp": "2026-08-20T02:19:25+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_8b9c7aa2a89d4943",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_77d1fa1aa2e342",
+    "cart_value": 10779.98,
+    "currency": "INR",
+    "time_to_abandon_seconds": 530,
+    "device_type": "mobile",
+    "channel": "social",
+    "items_count": 2,
+    "customer": {
+      "id": "cust_6a6ec1e851d44b",
+      "name": "Neha Patel",
+      "email": "neha.patel268@outlook.com",
+      "phone": "+918368878709"
+    },
+    "timestamp": "2026-08-20T02:21:10+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "page_views": 6
+    }
+  },
+  {
+    "event_id": "evt_36be1fe4aead415a",
+    "event_type": "payment_failed",
+    "payment_id": "pay_f28e43879b2943",
+    "order_id": "order_3402ab7e21994d",
+    "amount": 680.31,
+    "currency": "INR",
+    "decline_reason": "Transaction timed out",
+    "decline_code": "TIMEOUT",
+    "method": "upi",
+    "bank": "Punjab National Bank",
+    "customer": {
+      "id": "cust_f52154490a5341",
+      "name": "Suresh Kumar",
+      "email": "suresh.kumar577@gmail.com",
+      "phone": "+919667858669"
+    },
+    "timestamp": "2026-08-20T02:34:13+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_716c3668c0264ae9",
+    "event_type": "payment_failed",
+    "payment_id": "pay_2d1602e67e6d4e",
+    "order_id": "order_425d1442eb794f",
+    "amount": 1447.36,
+    "currency": "INR",
+    "decline_reason": "Invalid card number",
+    "decline_code": "INVALID_CARD_NUMBER",
+    "method": "card",
+    "bank": "Union Bank",
+    "customer": {
+      "id": "cust_a6095e3734a046",
+      "name": "Ishaan Verma",
+      "email": "ishaan.verma970@gmail.com",
+      "phone": "+919436779490"
+    },
+    "timestamp": "2026-08-20T02:46:31+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_80b07a96d5c044a7",
+    "event_type": "payment_failed",
+    "payment_id": "pay_9653153da57b4f",
+    "order_id": "order_8c44f6becc9d4f",
+    "amount": 359.0,
+    "currency": "INR",
+    "decline_reason": "Daily transaction limit reached",
+    "decline_code": "DAILY_LIMIT_REACHED",
+    "method": "card",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_d6f7f29b883e40",
+      "name": "Vivaan Verma",
+      "email": "vivaan.verma469@hotmail.com",
+      "phone": "+919674951016"
+    },
+    "timestamp": "2026-08-20T03:53:57+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_dd9eaa1455c74da9",
+    "event_type": "payment_failed",
+    "payment_id": "pay_45733f8aaada4d",
+    "order_id": "order_a89c34912ffb46",
+    "amount": 874.69,
+    "currency": "INR",
+    "decline_reason": "Card has expired",
+    "decline_code": "EXPIRED_CARD",
+    "method": "card",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_c3ac78b75efd47",
+      "name": "Saanvi Bose",
+      "email": "saanvi.bose703@gmail.com",
+      "phone": "+919703448716"
+    },
+    "timestamp": "2026-08-20T04:09:51+00:00",
+    "metadata": {
+      "category": "Jewelry",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_b5e816a0f16f40f1",
+    "event_type": "payment_failed",
+    "payment_id": "pay_6817549d65054a",
+    "order_id": "order_e90524ec82d741",
+    "amount": 2208.07,
+    "currency": "INR",
+    "decline_reason": "Additional authentication required",
+    "decline_code": "AUTHENTICATION_REQUIRED",
+    "method": "card",
+    "bank": "Union Bank",
+    "customer": {
+      "id": "cust_8a69b63c9e814d",
+      "name": "Neha Iyer",
+      "email": "neha.iyer706@outlook.com",
+      "phone": "+917313416738"
+    },
+    "timestamp": "2026-08-20T05:28:26+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_f5c256c49f594686",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_6e7000f0c0af47",
+    "plan_id": "plan_enterprise",
+    "amount": 2999,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 1,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "MANDATE_NOT_APPROVED",
+    "customer": {
+      "id": "cust_5605659e415f4c",
+      "name": "Aarav Das",
+      "email": "aarav.das76@outlook.com",
+      "phone": "+917375899416"
+    },
+    "timestamp": "2026-08-20T05:50:16+00:00",
+    "metadata": {
+      "plan_name": "Enterprise Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_5b6100a680314d85",
+    "event_type": "payment_failed",
+    "payment_id": "pay_e943b4680ac340",
+    "order_id": "order_e9951c11af7f48",
+    "amount": 31748.59,
+    "currency": "INR",
+    "decline_reason": "e-Mandate/NACH not approved by customer",
+    "decline_code": "MANDATE_NOT_APPROVED",
+    "method": "card",
+    "bank": "Union Bank",
+    "customer": {
+      "id": "cust_ed3584b369b642",
+      "name": "Arjun Kumar",
+      "email": "arjun.kumar207@hotmail.com",
+      "phone": "+918260326267"
+    },
+    "timestamp": "2026-08-20T06:56:02+00:00",
+    "metadata": {
+      "category": "Sports",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_3118882496134b1b",
+    "event_type": "payment_failed",
+    "payment_id": "pay_22867f28363647",
+    "order_id": "order_c9dfcc3d519c4b",
+    "amount": 2974.69,
+    "currency": "INR",
+    "decline_reason": "Incorrect OTP entered",
+    "decline_code": "OTP_INCORRECT",
+    "method": "card",
+    "bank": "Federal Bank",
+    "customer": {
+      "id": "cust_71dd770c27d24d",
+      "name": "Vivaan Pillai",
+      "email": "vivaan.pillai27@outlook.com",
+      "phone": "+918075321966"
+    },
+    "timestamp": "2026-08-20T07:43:53+00:00",
+    "metadata": {
+      "category": "Jewelry",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_105c95a1fdec4367",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_8d3af7dcff304d",
+    "cart_value": 8762.37,
+    "currency": "INR",
+    "time_to_abandon_seconds": 614,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 4,
+    "customer": {
+      "id": "cust_16287da54a2740",
+      "name": "Aanya Bose",
+      "email": "aanya.bose96@gmail.com",
+      "phone": "+918201840395"
+    },
+    "timestamp": "2026-08-20T07:57:54+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "page_views": 14
+    }
+  },
+  {
+    "event_id": "evt_eceb2298784b40e4",
+    "event_type": "payment_failed",
+    "payment_id": "pay_cb0f4edce89c40",
+    "order_id": "order_77fd0b5aedb643",
+    "amount": 4281.32,
+    "currency": "INR",
+    "decline_reason": "e-Mandate/NACH not approved by customer",
+    "decline_code": "MANDATE_NOT_APPROVED",
+    "method": "card",
+    "bank": "Axis Bank",
+    "customer": {
+      "id": "cust_96d7e235f57e4c",
+      "name": "Aarav Reddy",
+      "email": "aarav.reddy886@hotmail.com",
+      "phone": "+918196591018"
+    },
+    "timestamp": "2026-08-20T08:22:41+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_961ceccbf9664980",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_0133d4b11d7c43",
+    "cart_value": 10469.92,
+    "currency": "INR",
+    "time_to_abandon_seconds": 395,
+    "device_type": "mobile",
+    "channel": "social",
+    "items_count": 1,
+    "customer": {
+      "id": "cust_8a1843b801444c",
+      "name": "Aanya Agarwal",
+      "email": "aanya.agarwal55@protonmail.com",
+      "phone": "+917674755608"
+    },
+    "timestamp": "2026-08-20T10:13:12+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "page_views": 18
+    }
+  },
+  {
+    "event_id": "evt_e2a68de72a374964",
+    "event_type": "payment_failed",
+    "payment_id": "pay_5c8b283021bf48",
+    "order_id": "order_3904864bfc284f",
+    "amount": 29521.39,
+    "currency": "INR",
+    "decline_reason": "Invalid UPI VPA",
+    "decline_code": "INVALID_VPA",
+    "method": "upi",
+    "bank": "IndusInd Bank",
+    "customer": {
+      "id": "cust_8a552ac079a646",
+      "name": "Diya Verma",
+      "email": "diya.verma230@hotmail.com",
+      "phone": "+918610237679"
+    },
+    "timestamp": "2026-08-20T10:59:06+00:00",
+    "metadata": {
+      "category": "Sports",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_a6fe0247712a44ed",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_d011f902d6ba40",
+    "cart_value": 12299.01,
+    "currency": "INR",
+    "time_to_abandon_seconds": 28,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 2,
+    "customer": {
+      "id": "cust_7afa86e298ec44",
+      "name": "Vivaan Iyer",
+      "email": "vivaan.iyer158@protonmail.com",
+      "phone": "+919108606793"
+    },
+    "timestamp": "2026-08-20T11:00:27+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "page_views": 10
+    }
+  },
+  {
+    "event_id": "evt_872a8a81e3e84c59",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_b427a5fe86be42",
+    "cart_value": 612.1,
+    "currency": "INR",
+    "time_to_abandon_seconds": 35,
+    "device_type": "mobile",
+    "channel": "social",
+    "items_count": 5,
+    "customer": {
+      "id": "cust_cd8b8e42c2024d",
+      "name": "Suresh Shah",
+      "email": "suresh.shah468@outlook.com",
+      "phone": "+919375509447"
+    },
+    "timestamp": "2026-08-20T11:12:18+00:00",
+    "metadata": {
+      "category": "Jewelry",
+      "page_views": 10
+    }
+  },
+  {
+    "event_id": "evt_bdfd503df9a74652",
+    "event_type": "payment_failed",
+    "payment_id": "pay_12ef07ca9ce849",
+    "order_id": "order_a3a2859fa36040",
+    "amount": 984.64,
+    "currency": "INR",
+    "decline_reason": "Card has insufficient funds to complete the transaction",
+    "decline_code": "INSUFFICIENT_FUNDS",
+    "method": "card",
+    "bank": "IndusInd Bank",
+    "customer": {
+      "id": "cust_af5d960e4b4049",
+      "name": "Krishna Agarwal",
+      "email": "krishna.agarwal135@gmail.com",
+      "phone": "+917110724913"
+    },
+    "timestamp": "2026-08-20T11:50:50+00:00",
+    "metadata": {
+      "category": "Books",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_0b950586acf0408d",
+    "event_type": "payment_failed",
+    "payment_id": "pay_e27d9c43a4144b",
+    "order_id": "order_f6c930ff24304b",
+    "amount": 441.55,
+    "currency": "INR",
+    "decline_reason": "Incorrect PIN entered",
+    "decline_code": "INVALID_PIN",
+    "method": "card",
+    "bank": "Punjab National Bank",
+    "customer": {
+      "id": "cust_1151276803a14f",
+      "name": "Kavya Joshi",
+      "email": "kavya.joshi550@gmail.com",
+      "phone": "+918973214822"
+    },
+    "timestamp": "2026-08-20T12:05:35+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_fb6aa7fde51d4502",
+    "event_type": "payment_failed",
+    "payment_id": "pay_df5f2ea2f87e46",
+    "order_id": "order_217ac6dc6bb74a",
+    "amount": 7145.49,
+    "currency": "INR",
+    "decline_reason": "3D Secure authentication failed",
+    "decline_code": "3DS_FAILED",
+    "method": "netbanking",
+    "bank": "Kotak Mahindra",
+    "customer": {
+      "id": "cust_6371bc711a554e",
+      "name": "Amit Bose",
+      "email": "amit.bose874@yahoo.com",
+      "phone": "+917582949109"
+    },
+    "timestamp": "2026-08-20T14:11:57+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_0e6876f31a40424e",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_97408e940e594c",
+    "plan_id": "plan_enterprise",
+    "amount": 2999,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 3,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "NETWORK_ERROR",
+    "customer": {
+      "id": "cust_5722d954a3f34e",
+      "name": "Vihaan Pillai",
+      "email": "vihaan.pillai603@gmail.com",
+      "phone": "+919886826923"
+    },
+    "timestamp": "2026-08-20T14:29:42+00:00",
+    "metadata": {
+      "plan_name": "Enterprise Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_8a6ef2c7603f4d03",
+    "event_type": "payment_failed",
+    "payment_id": "pay_28b9613011c04b",
+    "order_id": "order_da6dcf5043404f",
+    "amount": 1963.08,
+    "currency": "INR",
+    "decline_reason": "Payment gateway encountered an error",
+    "decline_code": "GATEWAY_ERROR",
+    "method": "netbanking",
+    "bank": "SBI",
+    "customer": {
+      "id": "cust_2f19f2e1d77741",
+      "name": "Ayaan Das",
+      "email": "ayaan.das683@outlook.com",
+      "phone": "+918096619850"
+    },
+    "timestamp": "2026-08-20T14:57:18+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_fe87aa2b9701486a",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_21b34b29a84143",
+    "plan_id": "plan_monthly",
+    "amount": 799,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 1,
+    "mandate_type": "emandate",
+    "failure_reason": "NETWORK_ERROR",
+    "customer": {
+      "id": "cust_b23f2ea56c9c45",
+      "name": "Priya Roy",
+      "email": "priya.roy701@protonmail.com",
+      "phone": "+918281944343"
+    },
+    "timestamp": "2026-08-20T15:04:21+00:00",
+    "metadata": {
+      "plan_name": "Monthly Box",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_2607ca3e509447d2",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_046ea9b6f77e46",
+    "cart_value": 3266.98,
+    "currency": "INR",
+    "time_to_abandon_seconds": 125,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 4,
+    "customer": {
+      "id": "cust_3c855fc7500d42",
+      "name": "Deepak Chatterjee",
+      "email": "deepak.chatterjee251@gmail.com",
+      "phone": "+917052776893"
+    },
+    "timestamp": "2026-08-20T15:23:24+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "page_views": 6
+    }
+  },
+  {
+    "event_id": "evt_78f0381f0b97417d",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_ed609c9ef57846",
+    "cart_value": 3998.36,
+    "currency": "INR",
+    "time_to_abandon_seconds": 420,
+    "device_type": "mobile",
+    "channel": "app",
+    "items_count": 7,
+    "customer": {
+      "id": "cust_635d6adfaa8f45",
+      "name": "Krishna Chatterjee",
+      "email": "krishna.chatterjee643@gmail.com",
+      "phone": "+919476700066"
+    },
+    "timestamp": "2026-08-20T15:29:32+00:00",
+    "metadata": {
+      "category": "Sports",
+      "page_views": 2
+    }
+  },
+  {
+    "event_id": "evt_008f16cec887438e",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_c6b03227b73640",
+    "cart_value": 27087.86,
+    "currency": "INR",
+    "time_to_abandon_seconds": 55,
+    "device_type": "mobile",
+    "channel": "app",
+    "items_count": 1,
+    "customer": {
+      "id": "cust_2bca9ec2a49341",
+      "name": "Aarav Gupta",
+      "email": "aarav.gupta793@protonmail.com",
+      "phone": "+917608393560"
+    },
+    "timestamp": "2026-08-20T16:55:23+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "page_views": 12
+    }
+  },
+  {
+    "event_id": "evt_c91e2a8bdc0448f9",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_f32933685c3b4e",
+    "plan_id": "plan_monthly",
+    "amount": 799,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 2,
+    "mandate_type": "nach",
+    "failure_reason": "NETWORK_ERROR",
+    "customer": {
+      "id": "cust_731c0d182c9546",
+      "name": "Aarav Mukherjee",
+      "email": "aarav.mukherjee43@protonmail.com",
+      "phone": "+917529290976"
+    },
+    "timestamp": "2026-08-20T18:38:25+00:00",
+    "metadata": {
+      "plan_name": "Monthly Box",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_2f6906c14657421a",
+    "event_type": "payment_failed",
+    "payment_id": "pay_799e7d1b07e942",
+    "order_id": "order_31bb8e3e2e294b",
+    "amount": 718.17,
+    "currency": "INR",
+    "decline_reason": "OTP entry timed out",
+    "decline_code": "OTP_TIMEOUT",
+    "method": "card",
+    "bank": "Union Bank",
+    "customer": {
+      "id": "cust_6a75ba707cf648",
+      "name": "Aanya Verma",
+      "email": "aanya.verma476@yahoo.com",
+      "phone": "+919224611603"
+    },
+    "timestamp": "2026-08-20T17:15:58+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_342f0c936fce4582",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_96ea616fff034f",
+    "cart_value": 67178.02,
+    "currency": "INR",
+    "time_to_abandon_seconds": 69,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 2,
+    "customer": {
+      "id": "cust_6c0e5683441440",
+      "name": "Suresh Verma",
+      "email": "suresh.verma628@outlook.com",
+      "phone": "+919778843173"
+    },
+    "timestamp": "2026-08-20T18:41:43+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "page_views": 11
+    }
+  },
+  {
+    "event_id": "evt_f271719cd23640ed",
+    "event_type": "payment_failed",
+    "payment_id": "pay_640503b1f7654e",
+    "order_id": "order_1df62e4c4f5f49",
+    "amount": 10834.65,
+    "currency": "INR",
+    "decline_reason": "3D Secure authentication timed out",
+    "decline_code": "3DS_TIMEOUT",
+    "method": "card",
+    "bank": "IndusInd Bank",
+    "customer": {
+      "id": "cust_1c42042e9e4b49",
+      "name": "Rohan Roy",
+      "email": "rohan.roy249@hotmail.com",
+      "phone": "+919923699745"
+    },
+    "timestamp": "2026-08-20T18:44:07+00:00",
+    "metadata": {
+      "category": "Books",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_090f9c4d98d84547",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_3b85469b061d4f",
+    "cart_value": 6024.17,
+    "currency": "INR",
+    "time_to_abandon_seconds": 285,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 7,
+    "customer": {
+      "id": "cust_e1857b275c8140",
+      "name": "Suresh Gupta",
+      "email": "suresh.gupta577@yahoo.com",
+      "phone": "+919278515709"
+    },
+    "timestamp": "2026-08-20T19:41:10+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "page_views": 12
+    }
+  },
+  {
+    "event_id": "evt_d2c211dfca094852",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_ff85f8c074c64e",
+    "plan_id": "plan_pro",
+    "amount": 499,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 0,
+    "mandate_type": "nach",
+    "failure_reason": "DEBIT_FAILED",
+    "customer": {
+      "id": "cust_32f0572e2d404f",
+      "name": "Krishna Nair",
+      "email": "krishna.nair651@hotmail.com",
+      "phone": "+918704854104"
+    },
+    "timestamp": "2026-08-20T21:01:15+00:00",
+    "metadata": {
+      "plan_name": "Pro Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_51b03d505f2e40ee",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_0fa17f9e252244",
+    "cart_value": 875.42,
+    "currency": "INR",
+    "time_to_abandon_seconds": 144,
+    "device_type": "tablet",
+    "channel": "web",
+    "items_count": 1,
+    "customer": {
+      "id": "cust_68b2bd35ef0745",
+      "name": "Ayaan Reddy",
+      "email": "ayaan.reddy48@protonmail.com",
+      "phone": "+918164344392"
+    },
+    "timestamp": "2026-08-20T21:59:17+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "page_views": 19
+    }
+  },
+  {
+    "event_id": "evt_9a91750c87014852",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_940312020a5e47",
+    "cart_value": 3251.87,
+    "currency": "INR",
+    "time_to_abandon_seconds": 41,
+    "device_type": "tablet",
+    "channel": "app",
+    "items_count": 3,
+    "customer": {
+      "id": "cust_233c82bea52b4d",
+      "name": "Isha Patel",
+      "email": "isha.patel617@gmail.com",
+      "phone": "+917999109703"
+    },
+    "timestamp": "2026-08-21T00:33:30+00:00",
+    "metadata": {
+      "category": "Electronics",
+      "page_views": 11
+    }
+  },
+  {
+    "event_id": "evt_091d2ac1ec434000",
+    "event_type": "payment_failed",
+    "payment_id": "pay_330b3b515bcf46",
+    "order_id": "order_a092b94d303745",
+    "amount": 804.88,
+    "currency": "INR",
+    "decline_reason": "Payment gateway encountered an error",
+    "decline_code": "GATEWAY_ERROR",
+    "method": "upi",
+    "bank": "Kotak Mahindra",
+    "customer": {
+      "id": "cust_00cf9cd6692a48",
+      "name": "Aanya Mukherjee",
+      "email": "aanya.mukherjee304@hotmail.com",
+      "phone": "+917815605132"
+    },
+    "timestamp": "2026-08-21T01:37:47+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_24b111f2a0af46b8",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_7bebd8dc328c4b",
+    "plan_id": "plan_annual",
+    "amount": 4999,
+    "currency": "INR",
+    "attempt_number": 3,
+    "days_overdue": 17,
+    "mandate_type": "nach",
+    "failure_reason": "DO_NOT_HONOR",
+    "customer": {
+      "id": "cust_4da592af750246",
+      "name": "Neha Sharma",
+      "email": "neha.sharma391@protonmail.com",
+      "phone": "+917108543028"
+    },
+    "timestamp": "2026-08-21T01:42:03+00:00",
+    "metadata": {
+      "plan_name": "Annual Membership",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_786bd4a8fd62433f",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_2d9f3aa234844d",
+    "cart_value": 10594.81,
+    "currency": "INR",
+    "time_to_abandon_seconds": 1894,
+    "device_type": "tablet",
+    "channel": "web",
+    "items_count": 7,
+    "customer": {
+      "id": "cust_6ba97000aa3a4e",
+      "name": "Sai Gupta",
+      "email": "sai.gupta505@outlook.com",
+      "phone": "+918152798401"
+    },
+    "timestamp": "2026-08-21T02:10:27+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "page_views": 14
+    }
+  },
+  {
+    "event_id": "evt_88344e03716c4001",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_6addbce61f624d",
+    "plan_id": "plan_premium",
+    "amount": 999,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 13,
+    "mandate_type": "nach",
+    "failure_reason": "MANDATE_REVOKED",
+    "customer": {
+      "id": "cust_c78243b7615844",
+      "name": "Rohan Shah",
+      "email": "rohan.shah784@yahoo.com",
+      "phone": "+919221759035"
+    },
+    "timestamp": "2026-08-21T01:51:54+00:00",
+    "metadata": {
+      "plan_name": "Premium Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_ac92ed0e59cb493b",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_7a1855a28c4140",
+    "cart_value": 1780.32,
+    "currency": "INR",
+    "time_to_abandon_seconds": 203,
+    "device_type": "tablet",
+    "channel": "social",
+    "items_count": 7,
+    "customer": {
+      "id": "cust_cd8c38eeaa5346",
+      "name": "Raj Bose",
+      "email": "raj.bose501@hotmail.com",
+      "phone": "+918906328733"
+    },
+    "timestamp": "2026-08-21T02:36:01+00:00",
+    "metadata": {
+      "category": "Books",
+      "page_views": 10
+    }
+  },
+  {
+    "event_id": "evt_461304d3802e42b2",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_6acce19a6a164c",
+    "plan_id": "plan_premium",
+    "amount": 999,
+    "currency": "INR",
+    "attempt_number": 3,
+    "days_overdue": 1,
+    "mandate_type": "emandate",
+    "failure_reason": "GENERAL_DECLINE",
+    "customer": {
+      "id": "cust_03fb424d41584f",
+      "name": "Arjun Pillai",
+      "email": "arjun.pillai201@gmail.com",
+      "phone": "+919623588379"
+    },
+    "timestamp": "2026-08-21T03:59:54+00:00",
+    "metadata": {
+      "plan_name": "Premium Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_66a91e122ed04536",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_5478cead22204f",
+    "cart_value": 2578.82,
+    "currency": "INR",
+    "time_to_abandon_seconds": 335,
+    "device_type": "tablet",
+    "channel": "web",
+    "items_count": 2,
+    "customer": {
+      "id": "cust_45a28a72c01a4e",
+      "name": "Suresh Das",
+      "email": "suresh.das828@yahoo.com",
+      "phone": "+917910061300"
+    },
+    "timestamp": "2026-08-21T04:02:27+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "page_views": 14
+    }
+  },
+  {
+    "event_id": "evt_4a671800d3f64f4e",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_8a90e0e143a449",
+    "plan_id": "plan_enterprise",
+    "amount": 2999,
+    "currency": "INR",
+    "attempt_number": 3,
+    "days_overdue": 19,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "NETWORK_ERROR",
+    "customer": {
+      "id": "cust_e5535d3f601146",
+      "name": "Aanya Gupta",
+      "email": "aanya.gupta769@outlook.com",
+      "phone": "+918542970785"
+    },
+    "timestamp": "2026-08-21T05:58:58+00:00",
+    "metadata": {
+      "plan_name": "Enterprise Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_816eaa377b484b31",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_1b8c093c024e42",
+    "cart_value": 2655.31,
+    "currency": "INR",
+    "time_to_abandon_seconds": 116,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 5,
+    "customer": {
+      "id": "cust_d3c84b05026040",
+      "name": "Priya Banerjee",
+      "email": "priya.banerjee303@protonmail.com",
+      "phone": "+918793484162"
+    },
+    "timestamp": "2026-08-21T06:21:14+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "page_views": 19
+    }
+  },
+  {
+    "event_id": "evt_c9858efd9deb4f0b",
+    "event_type": "payment_failed",
+    "payment_id": "pay_e8ca602bf55e4a",
+    "order_id": "order_5f6adaf63eee43",
+    "amount": 31338.53,
+    "currency": "INR",
+    "decline_reason": "Debit against mandate failed",
+    "decline_code": "DEBIT_FAILED",
+    "method": "card",
+    "bank": "Yes Bank",
+    "customer": {
+      "id": "cust_8e93e96474c04e",
+      "name": "Aarav Kumar",
+      "email": "aarav.kumar990@hotmail.com",
+      "phone": "+918963790638"
+    },
+    "timestamp": "2026-08-21T06:37:22+00:00",
+    "metadata": {
+      "category": "Electronics",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_8393ceb659054e3a",
+    "event_type": "payment_failed",
+    "payment_id": "pay_3bb752731b104f",
+    "order_id": "order_445395aa1cdb40",
+    "amount": 399.82,
+    "currency": "INR",
+    "decline_reason": "Non-sufficient funds",
+    "decline_code": "NSF",
+    "method": "card",
+    "bank": "Union Bank",
+    "customer": {
+      "id": "cust_dfba63606b6c40",
+      "name": "Riya Reddy",
+      "email": "riya.reddy601@gmail.com",
+      "phone": "+917889734128"
+    },
+    "timestamp": "2026-08-21T07:21:49+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_dad735b15ec14c74",
+    "event_type": "payment_failed",
+    "payment_id": "pay_fd396719653544",
+    "order_id": "order_1f736be4a3044a",
+    "amount": 7100.56,
+    "currency": "INR",
+    "decline_reason": "Account balance insufficient",
+    "decline_code": "BALANCE_INSUFFICIENT",
+    "method": "card",
+    "bank": "IDBI Bank",
+    "customer": {
+      "id": "cust_c0588c4497c040",
+      "name": "Vihaan Nair",
+      "email": "vihaan.nair768@protonmail.com",
+      "phone": "+919665720874"
+    },
+    "timestamp": "2026-08-21T07:55:10+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_e76a6fdae8a04298",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_d7050c36fb0947",
+    "plan_id": "plan_monthly",
+    "amount": 799,
+    "currency": "INR",
+    "attempt_number": 3,
+    "days_overdue": 13,
+    "mandate_type": "emandate",
+    "failure_reason": "BANK_DOWN",
+    "customer": {
+      "id": "cust_0a2925c4f9bb49",
+      "name": "Ishaan Singh",
+      "email": "ishaan.singh624@gmail.com",
+      "phone": "+917853180912"
+    },
+    "timestamp": "2026-08-21T08:53:33+00:00",
+    "metadata": {
+      "plan_name": "Monthly Box",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_7a63f40fa148451f",
+    "event_type": "payment_failed",
+    "payment_id": "pay_75168ba7eb2045",
+    "order_id": "order_f104a16697c34c",
+    "amount": 764.01,
+    "currency": "INR",
+    "decline_reason": "Suspected fraudulent transaction",
+    "decline_code": "FRAUD_SUSPECTED",
+    "method": "card",
+    "bank": "Canara Bank",
+    "customer": {
+      "id": "cust_d9d30457308049",
+      "name": "Riya Chatterjee",
+      "email": "riya.chatterjee853@protonmail.com",
+      "phone": "+917431756350"
+    },
+    "timestamp": "2026-08-21T09:14:23+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "retry_eligible": false
+    }
+  },
+  {
+    "event_id": "evt_68df90ba1d154f0c",
+    "event_type": "payment_failed",
+    "payment_id": "pay_879e3106a99b48",
+    "order_id": "order_a0b3f1c6b7104e",
+    "amount": 12640.84,
+    "currency": "INR",
+    "decline_reason": "Card is restricted from this type of transaction",
+    "decline_code": "RESTRICTED_CARD",
+    "method": "card",
+    "bank": "Punjab National Bank",
+    "customer": {
+      "id": "cust_b3db5e72bf3049",
+      "name": "Vihaan Sharma",
+      "email": "vihaan.sharma180@hotmail.com",
+      "phone": "+918849649210"
+    },
+    "timestamp": "2026-08-21T12:34:45+00:00",
+    "metadata": {
+      "category": "Books",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_60e454089ecb438b",
+    "event_type": "payment_failed",
+    "payment_id": "pay_ebef806eb1e44c",
+    "order_id": "order_447954980d5248",
+    "amount": 1443.45,
+    "currency": "INR",
+    "decline_reason": "Issuing bank systems are down",
+    "decline_code": "BANK_DOWN",
+    "method": "wallet",
+    "bank": "IDBI Bank",
+    "customer": {
+      "id": "cust_3f9b06fa6a994b",
+      "name": "Riya Bose",
+      "email": "riya.bose47@protonmail.com",
+      "phone": "+918324651201"
+    },
+    "timestamp": "2026-08-21T12:38:03+00:00",
+    "metadata": {
+      "category": "Electronics",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_8e2baa9c2a174dd8",
+    "event_type": "payment_failed",
+    "payment_id": "pay_5017147d3e4c43",
+    "order_id": "order_e22ea013d75e4a",
+    "amount": 4031.9,
+    "currency": "INR",
+    "decline_reason": "Transaction declined: CONTACT_BANK",
+    "decline_code": "CONTACT_BANK",
+    "method": "wallet",
+    "bank": "Yes Bank",
+    "customer": {
+      "id": "cust_8fd54f0657d24a",
+      "name": "Rohan Bose",
+      "email": "rohan.bose302@hotmail.com",
+      "phone": "+917399661102"
+    },
+    "timestamp": "2026-08-21T12:44:15+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_3a28a33ece614f40",
+    "event_type": "payment_failed",
+    "payment_id": "pay_2adb8418380944",
+    "order_id": "order_41fd000b093e46",
+    "amount": 998.35,
+    "currency": "INR",
+    "decline_reason": "Card issuer bank is temporarily unavailable",
+    "decline_code": "ISSUER_UNAVAILABLE",
+    "method": "card",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_f2d30d27d5714e",
+      "name": "Suresh Verma",
+      "email": "suresh.verma493@yahoo.com",
+      "phone": "+919085812759"
+    },
+    "timestamp": "2026-08-21T12:57:03+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_5124b3f0eccb4f1f",
+    "event_type": "payment_failed",
+    "payment_id": "pay_9c486d550f424d",
+    "order_id": "order_26a17a303baf45",
+    "amount": 2720.37,
+    "currency": "INR",
+    "decline_reason": "e-Mandate/NACH not approved by customer",
+    "decline_code": "MANDATE_NOT_APPROVED",
+    "method": "wallet",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_723ce26c79cd43",
+      "name": "Swati Mukherjee",
+      "email": "swati.mukherjee910@yahoo.com",
+      "phone": "+918939413575"
+    },
+    "timestamp": "2026-08-21T13:21:52+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_f6be02dca5cd4536",
+    "event_type": "payment_failed",
+    "payment_id": "pay_3c748f6fe5884a",
+    "order_id": "order_046dc4110e0647",
+    "amount": 533.49,
+    "currency": "INR",
+    "decline_reason": "Card is restricted from this type of transaction",
+    "decline_code": "RESTRICTED_CARD",
+    "method": "card",
+    "bank": "Punjab National Bank",
+    "customer": {
+      "id": "cust_e15ae6931ad646",
+      "name": "Swati Mukherjee",
+      "email": "swati.mukherjee588@outlook.com",
+      "phone": "+918196441373"
+    },
+    "timestamp": "2026-08-21T13:54:35+00:00",
+    "metadata": {
+      "category": "Jewelry",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_18c43f112b5d4ee9",
+    "event_type": "payment_failed",
+    "payment_id": "pay_f801df1d7e4b4a",
+    "order_id": "order_f251d007bdce49",
+    "amount": 3582.95,
+    "currency": "INR",
+    "decline_reason": "Additional authentication required",
+    "decline_code": "AUTHENTICATION_REQUIRED",
+    "method": "card",
+    "bank": "IDBI Bank",
+    "customer": {
+      "id": "cust_9db324ab3a384f",
+      "name": "Riya Verma",
+      "email": "riya.verma936@protonmail.com",
+      "phone": "+917160194739"
+    },
+    "timestamp": "2026-08-21T13:56:53+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_dbe9036bd37545b3",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_6feefd3b73ca4f",
+    "cart_value": 5010.86,
+    "currency": "INR",
+    "time_to_abandon_seconds": 93,
+    "device_type": "tablet",
+    "channel": "web",
+    "items_count": 8,
+    "customer": {
+      "id": "cust_b178cfdcbd6945",
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma711@outlook.com",
+      "phone": "+918813824517"
+    },
+    "timestamp": "2026-08-21T15:04:14+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "page_views": 3
+    }
+  },
+  {
+    "event_id": "evt_a4974b74b7db4ab1",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_4b1fb21592384b",
+    "cart_value": 9653.48,
+    "currency": "INR",
+    "time_to_abandon_seconds": 53,
+    "device_type": "tablet",
+    "channel": "app",
+    "items_count": 2,
+    "customer": {
+      "id": "cust_2135d57bf2e348",
+      "name": "Rohan Shah",
+      "email": "rohan.shah225@outlook.com",
+      "phone": "+917948540266"
+    },
+    "timestamp": "2026-08-21T15:09:29+00:00",
+    "metadata": {
+      "category": "Jewelry",
+      "page_views": 12
+    }
+  },
+  {
+    "event_id": "evt_05f5a6b250c74505",
+    "event_type": "payment_failed",
+    "payment_id": "pay_f92a49d82b6049",
+    "order_id": "order_7947c6bca0684e",
+    "amount": 2651.43,
+    "currency": "INR",
+    "decline_reason": "Transaction declined: UNKNOWN_ERROR",
+    "decline_code": "UNKNOWN_ERROR",
+    "method": "card",
+    "bank": "Bank of Baroda",
+    "customer": {
+      "id": "cust_4e0816de1dee49",
+      "name": "Myra Roy",
+      "email": "myra.roy723@hotmail.com",
+      "phone": "+917267496095"
+    },
+    "timestamp": "2026-08-21T16:13:35+00:00",
+    "metadata": {
+      "category": "Sports",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_15a30029c57d4675",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_aecb57ccd9fa41",
+    "plan_id": "plan_monthly",
+    "amount": 799,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 1,
+    "mandate_type": "nach",
+    "failure_reason": "INSUFFICIENT_FUNDS",
+    "customer": {
+      "id": "cust_29e702aa1c564f",
+      "name": "Swati Banerjee",
+      "email": "swati.banerjee484@protonmail.com",
+      "phone": "+917305869263"
+    },
+    "timestamp": "2026-08-21T16:07:55+00:00",
+    "metadata": {
+      "plan_name": "Monthly Box",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_90610005a732472f",
+    "event_type": "payment_failed",
+    "payment_id": "pay_9f931017548c4e",
+    "order_id": "order_c2fc9087b63c48",
+    "amount": 2292.77,
+    "currency": "INR",
+    "decline_reason": "Transaction declined: GENERAL_DECLINE",
+    "decline_code": "GENERAL_DECLINE",
+    "method": "upi",
+    "bank": "IndusInd Bank",
+    "customer": {
+      "id": "cust_e4611c5285ce46",
+      "name": "Pooja Sharma",
+      "email": "pooja.sharma56@protonmail.com",
+      "phone": "+918774884818"
+    },
+    "timestamp": "2026-08-21T16:23:39+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_c08947b4da9f4396",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_b500e25bca2241",
+    "cart_value": 72434.21,
+    "currency": "INR",
+    "time_to_abandon_seconds": 274,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 1,
+    "customer": {
+      "id": "cust_164d12e8973c4c",
+      "name": "Aanya Gupta",
+      "email": "aanya.gupta10@yahoo.com",
+      "phone": "+917648667392"
+    },
+    "timestamp": "2026-08-21T16:29:23+00:00",
+    "metadata": {
+      "category": "Electronics",
+      "page_views": 20
+    }
+  },
+  {
+    "event_id": "evt_a440794d0d634c9b",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_682db4f2b38c44",
+    "plan_id": "plan_annual",
+    "amount": 4999,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 5,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "DO_NOT_HONOR",
+    "customer": {
+      "id": "cust_3bd381c7ef3c42",
+      "name": "Arjun Mukherjee",
+      "email": "arjun.mukherjee659@protonmail.com",
+      "phone": "+917050014313"
+    },
+    "timestamp": "2026-08-21T16:54:30+00:00",
+    "metadata": {
+      "plan_name": "Annual Membership",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_3d9517df12d64335",
+    "event_type": "payment_failed",
+    "payment_id": "pay_397ccc175b4349",
+    "order_id": "order_c0ba26a9ca5248",
+    "amount": 5737.43,
+    "currency": "INR",
+    "decline_reason": "Transaction exceeds card/account limit",
+    "decline_code": "LIMIT_EXCEEDED",
+    "method": "card",
+    "bank": "IDBI Bank",
+    "customer": {
+      "id": "cust_07f9c59a12a84e",
+      "name": "Aditya Das",
+      "email": "aditya.das353@hotmail.com",
+      "phone": "+919222044336"
+    },
+    "timestamp": "2026-08-21T17:40:37+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_16b633f3519c431d",
+    "event_type": "payment_failed",
+    "payment_id": "pay_3a154b8732dc42",
+    "order_id": "order_a10c495d863f46",
+    "amount": 3069.79,
+    "currency": "INR",
+    "decline_reason": "Network connectivity issue during transaction",
+    "decline_code": "NETWORK_ERROR",
+    "method": "card",
+    "bank": "Axis Bank",
+    "customer": {
+      "id": "cust_718bdbcf690348",
+      "name": "Ayaan Kumar",
+      "email": "ayaan.kumar568@outlook.com",
+      "phone": "+919526766690"
+    },
+    "timestamp": "2026-08-21T18:14:00+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_ec2f1435f7814c6c",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_e2b92a7144a44b",
+    "cart_value": 670.57,
+    "currency": "INR",
+    "time_to_abandon_seconds": 29,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 3,
+    "customer": {
+      "id": "cust_6d76e0bd85ad48",
+      "name": "Deepak Sharma",
+      "email": "deepak.sharma34@protonmail.com",
+      "phone": "+919437319900"
+    },
+    "timestamp": "2026-08-21T19:20:58+00:00",
+    "metadata": {
+      "category": "Jewelry",
+      "page_views": 8
+    }
+  },
+  {
+    "event_id": "evt_fcc0ca5dcf0d4a0b",
+    "event_type": "payment_failed",
+    "payment_id": "pay_c03f0b281e494e",
+    "order_id": "order_de841cc0517f44",
+    "amount": 44613.63,
+    "currency": "INR",
+    "decline_reason": "3D Secure authentication failed",
+    "decline_code": "3DS_FAILED",
+    "method": "card",
+    "bank": "IDBI Bank",
+    "customer": {
+      "id": "cust_538287a3a84e4a",
+      "name": "Aanya Joshi",
+      "email": "aanya.joshi790@gmail.com",
+      "phone": "+918432614422"
+    },
+    "timestamp": "2026-08-21T20:16:10+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_3a0da88e555f428b",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_d77755b195de4c",
+    "cart_value": 745.89,
+    "currency": "INR",
+    "time_to_abandon_seconds": 23,
+    "device_type": "mobile",
+    "channel": "app",
+    "items_count": 5,
+    "customer": {
+      "id": "cust_89ba1ef86fd946",
+      "name": "Aadhya Gupta",
+      "email": "aadhya.gupta632@gmail.com",
+      "phone": "+919659343022"
+    },
+    "timestamp": "2026-08-21T20:18:31+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "page_views": 18
+    }
+  },
+  {
+    "event_id": "evt_6cd33a14036c4307",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_b89c335a4f0345",
+    "cart_value": 677.1,
+    "currency": "INR",
+    "time_to_abandon_seconds": 59,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 8,
+    "customer": {
+      "id": "cust_4d27e1f5d0a545",
+      "name": "Myra Nair",
+      "email": "myra.nair103@protonmail.com",
+      "phone": "+917685583357"
+    },
+    "timestamp": "2026-08-21T21:15:17+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "page_views": 2
+    }
+  },
+  {
+    "event_id": "evt_dad03435a928466d",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_5583315d57454e",
+    "cart_value": 4808.64,
+    "currency": "INR",
+    "time_to_abandon_seconds": 290,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 7,
+    "customer": {
+      "id": "cust_35b28ac701ea4f",
+      "name": "Vivaan Joshi",
+      "email": "vivaan.joshi256@yahoo.com",
+      "phone": "+917569902893"
+    },
+    "timestamp": "2026-08-21T22:20:53+00:00",
+    "metadata": {
+      "category": "Books",
+      "page_views": 13
+    }
+  },
+  {
+    "event_id": "evt_1c3e1bb7cc7149f4",
+    "event_type": "payment_failed",
+    "payment_id": "pay_b2c25b7bffba47",
+    "order_id": "order_b47da16f80b24e",
+    "amount": 19700.19,
+    "currency": "INR",
+    "decline_reason": "Card issuer bank is temporarily unavailable",
+    "decline_code": "ISSUER_UNAVAILABLE",
+    "method": "card",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_120d9bf7c82249",
+      "name": "Deepak Mukherjee",
+      "email": "deepak.mukherjee620@yahoo.com",
+      "phone": "+918210133979"
+    },
+    "timestamp": "2026-08-21T22:21:13+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_49742a2944914c40",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_aa9ec7f0388f4a",
+    "cart_value": 1336.91,
+    "currency": "INR",
+    "time_to_abandon_seconds": 213,
+    "device_type": "tablet",
+    "channel": "app",
+    "items_count": 1,
+    "customer": {
+      "id": "cust_72494220369245",
+      "name": "Swati Shah",
+      "email": "swati.shah522@yahoo.com",
+      "phone": "+919606731065"
+    },
+    "timestamp": "2026-08-21T23:25:18+00:00",
+    "metadata": {
+      "category": "Electronics",
+      "page_views": 8
+    }
+  },
+  {
+    "event_id": "evt_7f1c88935ee24eaf",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_f19036086d2b43",
+    "plan_id": "plan_basic",
+    "amount": 199,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 7,
+    "mandate_type": "nach",
+    "failure_reason": "DO_NOT_HONOR",
+    "customer": {
+      "id": "cust_790fa5a2357743",
+      "name": "Pooja Sharma",
+      "email": "pooja.sharma226@hotmail.com",
+      "phone": "+919291226621"
+    },
+    "timestamp": "2026-08-21T23:25:50+00:00",
+    "metadata": {
+      "plan_name": "Basic Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_f543bfe808b8481a",
+    "event_type": "payment_failed",
+    "payment_id": "pay_5d7c2dfa674545",
+    "order_id": "order_05a120efc8cd4f",
+    "amount": 11179.7,
+    "currency": "INR",
+    "decline_reason": "Transaction declined: UNKNOWN_ERROR",
+    "decline_code": "UNKNOWN_ERROR",
+    "method": "netbanking",
+    "bank": "Bank of Baroda",
+    "customer": {
+      "id": "cust_a5ce040fc16847",
+      "name": "Arjun Agarwal",
+      "email": "arjun.agarwal829@yahoo.com",
+      "phone": "+919683239935"
+    },
+    "timestamp": "2026-08-21T23:28:02+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_4202fce84b424287",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_cdd0aacf035945",
+    "plan_id": "plan_monthly",
+    "amount": 799,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 9,
+    "mandate_type": "emandate",
+    "failure_reason": "DEBIT_FAILED",
+    "customer": {
+      "id": "cust_8dc308bb215848",
+      "name": "Ishaan Das",
+      "email": "ishaan.das192@yahoo.com",
+      "phone": "+917319841893"
+    },
+    "timestamp": "2026-08-21T23:32:07+00:00",
+    "metadata": {
+      "plan_name": "Monthly Box",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_50aac05a6f0b4c2d",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_5fec566a0b574a",
+    "cart_value": 9992.52,
+    "currency": "INR",
+    "time_to_abandon_seconds": 235,
+    "device_type": "mobile",
+    "channel": "app",
+    "items_count": 8,
+    "customer": {
+      "id": "cust_9b6006a628b74e",
+      "name": "Deepak Bose",
+      "email": "deepak.bose174@hotmail.com",
+      "phone": "+918512585138"
+    },
+    "timestamp": "2026-08-21T23:34:31+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "page_views": 18
+    }
+  },
+  {
+    "event_id": "evt_a495779002cd4177",
+    "event_type": "payment_failed",
+    "payment_id": "pay_6fc038c0c63146",
+    "order_id": "order_1069d013bb6b4f",
+    "amount": 4670.83,
+    "currency": "INR",
+    "decline_reason": "Transaction declined by risk/fraud detection system",
+    "decline_code": "RISK_DECLINED",
+    "method": "upi",
+    "bank": "Bank of Baroda",
+    "customer": {
+      "id": "cust_f3a444cf5f6e40",
+      "name": "Suresh Mehta",
+      "email": "suresh.mehta663@protonmail.com",
+      "phone": "+919709637214"
+    },
+    "timestamp": "2026-08-22T02:21:06+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_eef875f948ae442b",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_f632e0d2203248",
+    "plan_id": "plan_basic",
+    "amount": 199,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 5,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "INSUFFICIENT_FUNDS",
+    "customer": {
+      "id": "cust_b063a92d926245",
+      "name": "Suresh Roy",
+      "email": "suresh.roy564@outlook.com",
+      "phone": "+919459628934"
+    },
+    "timestamp": "2026-08-22T02:50:45+00:00",
+    "metadata": {
+      "plan_name": "Basic Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_33047ed3c80941eb",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_042be811800c43",
+    "cart_value": 66449.11,
+    "currency": "INR",
+    "time_to_abandon_seconds": 293,
+    "device_type": "desktop",
+    "channel": "web",
+    "items_count": 6,
+    "customer": {
+      "id": "cust_81359b61245e42",
+      "name": "Ayaan Pillai",
+      "email": "ayaan.pillai586@outlook.com",
+      "phone": "+917334522402"
+    },
+    "timestamp": "2026-08-22T03:32:43+00:00",
+    "metadata": {
+      "category": "Electronics",
+      "page_views": 6
+    }
+  },
+  {
+    "event_id": "evt_34f1cd12481f4416",
+    "event_type": "payment_failed",
+    "payment_id": "pay_a5f4f006a21546",
+    "order_id": "order_efd87fc94f0c4e",
+    "amount": 766.13,
+    "currency": "INR",
+    "decline_reason": "Transaction timed out",
+    "decline_code": "TIMEOUT",
+    "method": "card",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_19a56614059d4d",
+      "name": "Deepak Chatterjee",
+      "email": "deepak.chatterjee465@yahoo.com",
+      "phone": "+918803166816"
+    },
+    "timestamp": "2026-08-22T05:23:19+00:00",
+    "metadata": {
+      "category": "Sports",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_bc6c216dc6704599",
+    "event_type": "payment_failed",
+    "payment_id": "pay_47a1fa61421c4a",
+    "order_id": "order_e3228296fc9448",
+    "amount": 38529.86,
+    "currency": "INR",
+    "decline_reason": "Non-sufficient funds",
+    "decline_code": "NSF",
+    "method": "card",
+    "bank": "Federal Bank",
+    "customer": {
+      "id": "cust_7e30b5620f7e47",
+      "name": "Vivaan Agarwal",
+      "email": "vivaan.agarwal453@hotmail.com",
+      "phone": "+919798211967"
+    },
+    "timestamp": "2026-08-22T05:37:27+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_5b16f698b1ff4bfb",
+    "event_type": "payment_failed",
+    "payment_id": "pay_a4ab5ad47faa40",
+    "order_id": "order_d4e653d1cb304f",
+    "amount": 1158.93,
+    "currency": "INR",
+    "decline_reason": "OTP entry timed out",
+    "decline_code": "OTP_TIMEOUT",
+    "method": "card",
+    "bank": "Bank of Baroda",
+    "customer": {
+      "id": "cust_bc46363b01e740",
+      "name": "Raj Banerjee",
+      "email": "raj.banerjee958@protonmail.com",
+      "phone": "+918358798143"
+    },
+    "timestamp": "2026-08-22T06:42:45+00:00",
+    "metadata": {
+      "category": "Sports",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_3c560055607e42bf",
+    "event_type": "payment_failed",
+    "payment_id": "pay_2c66da0729124c",
+    "order_id": "order_4f000542699549",
+    "amount": 225.53,
+    "currency": "INR",
+    "decline_reason": "e-Mandate/NACH not approved by customer",
+    "decline_code": "MANDATE_NOT_APPROVED",
+    "method": "wallet",
+    "bank": "IndusInd Bank",
+    "customer": {
+      "id": "cust_08b3faec865a45",
+      "name": "Priya Joshi",
+      "email": "priya.joshi409@protonmail.com",
+      "phone": "+919506254832"
+    },
+    "timestamp": "2026-08-22T07:08:32+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_ff8fafc618fd4cff",
+    "event_type": "payment_failed",
+    "payment_id": "pay_1703d836989f4f",
+    "order_id": "order_368fb09916d349",
+    "amount": 3123.16,
+    "currency": "INR",
+    "decline_reason": "Network connectivity issue during transaction",
+    "decline_code": "NETWORK_ERROR",
+    "method": "upi",
+    "bank": "Canara Bank",
+    "customer": {
+      "id": "cust_687bf7a06b9947",
+      "name": "Priya Mehta",
+      "email": "priya.mehta278@outlook.com",
+      "phone": "+918948821078"
+    },
+    "timestamp": "2026-08-22T08:14:07+00:00",
+    "metadata": {
+      "category": "Books",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_b4627b68e1984fc5",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_b6c657e6dafb4c",
+    "cart_value": 11739.66,
+    "currency": "INR",
+    "time_to_abandon_seconds": 483,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 3,
+    "customer": {
+      "id": "cust_41eaac6ebbfb4d",
+      "name": "Ayaan Reddy",
+      "email": "ayaan.reddy835@protonmail.com",
+      "phone": "+918084127872"
+    },
+    "timestamp": "2026-08-22T08:50:25+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "page_views": 12
+    }
+  },
+  {
+    "event_id": "evt_25743adaa60e4aa6",
+    "event_type": "payment_failed",
+    "payment_id": "pay_658aa68880d248",
+    "order_id": "order_d2c56cbacbcd41",
+    "amount": 865.56,
+    "currency": "INR",
+    "decline_reason": "Additional authentication required",
+    "decline_code": "AUTHENTICATION_REQUIRED",
+    "method": "netbanking",
+    "bank": "SBI",
+    "customer": {
+      "id": "cust_b9a5a9b942274b",
+      "name": "Ananya Kumar",
+      "email": "ananya.kumar939@protonmail.com",
+      "phone": "+917607430264"
+    },
+    "timestamp": "2026-08-22T09:41:44+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_cac6de5655784e30",
+    "event_type": "payment_failed",
+    "payment_id": "pay_29290a3f5ea948",
+    "order_id": "order_9c448fc28d2c41",
+    "amount": 4078.41,
+    "currency": "INR",
+    "decline_reason": "Transaction exceeds card/account limit",
+    "decline_code": "LIMIT_EXCEEDED",
+    "method": "wallet",
+    "bank": "HDFC Bank",
+    "customer": {
+      "id": "cust_10679ac24bfa45",
+      "name": "Swati Banerjee",
+      "email": "swati.banerjee966@hotmail.com",
+      "phone": "+917025323460"
+    },
+    "timestamp": "2026-08-22T09:48:24+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_0ced3ee316534a0a",
+    "event_type": "payment_failed",
+    "payment_id": "pay_98f7c4b53adb40",
+    "order_id": "order_6b70d7f2078d44",
+    "amount": 485.32,
+    "currency": "INR",
+    "decline_reason": "Non-sufficient funds",
+    "decline_code": "NSF",
+    "method": "upi",
+    "bank": "SBI",
+    "customer": {
+      "id": "cust_08bc0a8469e346",
+      "name": "Vivaan Joshi",
+      "email": "vivaan.joshi466@hotmail.com",
+      "phone": "+917909074012"
+    },
+    "timestamp": "2026-08-22T10:48:56+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_af2a15a73421473e",
+    "event_type": "payment_failed",
+    "payment_id": "pay_cc9ef2ac0e0a41",
+    "order_id": "order_c6ac7e0986ac46",
+    "amount": 3630.67,
+    "currency": "INR",
+    "decline_reason": "Non-sufficient funds",
+    "decline_code": "NSF",
+    "method": "wallet",
+    "bank": "Kotak Mahindra",
+    "customer": {
+      "id": "cust_509a23c034f945",
+      "name": "Aarav Agarwal",
+      "email": "aarav.agarwal944@outlook.com",
+      "phone": "+918327079104"
+    },
+    "timestamp": "2026-08-22T11:00:11+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_874cabc00b434a07",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_aa8f666c8d6b49",
+    "cart_value": 5374.62,
+    "currency": "INR",
+    "time_to_abandon_seconds": 19,
+    "device_type": "tablet",
+    "channel": "social",
+    "items_count": 1,
+    "customer": {
+      "id": "cust_bd3ac55360fa46",
+      "name": "Saanvi Mehta",
+      "email": "saanvi.mehta943@yahoo.com",
+      "phone": "+919041046587"
+    },
+    "timestamp": "2026-08-22T11:01:21+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "page_views": 10
+    }
+  },
+  {
+    "event_id": "evt_2313b20d882a43d5",
+    "event_type": "payment_failed",
+    "payment_id": "pay_b511d9b873f34e",
+    "order_id": "order_9f4be2134c7447",
+    "amount": 11212.74,
+    "currency": "INR",
+    "decline_reason": "Transaction flagged for security violation",
+    "decline_code": "SECURITY_VIOLATION",
+    "method": "card",
+    "bank": "SBI",
+    "customer": {
+      "id": "cust_1ec7c256e8d94a",
+      "name": "Isha Singh",
+      "email": "isha.singh717@protonmail.com",
+      "phone": "+918997305752"
+    },
+    "timestamp": "2026-08-22T11:10:38+00:00",
+    "metadata": {
+      "category": "Jewelry",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_0f4b447bda724019",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_bdf15ca5ebc145",
+    "plan_id": "plan_pro",
+    "amount": 499,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 2,
+    "mandate_type": "nach",
+    "failure_reason": "MANDATE_REVOKED",
+    "customer": {
+      "id": "cust_d2406f6a7d2d44",
+      "name": "Arjun Patel",
+      "email": "arjun.patel34@outlook.com",
+      "phone": "+919324316421"
+    },
+    "timestamp": "2026-08-22T14:06:39+00:00",
+    "metadata": {
+      "plan_name": "Pro Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_e7b898439d4043ff",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_e24d6d7067bb4f",
+    "cart_value": 3309.12,
+    "currency": "INR",
+    "time_to_abandon_seconds": 36,
+    "device_type": "desktop",
+    "channel": "social",
+    "items_count": 2,
+    "customer": {
+      "id": "cust_3b698d4f31c349",
+      "name": "Rohan Kumar",
+      "email": "rohan.kumar712@hotmail.com",
+      "phone": "+918194970235"
+    },
+    "timestamp": "2026-08-22T14:31:20+00:00",
+    "metadata": {
+      "category": "Jewelry",
+      "page_views": 1
+    }
+  },
+  {
+    "event_id": "evt_f149b581592e4e42",
+    "event_type": "payment_failed",
+    "payment_id": "pay_1f3b95bb5dab42",
+    "order_id": "order_baab3219f4eb47",
+    "amount": 4632.74,
+    "currency": "INR",
+    "decline_reason": "3D Secure authentication timed out",
+    "decline_code": "3DS_TIMEOUT",
+    "method": "card",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_794070a58dac41",
+      "name": "Vivaan Agarwal",
+      "email": "vivaan.agarwal944@outlook.com",
+      "phone": "+919444725646"
+    },
+    "timestamp": "2026-08-22T14:07:29+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_428a28a003db4688",
+    "event_type": "payment_failed",
+    "payment_id": "pay_5af74404197243",
+    "order_id": "order_dbd036ca2e3947",
+    "amount": 3817.58,
+    "currency": "INR",
+    "decline_reason": "Network connectivity issue during transaction",
+    "decline_code": "NETWORK_ERROR",
+    "method": "card",
+    "bank": "IDBI Bank",
+    "customer": {
+      "id": "cust_8140e5201d1d46",
+      "name": "Ayaan Shah",
+      "email": "ayaan.shah390@gmail.com",
+      "phone": "+917433797840"
+    },
+    "timestamp": "2026-08-22T14:40:53+00:00",
+    "metadata": {
+      "category": "Sports",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_1fa802141c1a4887",
+    "event_type": "payment_failed",
+    "payment_id": "pay_129cddeb0d3340",
+    "order_id": "order_d9b88d84059448",
+    "amount": 975.89,
+    "currency": "INR",
+    "decline_reason": "Issuer is not available for authorization",
+    "decline_code": "ISSUER_NOT_AVAILABLE",
+    "method": "netbanking",
+    "bank": "Kotak Mahindra",
+    "customer": {
+      "id": "cust_4feb837043034e",
+      "name": "Amit Gupta",
+      "email": "amit.gupta588@hotmail.com",
+      "phone": "+917052679490"
+    },
+    "timestamp": "2026-08-22T15:30:28+00:00",
+    "metadata": {
+      "category": "Sports",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_72dcf6fc17334f6f",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_bb853dbcbc2c44",
+    "cart_value": 689.23,
+    "currency": "INR",
+    "time_to_abandon_seconds": 52,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 1,
+    "customer": {
+      "id": "cust_298a3830ea3448",
+      "name": "Amit Gupta",
+      "email": "amit.gupta976@gmail.com",
+      "phone": "+919132077306"
+    },
+    "timestamp": "2026-08-22T16:33:50+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "page_views": 6
+    }
+  },
+  {
+    "event_id": "evt_4af2b2b500614901",
+    "event_type": "payment_failed",
+    "payment_id": "pay_94896cd461be4d",
+    "order_id": "order_8123a586d10344",
+    "amount": 147.11,
+    "currency": "INR",
+    "decline_reason": "Non-sufficient funds",
+    "decline_code": "NSF",
+    "method": "wallet",
+    "bank": "Bank of Baroda",
+    "customer": {
+      "id": "cust_a04fc4ac16a844",
+      "name": "Myra Singh",
+      "email": "myra.singh797@gmail.com",
+      "phone": "+918925327382"
+    },
+    "timestamp": "2026-08-22T16:37:06+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_644a9a31b4824b23",
+    "event_type": "payment_failed",
+    "payment_id": "pay_52362c38749b45",
+    "order_id": "order_4da4d8ede3394d",
+    "amount": 6818.22,
+    "currency": "INR",
+    "decline_reason": "Debit against mandate failed",
+    "decline_code": "DEBIT_FAILED",
+    "method": "card",
+    "bank": "Punjab National Bank",
+    "customer": {
+      "id": "cust_41bfde3c983d44",
+      "name": "Neha Joshi",
+      "email": "neha.joshi719@outlook.com",
+      "phone": "+919560466250"
+    },
+    "timestamp": "2026-08-22T17:00:33+00:00",
+    "metadata": {
+      "category": "Books",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_820d10efccc5444d",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_599bb02660f84d",
+    "cart_value": 235.7,
+    "currency": "INR",
+    "time_to_abandon_seconds": 323,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 3,
+    "customer": {
+      "id": "cust_6e8859b1d14740",
+      "name": "Deepak Verma",
+      "email": "deepak.verma164@protonmail.com",
+      "phone": "+919370436671"
+    },
+    "timestamp": "2026-08-22T17:27:29+00:00",
+    "metadata": {
+      "category": "Books",
+      "page_views": 13
+    }
+  },
+  {
+    "event_id": "evt_2808be97073347b6",
+    "event_type": "payment_failed",
+    "payment_id": "pay_b06eabc2d64b44",
+    "order_id": "order_fa86252775be46",
+    "amount": 5805.7,
+    "currency": "INR",
+    "decline_reason": "Invalid card number",
+    "decline_code": "INVALID_CARD_NUMBER",
+    "method": "card",
+    "bank": "Axis Bank",
+    "customer": {
+      "id": "cust_89014527cfc144",
+      "name": "Saanvi Gupta",
+      "email": "saanvi.gupta418@yahoo.com",
+      "phone": "+918781844052"
+    },
+    "timestamp": "2026-08-22T17:29:26+00:00",
+    "metadata": {
+      "category": "Electronics",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_36ddc4dad34c4c75",
+    "event_type": "payment_failed",
+    "payment_id": "pay_bd73692adad34e",
+    "order_id": "order_97ea0736b8004b",
+    "amount": 10798.65,
+    "currency": "INR",
+    "decline_reason": "Invalid CVV provided",
+    "decline_code": "INVALID_CVV",
+    "method": "wallet",
+    "bank": "Yes Bank",
+    "customer": {
+      "id": "cust_94685de7693745",
+      "name": "Swati Gupta",
+      "email": "swati.gupta354@hotmail.com",
+      "phone": "+919080230418"
+    },
+    "timestamp": "2026-08-22T17:48:34+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_e187a5d3f0924201",
+    "event_type": "payment_failed",
+    "payment_id": "pay_990baed79a2b4b",
+    "order_id": "order_a4b4b18d732149",
+    "amount": 11271.55,
+    "currency": "INR",
+    "decline_reason": "Invalid card number",
+    "decline_code": "INVALID_CARD_NUMBER",
+    "method": "card",
+    "bank": "Yes Bank",
+    "customer": {
+      "id": "cust_5392ca44ea914c",
+      "name": "Aditya Bose",
+      "email": "aditya.bose816@hotmail.com",
+      "phone": "+918300603858"
+    },
+    "timestamp": "2026-08-22T18:03:22+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_ff3de245fb554f48",
+    "event_type": "payment_failed",
+    "payment_id": "pay_df091c9358b342",
+    "order_id": "order_c912f9e9e96641",
+    "amount": 187.03,
+    "currency": "INR",
+    "decline_reason": "Card has been blocked by the issuer",
+    "decline_code": "CARD_BLOCKED",
+    "method": "card",
+    "bank": "Bank of Baroda",
+    "customer": {
+      "id": "cust_801b285016634c",
+      "name": "Swati Roy",
+      "email": "swati.roy834@hotmail.com",
+      "phone": "+917685904828"
+    },
+    "timestamp": "2026-08-22T18:46:20+00:00",
+    "metadata": {
+      "category": "Books",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_fee03c365b0d455b",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_5fd63565c13c42",
+    "plan_id": "plan_enterprise",
+    "amount": 2999,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 13,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "INSUFFICIENT_FUNDS",
+    "customer": {
+      "id": "cust_8d5ad3aa9f924e",
+      "name": "Isha Gupta",
+      "email": "isha.gupta230@yahoo.com",
+      "phone": "+917036351450"
+    },
+    "timestamp": "2026-08-22T19:51:19+00:00",
+    "metadata": {
+      "plan_name": "Enterprise Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_1fd9815361f544dd",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_c052d4fc9a9e47",
+    "plan_id": "plan_basic",
+    "amount": 199,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 14,
+    "mandate_type": "emandate",
+    "failure_reason": "GENERAL_DECLINE",
+    "customer": {
+      "id": "cust_66cceabaa30a49",
+      "name": "Arjun Kumar",
+      "email": "arjun.kumar927@protonmail.com",
+      "phone": "+917435039291"
+    },
+    "timestamp": "2026-08-22T20:14:29+00:00",
+    "metadata": {
+      "plan_name": "Basic Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_0cfe936955444faa",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_6f604c89a7b349",
+    "cart_value": 4742.37,
+    "currency": "INR",
+    "time_to_abandon_seconds": 34,
+    "device_type": "mobile",
+    "channel": "social",
+    "items_count": 5,
+    "customer": {
+      "id": "cust_d5547751dc0941",
+      "name": "Ananya Shah",
+      "email": "ananya.shah12@protonmail.com",
+      "phone": "+919460489491"
+    },
+    "timestamp": "2026-08-22T20:23:44+00:00",
+    "metadata": {
+      "category": "Books",
+      "page_views": 2
+    }
+  },
+  {
+    "event_id": "evt_27d595cd340b41c0",
+    "event_type": "payment_failed",
+    "payment_id": "pay_fd1cdf4f67a848",
+    "order_id": "order_7406e0a279e341",
+    "amount": 308.1,
+    "currency": "INR",
+    "decline_reason": "Customer revoked the mandate",
+    "decline_code": "MANDATE_REVOKED",
+    "method": "wallet",
+    "bank": "Kotak Mahindra",
+    "customer": {
+      "id": "cust_719c3b1ffa474e",
+      "name": "Amit Das",
+      "email": "amit.das947@gmail.com",
+      "phone": "+918002547591"
+    },
+    "timestamp": "2026-08-22T20:37:42+00:00",
+    "metadata": {
+      "category": "Books",
+      "retry_eligible": false
+    }
+  },
+  {
+    "event_id": "evt_de6c25e8b9e3494c",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_6028cb7af4e74f",
+    "plan_id": "plan_annual",
+    "amount": 4999,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 5,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "DEBIT_FAILED",
+    "customer": {
+      "id": "cust_63491ecc682542",
+      "name": "Reyansh Reddy",
+      "email": "reyansh.reddy704@protonmail.com",
+      "phone": "+918248029429"
+    },
+    "timestamp": "2026-08-22T21:08:45+00:00",
+    "metadata": {
+      "plan_name": "Annual Membership",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_a64719cb49c44ed4",
+    "event_type": "payment_failed",
+    "payment_id": "pay_a3dfe83918eb47",
+    "order_id": "order_4e4fbccf442140",
+    "amount": 2332.9,
+    "currency": "INR",
+    "decline_reason": "Customer revoked the mandate",
+    "decline_code": "MANDATE_REVOKED",
+    "method": "wallet",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_25635758f8214e",
+      "name": "Swati Agarwal",
+      "email": "swati.agarwal508@outlook.com",
+      "phone": "+919979305739"
+    },
+    "timestamp": "2026-08-22T21:25:52+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": false
+    }
+  },
+  {
+    "event_id": "evt_3b71669f7c244701",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_a75337695c1046",
+    "plan_id": "plan_annual",
+    "amount": 4999,
+    "currency": "INR",
+    "attempt_number": 5,
+    "days_overdue": 17,
+    "mandate_type": "nach",
+    "failure_reason": "DO_NOT_HONOR",
+    "customer": {
+      "id": "cust_43308bdf85bd4a",
+      "name": "Swati Nair",
+      "email": "swati.nair478@hotmail.com",
+      "phone": "+917937200760"
+    },
+    "timestamp": "2026-08-22T21:33:52+00:00",
+    "metadata": {
+      "plan_name": "Annual Membership",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_d723f43ce67b479e",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_9efc52fc43d64f",
+    "cart_value": 2830.98,
+    "currency": "INR",
+    "time_to_abandon_seconds": 53,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 3,
+    "customer": {
+      "id": "cust_bbc2896db7a04c",
+      "name": "Ananya Singh",
+      "email": "ananya.singh188@yahoo.com",
+      "phone": "+917502291736"
+    },
+    "timestamp": "2026-08-22T22:09:32+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "page_views": 14
+    }
+  },
+  {
+    "event_id": "evt_2fc1e105568b4b33",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_305d966300b14b",
+    "plan_id": "plan_enterprise",
+    "amount": 2999,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 3,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "MANDATE_NOT_APPROVED",
+    "customer": {
+      "id": "cust_4ea2492019084f",
+      "name": "Reyansh Sharma",
+      "email": "reyansh.sharma127@protonmail.com",
+      "phone": "+917725783958"
+    },
+    "timestamp": "2026-08-22T22:41:50+00:00",
+    "metadata": {
+      "plan_name": "Enterprise Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_5f598629824a4b1f",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_a82d8147d6c54c",
+    "cart_value": 6863.68,
+    "currency": "INR",
+    "time_to_abandon_seconds": 161,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 8,
+    "customer": {
+      "id": "cust_6ccabc30b34c48",
+      "name": "Riya Pillai",
+      "email": "riya.pillai211@hotmail.com",
+      "phone": "+917922542252"
+    },
+    "timestamp": "2026-08-22T22:51:50+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "page_views": 19
+    }
+  },
+  {
+    "event_id": "evt_58666369c0894bbc",
+    "event_type": "payment_failed",
+    "payment_id": "pay_4f35494a77c149",
+    "order_id": "order_d5caf012775445",
+    "amount": 4370.56,
+    "currency": "INR",
+    "decline_reason": "Transaction declined: REFER_TO_ISSUER",
+    "decline_code": "REFER_TO_ISSUER",
+    "method": "wallet",
+    "bank": "Yes Bank",
+    "customer": {
+      "id": "cust_47afda30420b4a",
+      "name": "Ishaan Mukherjee",
+      "email": "ishaan.mukherjee138@gmail.com",
+      "phone": "+918850820685"
+    },
+    "timestamp": "2026-08-22T23:23:48+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_62aae84b3f254c1b",
+    "event_type": "payment_failed",
+    "payment_id": "pay_60c5c974222144",
+    "order_id": "order_4988d76009c948",
+    "amount": 19036.96,
+    "currency": "INR",
+    "decline_reason": "Incorrect PIN entered",
+    "decline_code": "INVALID_PIN",
+    "method": "card",
+    "bank": "SBI",
+    "customer": {
+      "id": "cust_c53b03a53a5549",
+      "name": "Riya Joshi",
+      "email": "riya.joshi445@gmail.com",
+      "phone": "+919562254028"
+    },
+    "timestamp": "2026-08-22T23:50:20+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_33a0a4fdc909479f",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_debf85d86af14d",
+    "plan_id": "plan_premium",
+    "amount": 999,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 7,
+    "mandate_type": "emandate",
+    "failure_reason": "GENERAL_DECLINE",
+    "customer": {
+      "id": "cust_fae8c6960ed74d",
+      "name": "Riya Mukherjee",
+      "email": "riya.mukherjee858@outlook.com",
+      "phone": "+917702285630"
+    },
+    "timestamp": "2026-08-22T23:53:44+00:00",
+    "metadata": {
+      "plan_name": "Premium Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_20e9efb967744896",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_f10eddfe5dcf4a",
+    "cart_value": 3227.38,
+    "currency": "INR",
+    "time_to_abandon_seconds": 86,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 6,
+    "customer": {
+      "id": "cust_6b18dbd01e284e",
+      "name": "Priya Kumar",
+      "email": "priya.kumar885@protonmail.com",
+      "phone": "+918393417638"
+    },
+    "timestamp": "2026-08-23T00:18:26+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "page_views": 3
+    }
+  },
+  {
+    "event_id": "evt_f7950d898c0d408d",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_c6e4710a862a42",
+    "cart_value": 2940.87,
+    "currency": "INR",
+    "time_to_abandon_seconds": 234,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 2,
+    "customer": {
+      "id": "cust_0fdbc7d20b954b",
+      "name": "Rohan Das",
+      "email": "rohan.das452@gmail.com",
+      "phone": "+917678534043"
+    },
+    "timestamp": "2026-08-23T00:27:12+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "page_views": 10
+    }
+  },
+  {
+    "event_id": "evt_65cd78fbfb824078",
+    "event_type": "payment_failed",
+    "payment_id": "pay_dc22e40c04c040",
+    "order_id": "order_95fb2cc6c61b48",
+    "amount": 1148.04,
+    "currency": "INR",
+    "decline_reason": "Bank did not respond in time",
+    "decline_code": "BANK_TIMEOUT",
+    "method": "netbanking",
+    "bank": "Federal Bank",
+    "customer": {
+      "id": "cust_fbfe515565f940",
+      "name": "Ananya Singh",
+      "email": "ananya.singh933@hotmail.com",
+      "phone": "+919258942692"
+    },
+    "timestamp": "2026-08-23T00:46:09+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_c30f6af301ca413f",
+    "event_type": "payment_failed",
+    "payment_id": "pay_b338265728bd4e",
+    "order_id": "order_edb676d98b044f",
+    "amount": 1458.09,
+    "currency": "INR",
+    "decline_reason": "Card has insufficient funds to complete the transaction",
+    "decline_code": "INSUFFICIENT_FUNDS",
+    "method": "netbanking",
+    "bank": "Union Bank",
+    "customer": {
+      "id": "cust_d19d02cdc8e242",
+      "name": "Krishna Mehta",
+      "email": "krishna.mehta162@gmail.com",
+      "phone": "+918867302554"
+    },
+    "timestamp": "2026-08-23T00:46:56+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_041e13c79aa3421e",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_b7ee92cfb5c140",
+    "plan_id": "plan_premium",
+    "amount": 999,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 2,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "BANK_DOWN",
+    "customer": {
+      "id": "cust_d2a78cd8d0ba44",
+      "name": "Neha Chatterjee",
+      "email": "neha.chatterjee550@yahoo.com",
+      "phone": "+919332511514"
+    },
+    "timestamp": "2026-08-23T02:22:14+00:00",
+    "metadata": {
+      "plan_name": "Premium Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_ceaf0caf524e46d8",
+    "event_type": "payment_failed",
+    "payment_id": "pay_89aa7f61fe194c",
+    "order_id": "order_02f4f96f167744",
+    "amount": 4006.36,
+    "currency": "INR",
+    "decline_reason": "Customer revoked the mandate",
+    "decline_code": "MANDATE_REVOKED",
+    "method": "wallet",
+    "bank": "Kotak Mahindra",
+    "customer": {
+      "id": "cust_a631ac8247df44",
+      "name": "Suresh Chatterjee",
+      "email": "suresh.chatterjee282@hotmail.com",
+      "phone": "+918027553177"
+    },
+    "timestamp": "2026-08-23T02:45:18+00:00",
+    "metadata": {
+      "category": "Books",
+      "retry_eligible": false
+    }
+  },
+  {
+    "event_id": "evt_d15153f83338483e",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_84c9cb1c5bb44c",
+    "cart_value": 4681.27,
+    "currency": "INR",
+    "time_to_abandon_seconds": 56,
+    "device_type": "mobile",
+    "channel": "app",
+    "items_count": 5,
+    "customer": {
+      "id": "cust_e65bd8b150c943",
+      "name": "Ananya Das",
+      "email": "ananya.das357@yahoo.com",
+      "phone": "+919074151376"
+    },
+    "timestamp": "2026-08-23T03:28:46+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "page_views": 11
+    }
+  },
+  {
+    "event_id": "evt_b5306ec9dc7e4a88",
+    "event_type": "payment_failed",
+    "payment_id": "pay_6e17db774d5e4f",
+    "order_id": "order_ea7b6d4453fc42",
+    "amount": 2249.78,
+    "currency": "INR",
+    "decline_reason": "Card issuer bank is temporarily unavailable",
+    "decline_code": "ISSUER_UNAVAILABLE",
+    "method": "card",
+    "bank": "Punjab National Bank",
+    "customer": {
+      "id": "cust_e02ac8161ee944",
+      "name": "Arjun Bose",
+      "email": "arjun.bose96@gmail.com",
+      "phone": "+917366637148"
+    },
+    "timestamp": "2026-08-23T03:47:47+00:00",
+    "metadata": {
+      "category": "Sports",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_d2d03b9d64e7470b",
+    "event_type": "payment_failed",
+    "payment_id": "pay_754f8877f7014d",
+    "order_id": "order_2fc32e92f7ec45",
+    "amount": 1447.38,
+    "currency": "INR",
+    "decline_reason": "Daily transaction limit reached",
+    "decline_code": "DAILY_LIMIT_REACHED",
+    "method": "wallet",
+    "bank": "SBI",
+    "customer": {
+      "id": "cust_3678bb1ab5cb4e",
+      "name": "Priya Patel",
+      "email": "priya.patel152@outlook.com",
+      "phone": "+919373077218"
+    },
+    "timestamp": "2026-08-23T04:02:19+00:00",
+    "metadata": {
+      "category": "Sports",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_b74d7a3c958d404b",
+    "event_type": "payment_failed",
+    "payment_id": "pay_4e3fabc0460c46",
+    "order_id": "order_be16d4a6ee564e",
+    "amount": 2091.47,
+    "currency": "INR",
+    "decline_reason": "3D Secure authentication timed out",
+    "decline_code": "3DS_TIMEOUT",
+    "method": "upi",
+    "bank": "HDFC Bank",
+    "customer": {
+      "id": "cust_4d2018f46da94d",
+      "name": "Saanvi Mehta",
+      "email": "saanvi.mehta861@hotmail.com",
+      "phone": "+917708861714"
+    },
+    "timestamp": "2026-08-23T04:39:34+00:00",
+    "metadata": {
+      "category": "Electronics",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_b664dd4afd114b6c",
+    "event_type": "payment_failed",
+    "payment_id": "pay_ea7a0a90c9824f",
+    "order_id": "order_74edc18ffcf248",
+    "amount": 2284.52,
+    "currency": "INR",
+    "decline_reason": "Suspected fraudulent transaction",
+    "decline_code": "FRAUD_SUSPECTED",
+    "method": "card",
+    "bank": "Punjab National Bank",
+    "customer": {
+      "id": "cust_72cbb8bfe75a41",
+      "name": "Raj Shah",
+      "email": "raj.shah735@outlook.com",
+      "phone": "+919588240189"
+    },
+    "timestamp": "2026-08-23T05:44:28+00:00",
+    "metadata": {
+      "category": "Sports",
+      "retry_eligible": false
+    }
+  },
+  {
+    "event_id": "evt_33b70d65a52e4203",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_ca208a3424b943",
+    "cart_value": 9734.71,
+    "currency": "INR",
+    "time_to_abandon_seconds": 607,
+    "device_type": "mobile",
+    "channel": "social",
+    "items_count": 1,
+    "customer": {
+      "id": "cust_02d2870215044d",
+      "name": "Priya Pillai",
+      "email": "priya.pillai138@hotmail.com",
+      "phone": "+919276297510"
+    },
+    "timestamp": "2026-08-23T07:16:13+00:00",
+    "metadata": {
+      "category": "Sports",
+      "page_views": 3
+    }
+  },
+  {
+    "event_id": "evt_9411774e96064c9f",
+    "event_type": "payment_failed",
+    "payment_id": "pay_9c7ca9e8b22149",
+    "order_id": "order_263c6234f5ee4a",
+    "amount": 6092.58,
+    "currency": "INR",
+    "decline_reason": "Transaction declined: UNKNOWN_ERROR",
+    "decline_code": "UNKNOWN_ERROR",
+    "method": "card",
+    "bank": "Axis Bank",
+    "customer": {
+      "id": "cust_e813d71c254447",
+      "name": "Priya Das",
+      "email": "priya.das286@yahoo.com",
+      "phone": "+917788075126"
+    },
+    "timestamp": "2026-08-23T07:55:59+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_2890a5a733624b44",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_42072b30d3d744",
+    "plan_id": "plan_annual",
+    "amount": 4999,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 1,
+    "mandate_type": "nach",
+    "failure_reason": "NETWORK_ERROR",
+    "customer": {
+      "id": "cust_c70d3a2e033444",
+      "name": "Rohan Agarwal",
+      "email": "rohan.agarwal5@outlook.com",
+      "phone": "+917249166485"
+    },
+    "timestamp": "2026-08-23T08:13:48+00:00",
+    "metadata": {
+      "plan_name": "Annual Membership",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_aa5dcc48b7b4464d",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_38daf16d87a741",
+    "cart_value": 4125.96,
+    "currency": "INR",
+    "time_to_abandon_seconds": 19,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 2,
+    "customer": {
+      "id": "cust_49d789e957a849",
+      "name": "Riya Singh",
+      "email": "riya.singh899@outlook.com",
+      "phone": "+918476906868"
+    },
+    "timestamp": "2026-08-23T08:24:41+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "page_views": 19
+    }
+  },
+  {
+    "event_id": "evt_d35f1117d97d46d5",
+    "event_type": "payment_failed",
+    "payment_id": "pay_ec61e9b563f248",
+    "order_id": "order_dde6aa37797b45",
+    "amount": 19145.8,
+    "currency": "INR",
+    "decline_reason": "Invalid expiry date provided",
+    "decline_code": "INVALID_EXPIRY",
+    "method": "upi",
+    "bank": "Federal Bank",
+    "customer": {
+      "id": "cust_cec2b9c259214b",
+      "name": "Kavya Roy",
+      "email": "kavya.roy462@yahoo.com",
+      "phone": "+918633711193"
+    },
+    "timestamp": "2026-08-23T09:55:37+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_37ab62b2fa924d51",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_9c428b0d611d45",
+    "plan_id": "plan_pro",
+    "amount": 499,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 6,
+    "mandate_type": "nach",
+    "failure_reason": "MANDATE_NOT_APPROVED",
+    "customer": {
+      "id": "cust_c592e11bd0bd4b",
+      "name": "Vivaan Mukherjee",
+      "email": "vivaan.mukherjee956@hotmail.com",
+      "phone": "+919955813290"
+    },
+    "timestamp": "2026-08-23T10:15:00+00:00",
+    "metadata": {
+      "plan_name": "Pro Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_843c501e65f34ae6",
+    "event_type": "payment_failed",
+    "payment_id": "pay_0cb57261cafe43",
+    "order_id": "order_0f2c2c6e34094d",
+    "amount": 12012.55,
+    "currency": "INR",
+    "decline_reason": "Transaction flagged for security violation",
+    "decline_code": "SECURITY_VIOLATION",
+    "method": "upi",
+    "bank": "Axis Bank",
+    "customer": {
+      "id": "cust_1473ba9350814e",
+      "name": "Aadhya Banerjee",
+      "email": "aadhya.banerjee715@outlook.com",
+      "phone": "+917685731524"
+    },
+    "timestamp": "2026-08-23T10:17:09+00:00",
+    "metadata": {
+      "category": "Books",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_cfffa52691064255",
+    "event_type": "payment_failed",
+    "payment_id": "pay_f6126c6b96454f",
+    "order_id": "order_45dc3201df144b",
+    "amount": 47226.98,
+    "currency": "INR",
+    "decline_reason": "The card used is expired",
+    "decline_code": "CARD_EXPIRED",
+    "method": "netbanking",
+    "bank": "Punjab National Bank",
+    "customer": {
+      "id": "cust_be2a84c3ab6b44",
+      "name": "Raj Singh",
+      "email": "raj.singh683@outlook.com",
+      "phone": "+918328367510"
+    },
+    "timestamp": "2026-08-23T10:25:44+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_50f44f39e7194279",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_2aee748323c244",
+    "cart_value": 11280.17,
+    "currency": "INR",
+    "time_to_abandon_seconds": 36,
+    "device_type": "tablet",
+    "channel": "social",
+    "items_count": 4,
+    "customer": {
+      "id": "cust_ddbea30d31d143",
+      "name": "Aditya Singh",
+      "email": "aditya.singh748@yahoo.com",
+      "phone": "+919532200677"
+    },
+    "timestamp": "2026-08-23T11:27:20+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "page_views": 8
+    }
+  },
+  {
+    "event_id": "evt_ab10977a7e004ae0",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_70798fdbb82c40",
+    "cart_value": 254.17,
+    "currency": "INR",
+    "time_to_abandon_seconds": 16,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 7,
+    "customer": {
+      "id": "cust_383c2a29b30447",
+      "name": "Aadhya Pillai",
+      "email": "aadhya.pillai903@yahoo.com",
+      "phone": "+919117771015"
+    },
+    "timestamp": "2026-08-23T11:34:24+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "page_views": 16
+    }
+  },
+  {
+    "event_id": "evt_7ce21ccf6af3422b",
+    "event_type": "payment_failed",
+    "payment_id": "pay_0c06590612434f",
+    "order_id": "order_667332de03e14b",
+    "amount": 24765.22,
+    "currency": "INR",
+    "decline_reason": "Transaction flagged for security violation",
+    "decline_code": "SECURITY_VIOLATION",
+    "method": "card",
+    "bank": "Axis Bank",
+    "customer": {
+      "id": "cust_a775ae94fec74c",
+      "name": "Ishaan Shah",
+      "email": "ishaan.shah325@yahoo.com",
+      "phone": "+919100252248"
+    },
+    "timestamp": "2026-08-23T11:35:59+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_4ea60c584e8b4c8d",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_c6932561c0b841",
+    "cart_value": 1230.89,
+    "currency": "INR",
+    "time_to_abandon_seconds": 266,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 7,
+    "customer": {
+      "id": "cust_9048e1bf9f4a49",
+      "name": "Krishna Sharma",
+      "email": "krishna.sharma47@yahoo.com",
+      "phone": "+917313659437"
+    },
+    "timestamp": "2026-08-23T11:44:04+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "page_views": 2
+    }
+  },
+  {
+    "event_id": "evt_2b27dc56dc494316",
+    "event_type": "payment_failed",
+    "payment_id": "pay_6d958080405441",
+    "order_id": "order_8e30cd0f164c43",
+    "amount": 340.01,
+    "currency": "INR",
+    "decline_reason": "Invalid UPI VPA",
+    "decline_code": "INVALID_VPA",
+    "method": "wallet",
+    "bank": "IDBI Bank",
+    "customer": {
+      "id": "cust_f80cee725af24d",
+      "name": "Aditya Roy",
+      "email": "aditya.roy168@yahoo.com",
+      "phone": "+918051454923"
+    },
+    "timestamp": "2026-08-23T12:17:59+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_938aebdb18dc4ec4",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_055d796ebe8941",
+    "plan_id": "plan_monthly",
+    "amount": 799,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 5,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "MANDATE_NOT_APPROVED",
+    "customer": {
+      "id": "cust_9d26ba95972b42",
+      "name": "Deepak Sharma",
+      "email": "deepak.sharma929@hotmail.com",
+      "phone": "+918114227340"
+    },
+    "timestamp": "2026-08-23T12:24:47+00:00",
+    "metadata": {
+      "plan_name": "Monthly Box",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_f5981fd793e84bfe",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_f61c17c8fdf543",
+    "plan_id": "plan_annual",
+    "amount": 4999,
+    "currency": "INR",
+    "attempt_number": 3,
+    "days_overdue": 7,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "DO_NOT_HONOR",
+    "customer": {
+      "id": "cust_0ed5163b16a344",
+      "name": "Ayaan Chatterjee",
+      "email": "ayaan.chatterjee49@outlook.com",
+      "phone": "+919853978147"
+    },
+    "timestamp": "2026-08-23T12:26:50+00:00",
+    "metadata": {
+      "plan_name": "Annual Membership",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_d8e1a4ad5f32463d",
+    "event_type": "payment_failed",
+    "payment_id": "pay_a0298e52c6cd45",
+    "order_id": "order_b68a207c04c044",
+    "amount": 6637.49,
+    "currency": "INR",
+    "decline_reason": "Issuing bank systems are down",
+    "decline_code": "BANK_DOWN",
+    "method": "card",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_626494a6916b44",
+      "name": "Riya Sharma",
+      "email": "riya.sharma930@outlook.com",
+      "phone": "+919909184445"
+    },
+    "timestamp": "2026-08-23T12:45:12+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_329726f40a234855",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_01f7fe9208774b",
+    "cart_value": 440.1,
+    "currency": "INR",
+    "time_to_abandon_seconds": 47,
+    "device_type": "mobile",
+    "channel": "social",
+    "items_count": 8,
+    "customer": {
+      "id": "cust_ae79c338e0a947",
+      "name": "Vivaan Nair",
+      "email": "vivaan.nair714@hotmail.com",
+      "phone": "+918368954072"
+    },
+    "timestamp": "2026-08-23T13:09:19+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "page_views": 6
+    }
+  },
+  {
+    "event_id": "evt_ff9edf814a874a36",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_fcbcc44fd49044",
+    "plan_id": "plan_pro",
+    "amount": 499,
+    "currency": "INR",
+    "attempt_number": 3,
+    "days_overdue": 4,
+    "mandate_type": "emandate",
+    "failure_reason": "DO_NOT_HONOR",
+    "customer": {
+      "id": "cust_a2b8c9b44f9f41",
+      "name": "Raj Roy",
+      "email": "raj.roy903@protonmail.com",
+      "phone": "+919165136471"
+    },
+    "timestamp": "2026-08-23T13:38:58+00:00",
+    "metadata": {
+      "plan_name": "Pro Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_16c0cc005e434dcf",
+    "event_type": "payment_failed",
+    "payment_id": "pay_fe96263b5e2d4c",
+    "order_id": "order_113ce13a3af447",
+    "amount": 14086.61,
+    "currency": "INR",
+    "decline_reason": "Account balance insufficient",
+    "decline_code": "BALANCE_INSUFFICIENT",
+    "method": "wallet",
+    "bank": "IndusInd Bank",
+    "customer": {
+      "id": "cust_5db194e5992540",
+      "name": "Ishaan Das",
+      "email": "ishaan.das868@gmail.com",
+      "phone": "+919057211631"
+    },
+    "timestamp": "2026-08-23T13:43:06+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_c48e214da02b4baf",
+    "event_type": "payment_failed",
+    "payment_id": "pay_25b2aafff79745",
+    "order_id": "order_0f87eff7a16841",
+    "amount": 11548.56,
+    "currency": "INR",
+    "decline_reason": "Bank did not respond in time",
+    "decline_code": "BANK_TIMEOUT",
+    "method": "upi",
+    "bank": "Federal Bank",
+    "customer": {
+      "id": "cust_8093bb2b315e42",
+      "name": "Aanya Joshi",
+      "email": "aanya.joshi223@gmail.com",
+      "phone": "+918591414076"
+    },
+    "timestamp": "2026-08-23T14:15:54+00:00",
+    "metadata": {
+      "category": "Sports",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_55bd83e5c99247e7",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_e2d62212bca445",
+    "plan_id": "plan_pro",
+    "amount": 499,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 2,
+    "mandate_type": "nach",
+    "failure_reason": "BANK_DOWN",
+    "customer": {
+      "id": "cust_e12b072367f842",
+      "name": "Arjun Roy",
+      "email": "arjun.roy414@hotmail.com",
+      "phone": "+918844300709"
+    },
+    "timestamp": "2026-08-23T15:24:00+00:00",
+    "metadata": {
+      "plan_name": "Pro Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_3620bea4000c4b7b",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_0131647d202443",
+    "cart_value": 884.4,
+    "currency": "INR",
+    "time_to_abandon_seconds": 55,
+    "device_type": "mobile",
+    "channel": "app",
+    "items_count": 7,
+    "customer": {
+      "id": "cust_f6484aa8cb8d4c",
+      "name": "Myra Patel",
+      "email": "myra.patel32@outlook.com",
+      "phone": "+917746756255"
+    },
+    "timestamp": "2026-08-23T14:35:47+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "page_views": 8
+    }
+  },
+  {
+    "event_id": "evt_3cd652d8be3f44f3",
+    "event_type": "payment_failed",
+    "payment_id": "pay_912f6227f51c46",
+    "order_id": "order_43c1822e7eb44d",
+    "amount": 391.97,
+    "currency": "INR",
+    "decline_reason": "Transaction timed out",
+    "decline_code": "TIMEOUT",
+    "method": "netbanking",
+    "bank": "Yes Bank",
+    "customer": {
+      "id": "cust_6564f9373c534f",
+      "name": "Pooja Nair",
+      "email": "pooja.nair250@gmail.com",
+      "phone": "+917454678712"
+    },
+    "timestamp": "2026-08-23T18:25:33+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_1cfd4eefa7de4395",
+    "event_type": "payment_failed",
+    "payment_id": "pay_a8e38122ae1144",
+    "order_id": "order_dd2181553da349",
+    "amount": 1227.5,
+    "currency": "INR",
+    "decline_reason": "Transaction declined: REFER_TO_ISSUER",
+    "decline_code": "REFER_TO_ISSUER",
+    "method": "card",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_f2ee3e8c6ec145",
+      "name": "Rohan Kumar",
+      "email": "rohan.kumar394@protonmail.com",
+      "phone": "+919177839698"
+    },
+    "timestamp": "2026-08-23T18:35:50+00:00",
+    "metadata": {
+      "category": "Electronics",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_06c2646d13924cbc",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_4ad304be5c5846",
+    "cart_value": 3298.65,
+    "currency": "INR",
+    "time_to_abandon_seconds": 184,
+    "device_type": "tablet",
+    "channel": "web",
+    "items_count": 3,
+    "customer": {
+      "id": "cust_1477a7c5aa2d43",
+      "name": "Isha Shah",
+      "email": "isha.shah863@yahoo.com",
+      "phone": "+918351110867"
+    },
+    "timestamp": "2026-08-23T19:03:55+00:00",
+    "metadata": {
+      "category": "Sports",
+      "page_views": 1
+    }
+  },
+  {
+    "event_id": "evt_1a1c2e43d17541c1",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_b08adebf4da04d",
+    "cart_value": 896.71,
+    "currency": "INR",
+    "time_to_abandon_seconds": 30,
+    "device_type": "mobile",
+    "channel": "social",
+    "items_count": 2,
+    "customer": {
+      "id": "cust_5c2d4d6ae9194c",
+      "name": "Krishna Bose",
+      "email": "krishna.bose612@protonmail.com",
+      "phone": "+918346060408"
+    },
+    "timestamp": "2026-08-23T19:25:37+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "page_views": 12
+    }
+  },
+  {
+    "event_id": "evt_cd140fa87b6241e5",
+    "event_type": "payment_failed",
+    "payment_id": "pay_58330371d97342",
+    "order_id": "order_56c1be60babe4b",
+    "amount": 6555.64,
+    "currency": "INR",
+    "decline_reason": "Invalid expiry date provided",
+    "decline_code": "INVALID_EXPIRY",
+    "method": "netbanking",
+    "bank": "HDFC Bank",
+    "customer": {
+      "id": "cust_662147b85cf54b",
+      "name": "Raj Kumar",
+      "email": "raj.kumar435@outlook.com",
+      "phone": "+919843005049"
+    },
+    "timestamp": "2026-08-23T19:28:26+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_2c1c4a6eacd14b26",
+    "event_type": "payment_failed",
+    "payment_id": "pay_1fb9e93adda844",
+    "order_id": "order_257a123c200e42",
+    "amount": 6341.87,
+    "currency": "INR",
+    "decline_reason": "Debit against mandate failed",
+    "decline_code": "DEBIT_FAILED",
+    "method": "netbanking",
+    "bank": "Yes Bank",
+    "customer": {
+      "id": "cust_0fa52682a8c24d",
+      "name": "Krishna Reddy",
+      "email": "krishna.reddy749@gmail.com",
+      "phone": "+917697907532"
+    },
+    "timestamp": "2026-08-23T20:16:45+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_860adf04af4a4ed4",
+    "event_type": "payment_failed",
+    "payment_id": "pay_df365b775fc149",
+    "order_id": "order_3df22f0910d949",
+    "amount": 10677.24,
+    "currency": "INR",
+    "decline_reason": "Transaction declined: UNKNOWN_ERROR",
+    "decline_code": "UNKNOWN_ERROR",
+    "method": "card",
+    "bank": "SBI",
+    "customer": {
+      "id": "cust_2847b87424ae4e",
+      "name": "Kavya Iyer",
+      "email": "kavya.iyer89@hotmail.com",
+      "phone": "+918408434291"
+    },
+    "timestamp": "2026-08-23T21:06:11+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_90df6b5a283843d8",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_19f5c527fbe047",
+    "plan_id": "plan_monthly",
+    "amount": 799,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 3,
+    "mandate_type": "nach",
+    "failure_reason": "DO_NOT_HONOR",
+    "customer": {
+      "id": "cust_3606fe284b8249",
+      "name": "Saanvi Das",
+      "email": "saanvi.das18@hotmail.com",
+      "phone": "+918358945892"
+    },
+    "timestamp": "2026-08-23T21:07:34+00:00",
+    "metadata": {
+      "plan_name": "Monthly Box",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_7413ea9826384ccd",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_4c259c9822bb40",
+    "cart_value": 8724.55,
+    "currency": "INR",
+    "time_to_abandon_seconds": 1247,
+    "device_type": "tablet",
+    "channel": "web",
+    "items_count": 3,
+    "customer": {
+      "id": "cust_4d40b81244b64a",
+      "name": "Rohan Iyer",
+      "email": "rohan.iyer64@gmail.com",
+      "phone": "+919438771483"
+    },
+    "timestamp": "2026-08-23T21:08:15+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "page_views": 9
+    }
+  },
+  {
+    "event_id": "evt_b408a53ca9024bc5",
+    "event_type": "payment_failed",
+    "payment_id": "pay_d4683592587343",
+    "order_id": "order_d0aeaf2c2c8e49",
+    "amount": 794.46,
+    "currency": "INR",
+    "decline_reason": "OTP entry timed out",
+    "decline_code": "OTP_TIMEOUT",
+    "method": "wallet",
+    "bank": "Federal Bank",
+    "customer": {
+      "id": "cust_33d16cf215b44a",
+      "name": "Neha Singh",
+      "email": "neha.singh546@protonmail.com",
+      "phone": "+918491228808"
+    },
+    "timestamp": "2026-08-23T21:23:04+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_6b23319d4d994073",
+    "event_type": "payment_failed",
+    "payment_id": "pay_bf9bbb4036fc49",
+    "order_id": "order_097e7778b70c44",
+    "amount": 14806.77,
+    "currency": "INR",
+    "decline_reason": "Invalid card number",
+    "decline_code": "INVALID_CARD_NUMBER",
+    "method": "card",
+    "bank": "Federal Bank",
+    "customer": {
+      "id": "cust_7aa7ea67908841",
+      "name": "Saanvi Verma",
+      "email": "saanvi.verma763@hotmail.com",
+      "phone": "+918366556920"
+    },
+    "timestamp": "2026-08-23T22:58:51+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_e47ad8f0830d487c",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_3411cea845e94e",
+    "plan_id": "plan_enterprise",
+    "amount": 2999,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 4,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "MANDATE_REVOKED",
+    "customer": {
+      "id": "cust_812c2ad24d0145",
+      "name": "Arjun Agarwal",
+      "email": "arjun.agarwal339@protonmail.com",
+      "phone": "+917024245671"
+    },
+    "timestamp": "2026-08-23T22:59:09+00:00",
+    "metadata": {
+      "plan_name": "Enterprise Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_afee77963c8c4461",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_d9bc56ead94540",
+    "plan_id": "plan_premium",
+    "amount": 999,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 0,
+    "mandate_type": "emandate",
+    "failure_reason": "MANDATE_NOT_APPROVED",
+    "customer": {
+      "id": "cust_d68798935d2646",
+      "name": "Swati Patel",
+      "email": "swati.patel321@outlook.com",
+      "phone": "+919906690116"
+    },
+    "timestamp": "2026-08-23T23:07:06+00:00",
+    "metadata": {
+      "plan_name": "Premium Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_0927f803cfd14884",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_ae7540a3686c41",
+    "cart_value": 12594.17,
+    "currency": "INR",
+    "time_to_abandon_seconds": 357,
+    "device_type": "tablet",
+    "channel": "web",
+    "items_count": 2,
+    "customer": {
+      "id": "cust_75c61df61d6d45",
+      "name": "Ishaan Chatterjee",
+      "email": "ishaan.chatterjee901@hotmail.com",
+      "phone": "+919251792132"
+    },
+    "timestamp": "2026-08-24T00:11:12+00:00",
+    "metadata": {
+      "category": "Books",
+      "page_views": 2
+    }
+  },
+  {
+    "event_id": "evt_8489da6cbefd467f",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_a9c83ed30d0d49",
+    "cart_value": 14477.08,
+    "currency": "INR",
+    "time_to_abandon_seconds": 264,
+    "device_type": "desktop",
+    "channel": "app",
+    "items_count": 3,
+    "customer": {
+      "id": "cust_eff00fa6a5154e",
+      "name": "Sai Verma",
+      "email": "sai.verma368@protonmail.com",
+      "phone": "+919996283266"
+    },
+    "timestamp": "2026-08-24T00:45:44+00:00",
+    "metadata": {
+      "category": "Sports",
+      "page_views": 19
+    }
+  },
+  {
+    "event_id": "evt_af518d7d8c4a4977",
+    "event_type": "payment_failed",
+    "payment_id": "pay_a7d5bbb91c034a",
+    "order_id": "order_aeacea07550546",
+    "amount": 4178.79,
+    "currency": "INR",
+    "decline_reason": "Card issuer bank is temporarily unavailable",
+    "decline_code": "ISSUER_UNAVAILABLE",
+    "method": "card",
+    "bank": "IndusInd Bank",
+    "customer": {
+      "id": "cust_e7d0d147747941",
+      "name": "Diya Gupta",
+      "email": "diya.gupta412@yahoo.com",
+      "phone": "+919186664545"
+    },
+    "timestamp": "2026-08-24T01:02:02+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_5404a340a69147d3",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_c9e4354a776b49",
+    "cart_value": 476.58,
+    "currency": "INR",
+    "time_to_abandon_seconds": 56,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 7,
+    "customer": {
+      "id": "cust_5be4e83833b649",
+      "name": "Kavya Sharma",
+      "email": "kavya.sharma104@yahoo.com",
+      "phone": "+917289012242"
+    },
+    "timestamp": "2026-08-24T01:28:38+00:00",
+    "metadata": {
+      "category": "Electronics",
+      "page_views": 8
+    }
+  },
+  {
+    "event_id": "evt_5b1c7fe0c0d64d90",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_24f453cbfb1043",
+    "plan_id": "plan_monthly",
+    "amount": 799,
+    "currency": "INR",
+    "attempt_number": 3,
+    "days_overdue": 11,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "GENERAL_DECLINE",
+    "customer": {
+      "id": "cust_f93fc20551924b",
+      "name": "Isha Patel",
+      "email": "isha.patel329@outlook.com",
+      "phone": "+917826834424"
+    },
+    "timestamp": "2026-08-24T02:06:10+00:00",
+    "metadata": {
+      "plan_name": "Monthly Box",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_f0be23d741bd42c4",
+    "event_type": "payment_failed",
+    "payment_id": "pay_420a8bcfcd0049",
+    "order_id": "order_d69e042c8aea45",
+    "amount": 3959.62,
+    "currency": "INR",
+    "decline_reason": "Card has expired",
+    "decline_code": "EXPIRED_CARD",
+    "method": "card",
+    "bank": "IDBI Bank",
+    "customer": {
+      "id": "cust_e227581ed2794c",
+      "name": "Reyansh Joshi",
+      "email": "reyansh.joshi178@gmail.com",
+      "phone": "+918030213097"
+    },
+    "timestamp": "2026-08-24T02:10:00+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_16d2bc2b44e34c57",
+    "event_type": "payment_failed",
+    "payment_id": "pay_1adb35470d374c",
+    "order_id": "order_de7a3cdbd1a844",
+    "amount": 625.18,
+    "currency": "INR",
+    "decline_reason": "Transaction declined: UNKNOWN_ERROR",
+    "decline_code": "UNKNOWN_ERROR",
+    "method": "netbanking",
+    "bank": "IndusInd Bank",
+    "customer": {
+      "id": "cust_acbc4002ea5f4f",
+      "name": "Sai Patel",
+      "email": "sai.patel71@protonmail.com",
+      "phone": "+917798112150"
+    },
+    "timestamp": "2026-08-24T02:43:55+00:00",
+    "metadata": {
+      "category": "Books",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_c9d7b65c07c2499a",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_e9ae9f1a1a9e49",
+    "cart_value": 3196.39,
+    "currency": "INR",
+    "time_to_abandon_seconds": 197,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 2,
+    "customer": {
+      "id": "cust_819c4840eb664c",
+      "name": "Myra Das",
+      "email": "myra.das80@protonmail.com",
+      "phone": "+918553854176"
+    },
+    "timestamp": "2026-08-24T03:03:53+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "page_views": 17
+    }
+  },
+  {
+    "event_id": "evt_2b1dcffa1da44243",
+    "event_type": "payment_failed",
+    "payment_id": "pay_9b54c0744efe40",
+    "order_id": "order_4de5c0bbcc524e",
+    "amount": 2250.02,
+    "currency": "INR",
+    "decline_reason": "Incorrect PIN entered",
+    "decline_code": "INVALID_PIN",
+    "method": "wallet",
+    "bank": "Punjab National Bank",
+    "customer": {
+      "id": "cust_c536b99cc6984a",
+      "name": "Deepak Nair",
+      "email": "deepak.nair528@hotmail.com",
+      "phone": "+918591458030"
+    },
+    "timestamp": "2026-08-24T03:20:15+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_7901b0798df34bef",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_e52182a3502444",
+    "plan_id": "plan_annual",
+    "amount": 4999,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 11,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "DEBIT_FAILED",
+    "customer": {
+      "id": "cust_c8a71f4354b144",
+      "name": "Raj Mehta",
+      "email": "raj.mehta718@protonmail.com",
+      "phone": "+919955975343"
+    },
+    "timestamp": "2026-08-24T03:27:42+00:00",
+    "metadata": {
+      "plan_name": "Annual Membership",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_5dd5df29a6f44cbf",
+    "event_type": "payment_failed",
+    "payment_id": "pay_1358e75b061845",
+    "order_id": "order_4888bbaa60c247",
+    "amount": 28894.81,
+    "currency": "INR",
+    "decline_reason": "Account balance insufficient",
+    "decline_code": "BALANCE_INSUFFICIENT",
+    "method": "upi",
+    "bank": "SBI",
+    "customer": {
+      "id": "cust_e4a8a1a5fbce4b",
+      "name": "Deepak Shah",
+      "email": "deepak.shah582@gmail.com",
+      "phone": "+918281584789"
+    },
+    "timestamp": "2026-08-24T03:59:21+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_93c1e723f7df4d30",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_a00806f4e7c04e",
+    "cart_value": 40827.33,
+    "currency": "INR",
+    "time_to_abandon_seconds": 26,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 8,
+    "customer": {
+      "id": "cust_9821487dea0346",
+      "name": "Diya Iyer",
+      "email": "diya.iyer708@hotmail.com",
+      "phone": "+919527974623"
+    },
+    "timestamp": "2026-08-24T04:22:01+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "page_views": 4
+    }
+  },
+  {
+    "event_id": "evt_f52a31d45d4543c7",
+    "event_type": "payment_failed",
+    "payment_id": "pay_5749076a799946",
+    "order_id": "order_2ec41fdb3c874d",
+    "amount": 913.97,
+    "currency": "INR",
+    "decline_reason": "Card has expired",
+    "decline_code": "EXPIRED_CARD",
+    "method": "card",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_4f77d1f945b641",
+      "name": "Myra Verma",
+      "email": "myra.verma220@outlook.com",
+      "phone": "+919084839399"
+    },
+    "timestamp": "2026-08-24T04:46:59+00:00",
+    "metadata": {
+      "category": "Jewelry",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_251a0cde908241d6",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_d3f7f2a62ede4b",
+    "plan_id": "plan_monthly",
+    "amount": 799,
+    "currency": "INR",
+    "attempt_number": 5,
+    "days_overdue": 8,
+    "mandate_type": "nach",
+    "failure_reason": "INSUFFICIENT_FUNDS",
+    "customer": {
+      "id": "cust_10bd45aadd1a48",
+      "name": "Myra Patel",
+      "email": "myra.patel495@protonmail.com",
+      "phone": "+919513074317"
+    },
+    "timestamp": "2026-08-24T05:44:37+00:00",
+    "metadata": {
+      "plan_name": "Monthly Box",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_03a31dcad6f54b95",
+    "event_type": "payment_failed",
+    "payment_id": "pay_ccfeaaeebbab41",
+    "order_id": "order_9a4153d3ce7542",
+    "amount": 844.33,
+    "currency": "INR",
+    "decline_reason": "Customer revoked the mandate",
+    "decline_code": "MANDATE_REVOKED",
+    "method": "card",
+    "bank": "IndusInd Bank",
+    "customer": {
+      "id": "cust_2a89dd08c6c24c",
+      "name": "Amit Joshi",
+      "email": "amit.joshi759@yahoo.com",
+      "phone": "+919644312718"
+    },
+    "timestamp": "2026-08-24T07:15:03+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": false
+    }
+  },
+  {
+    "event_id": "evt_0fbf08999f8241b9",
+    "event_type": "payment_failed",
+    "payment_id": "pay_3700e5f6487b4f",
+    "order_id": "order_612b170cc20c43",
+    "amount": 605.07,
+    "currency": "INR",
+    "decline_reason": "Transaction timed out",
+    "decline_code": "TIMEOUT",
+    "method": "card",
+    "bank": "IndusInd Bank",
+    "customer": {
+      "id": "cust_c318a30e87db43",
+      "name": "Ishaan Kumar",
+      "email": "ishaan.kumar783@hotmail.com",
+      "phone": "+918934257315"
+    },
+    "timestamp": "2026-08-24T08:52:39+00:00",
+    "metadata": {
+      "category": "Jewelry",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_0fec7e286d3144de",
+    "event_type": "payment_failed",
+    "payment_id": "pay_2cd845b1525343",
+    "order_id": "order_a5902f78a48049",
+    "amount": 3931.03,
+    "currency": "INR",
+    "decline_reason": "The card used is expired",
+    "decline_code": "CARD_EXPIRED",
+    "method": "wallet",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_858fbddf38cf4e",
+      "name": "Suresh Banerjee",
+      "email": "suresh.banerjee361@outlook.com",
+      "phone": "+917190420322"
+    },
+    "timestamp": "2026-08-24T10:52:41+00:00",
+    "metadata": {
+      "category": "Home & Kitchen",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_136fc92c221446cc",
+    "event_type": "payment_failed",
+    "payment_id": "pay_02918a1fc6d649",
+    "order_id": "order_4a533ab789bd4b",
+    "amount": 2506.34,
+    "currency": "INR",
+    "decline_reason": "Invalid expiry date provided",
+    "decline_code": "INVALID_EXPIRY",
+    "method": "card",
+    "bank": "SBI",
+    "customer": {
+      "id": "cust_ce6ae6be84f34e",
+      "name": "Raj Chatterjee",
+      "email": "raj.chatterjee434@gmail.com",
+      "phone": "+919879586763"
+    },
+    "timestamp": "2026-08-24T11:01:23+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_c93735e6550a4dc8",
+    "event_type": "payment_failed",
+    "payment_id": "pay_39f9d6ca511c48",
+    "order_id": "order_a0020c946d764c",
+    "amount": 5901.24,
+    "currency": "INR",
+    "decline_reason": "Transaction declined: UNKNOWN_ERROR",
+    "decline_code": "UNKNOWN_ERROR",
+    "method": "card",
+    "bank": "Punjab National Bank",
+    "customer": {
+      "id": "cust_f9c65c8d3d0945",
+      "name": "Deepak Pillai",
+      "email": "deepak.pillai806@yahoo.com",
+      "phone": "+917567622001"
+    },
+    "timestamp": "2026-08-24T11:33:32+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_42f8780b75054f90",
+    "event_type": "payment_failed",
+    "payment_id": "pay_db1e865c29f147",
+    "order_id": "order_8c0844d9340244",
+    "amount": 802.59,
+    "currency": "INR",
+    "decline_reason": "Bank did not respond in time",
+    "decline_code": "BANK_TIMEOUT",
+    "method": "card",
+    "bank": "Punjab National Bank",
+    "customer": {
+      "id": "cust_f079de7e1d6f41",
+      "name": "Kavya Iyer",
+      "email": "kavya.iyer880@gmail.com",
+      "phone": "+919896343368"
+    },
+    "timestamp": "2026-08-24T12:20:40+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_241e8d7380924f01",
+    "event_type": "payment_failed",
+    "payment_id": "pay_9b4f10dc978d43",
+    "order_id": "order_00b6173d23a94d",
+    "amount": 874.73,
+    "currency": "INR",
+    "decline_reason": "Invalid UPI VPA",
+    "decline_code": "INVALID_VPA",
+    "method": "card",
+    "bank": "Bank of Baroda",
+    "customer": {
+      "id": "cust_2099bb5fc0ec43",
+      "name": "Aarav Das",
+      "email": "aarav.das440@gmail.com",
+      "phone": "+919472866768"
+    },
+    "timestamp": "2026-08-24T12:45:40+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_93aa276c5e4d424f",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_def3d3e21f8344",
+    "plan_id": "plan_annual",
+    "amount": 4999,
+    "currency": "INR",
+    "attempt_number": 3,
+    "days_overdue": 5,
+    "mandate_type": "emandate",
+    "failure_reason": "DO_NOT_HONOR",
+    "customer": {
+      "id": "cust_0ca2be3664954b",
+      "name": "Riya Bose",
+      "email": "riya.bose186@protonmail.com",
+      "phone": "+918881894932"
+    },
+    "timestamp": "2026-08-24T12:49:22+00:00",
+    "metadata": {
+      "plan_name": "Annual Membership",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_c82dd97372fd4c8e",
+    "event_type": "payment_failed",
+    "payment_id": "pay_d41688e98ac14c",
+    "order_id": "order_0b19bf0cc6414c",
+    "amount": 454.72,
+    "currency": "INR",
+    "decline_reason": "Network connectivity issue during transaction",
+    "decline_code": "NETWORK_ERROR",
+    "method": "card",
+    "bank": "IndusInd Bank",
+    "customer": {
+      "id": "cust_b3647c67bca144",
+      "name": "Vihaan Das",
+      "email": "vihaan.das269@outlook.com",
+      "phone": "+919887681752"
+    },
+    "timestamp": "2026-08-24T12:52:40+00:00",
+    "metadata": {
+      "category": "Sports",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_b6fba22cbf634af5",
+    "event_type": "payment_failed",
+    "payment_id": "pay_292f26f7066b47",
+    "order_id": "order_d72823d551a34d",
+    "amount": 2591.74,
+    "currency": "INR",
+    "decline_reason": "Issuer is not available for authorization",
+    "decline_code": "ISSUER_NOT_AVAILABLE",
+    "method": "wallet",
+    "bank": "Kotak Mahindra",
+    "customer": {
+      "id": "cust_6cf561bd515b47",
+      "name": "Ayaan Singh",
+      "email": "ayaan.singh512@gmail.com",
+      "phone": "+917799070274"
+    },
+    "timestamp": "2026-08-24T12:58:35+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_4eb4acc526ae46a2",
+    "event_type": "payment_failed",
+    "payment_id": "pay_010602ba505349",
+    "order_id": "order_bf12bdbbfa844d",
+    "amount": 3299.61,
+    "currency": "INR",
+    "decline_reason": "Non-sufficient funds",
+    "decline_code": "NSF",
+    "method": "wallet",
+    "bank": "SBI",
+    "customer": {
+      "id": "cust_55538271567d49",
+      "name": "Ishaan Pillai",
+      "email": "ishaan.pillai247@gmail.com",
+      "phone": "+918515333350"
+    },
+    "timestamp": "2026-08-24T13:11:42+00:00",
+    "metadata": {
+      "category": "Fashion",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_f2bb5c66643b4ca2",
+    "event_type": "payment_failed",
+    "payment_id": "pay_addce71b519849",
+    "order_id": "order_7605c7762e844a",
+    "amount": 10635.62,
+    "currency": "INR",
+    "decline_reason": "Incorrect PIN entered",
+    "decline_code": "INVALID_PIN",
+    "method": "card",
+    "bank": "ICICI Bank",
+    "customer": {
+      "id": "cust_9246662e334540",
+      "name": "Vivaan Banerjee",
+      "email": "vivaan.banerjee786@outlook.com",
+      "phone": "+917905415100"
+    },
+    "timestamp": "2026-08-24T13:39:40+00:00",
+    "metadata": {
+      "category": "Electronics",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_ba436d7a4d64411f",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_2e9b59d945ec40",
+    "cart_value": 251.51,
+    "currency": "INR",
+    "time_to_abandon_seconds": 2716,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 6,
+    "customer": {
+      "id": "cust_8fae13ba3c3446",
+      "name": "Vihaan Patel",
+      "email": "vihaan.patel947@hotmail.com",
+      "phone": "+917721508131"
+    },
+    "timestamp": "2026-08-24T13:52:46+00:00",
+    "metadata": {
+      "category": "Toys & Games",
+      "page_views": 16
+    }
+  },
+  {
+    "event_id": "evt_c28fa54c0f9045b5",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_4d8d181c47314a",
+    "plan_id": "plan_annual",
+    "amount": 4999,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 4,
+    "mandate_type": "nach",
+    "failure_reason": "INSUFFICIENT_FUNDS",
+    "customer": {
+      "id": "cust_a4d60c5a641345",
+      "name": "Swati Gupta",
+      "email": "swati.gupta420@yahoo.com",
+      "phone": "+918471755952"
+    },
+    "timestamp": "2026-08-24T14:09:20+00:00",
+    "metadata": {
+      "plan_name": "Annual Membership",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_d05311ce52c54b9c",
+    "event_type": "payment_failed",
+    "payment_id": "pay_df08ca7092f941",
+    "order_id": "order_36138f2f238542",
+    "amount": 6528.26,
+    "currency": "INR",
+    "decline_reason": "Transaction declined: DO_NOT_HONOR",
+    "decline_code": "DO_NOT_HONOR",
+    "method": "card",
+    "bank": "Union Bank",
+    "customer": {
+      "id": "cust_b5f50ce8c9044a",
+      "name": "Raj Pillai",
+      "email": "raj.pillai391@protonmail.com",
+      "phone": "+918652563013"
+    },
+    "timestamp": "2026-08-24T14:33:16+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_87bb4d3dc5464d21",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_6202f384cf5841",
+    "cart_value": 42539.86,
+    "currency": "INR",
+    "time_to_abandon_seconds": 54,
+    "device_type": "mobile",
+    "channel": "app",
+    "items_count": 2,
+    "customer": {
+      "id": "cust_67a4e6f4189548",
+      "name": "Rohan Patel",
+      "email": "rohan.patel387@gmail.com",
+      "phone": "+918628926576"
+    },
+    "timestamp": "2026-08-24T15:03:40+00:00",
+    "metadata": {
+      "category": "Electronics",
+      "page_views": 6
+    }
+  },
+  {
+    "event_id": "evt_f29e0e4f21b34aa5",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_ecb7c370c64c49",
+    "cart_value": 12955.77,
+    "currency": "INR",
+    "time_to_abandon_seconds": 187,
+    "device_type": "mobile",
+    "channel": "app",
+    "items_count": 4,
+    "customer": {
+      "id": "cust_95ec164b8c114e",
+      "name": "Krishna Gupta",
+      "email": "krishna.gupta460@hotmail.com",
+      "phone": "+917317677825"
+    },
+    "timestamp": "2026-08-24T15:37:25+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "page_views": 17
+    }
+  },
+  {
+    "event_id": "evt_352cfc34a9f643ce",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_d48c0f403c3c4b",
+    "cart_value": 1350.8,
+    "currency": "INR",
+    "time_to_abandon_seconds": 167,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 1,
+    "customer": {
+      "id": "cust_bceb7f3df3cc4c",
+      "name": "Saanvi Nair",
+      "email": "saanvi.nair353@hotmail.com",
+      "phone": "+919081682554"
+    },
+    "timestamp": "2026-08-24T16:20:24+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "page_views": 6
+    }
+  },
+  {
+    "event_id": "evt_207e86ca5c694631",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_c1731f35ed9f4a",
+    "cart_value": 51615.71,
+    "currency": "INR",
+    "time_to_abandon_seconds": 217,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 4,
+    "customer": {
+      "id": "cust_36ae2388aa0745",
+      "name": "Neha Patel",
+      "email": "neha.patel288@protonmail.com",
+      "phone": "+919286128610"
+    },
+    "timestamp": "2026-08-24T17:10:20+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "page_views": 10
+    }
+  },
+  {
+    "event_id": "evt_01084d4b2f754ede",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_cab4f9aa8adb4c",
+    "plan_id": "plan_enterprise",
+    "amount": 2999,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 8,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "INSUFFICIENT_FUNDS",
+    "customer": {
+      "id": "cust_54a6c300c1ee47",
+      "name": "Pooja Kumar",
+      "email": "pooja.kumar312@protonmail.com",
+      "phone": "+919738205384"
+    },
+    "timestamp": "2026-08-24T17:13:41+00:00",
+    "metadata": {
+      "plan_name": "Enterprise Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_3d9243b29b9d4b75",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_7542ff943ae144",
+    "plan_id": "plan_annual",
+    "amount": 4999,
+    "currency": "INR",
+    "attempt_number": 2,
+    "days_overdue": 5,
+    "mandate_type": "nach",
+    "failure_reason": "INSUFFICIENT_FUNDS",
+    "customer": {
+      "id": "cust_0a9fae44634f41",
+      "name": "Pooja Verma",
+      "email": "pooja.verma786@hotmail.com",
+      "phone": "+919405829565"
+    },
+    "timestamp": "2026-08-24T19:30:45+00:00",
+    "metadata": {
+      "plan_name": "Annual Membership",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_3c1aa67e3b6c46c9",
+    "event_type": "payment_failed",
+    "payment_id": "pay_5b36085dfd8048",
+    "order_id": "order_bc1fc81e01b340",
+    "amount": 13222.49,
+    "currency": "INR",
+    "decline_reason": "Card has insufficient funds to complete the transaction",
+    "decline_code": "INSUFFICIENT_FUNDS",
+    "method": "card",
+    "bank": "Bank of Baroda",
+    "customer": {
+      "id": "cust_a15c9d9c7dc142",
+      "name": "Diya Das",
+      "email": "diya.das752@yahoo.com",
+      "phone": "+917756502473"
+    },
+    "timestamp": "2026-08-24T20:17:39+00:00",
+    "metadata": {
+      "category": "Grocery",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_87be5bcda8df4fa2",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_d52788953c514b",
+    "plan_id": "plan_enterprise",
+    "amount": 2999,
+    "currency": "INR",
+    "attempt_number": 4,
+    "days_overdue": 2,
+    "mandate_type": "nach",
+    "failure_reason": "NETWORK_ERROR",
+    "customer": {
+      "id": "cust_e7ebc9a6b7004a",
+      "name": "Ayaan Mehta",
+      "email": "ayaan.mehta229@outlook.com",
+      "phone": "+919177244907"
+    },
+    "timestamp": "2026-08-24T20:24:25+00:00",
+    "metadata": {
+      "plan_name": "Enterprise Plan",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_a332e8d024764d17",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_84799ab759fa4d",
+    "cart_value": 1450.86,
+    "currency": "INR",
+    "time_to_abandon_seconds": 212,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 6,
+    "customer": {
+      "id": "cust_64690e40952c44",
+      "name": "Ananya Gupta",
+      "email": "ananya.gupta375@hotmail.com",
+      "phone": "+918807595119"
+    },
+    "timestamp": "2026-08-24T21:11:48+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "page_views": 3
+    }
+  },
+  {
+    "event_id": "evt_5d612ac1f8924a3f",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_6c8db49aad1244",
+    "plan_id": "plan_annual",
+    "amount": 4999,
+    "currency": "INR",
+    "attempt_number": 5,
+    "days_overdue": 11,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "NETWORK_ERROR",
+    "customer": {
+      "id": "cust_0192a78fc62249",
+      "name": "Amit Singh",
+      "email": "amit.singh597@outlook.com",
+      "phone": "+919063173119"
+    },
+    "timestamp": "2026-08-24T21:45:26+00:00",
+    "metadata": {
+      "plan_name": "Annual Membership",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_385e4dac7af146b9",
+    "event_type": "payment_failed",
+    "payment_id": "pay_71c0367a0d8148",
+    "order_id": "order_0775ba047e9046",
+    "amount": 12759.22,
+    "currency": "INR",
+    "decline_reason": "Invalid card number",
+    "decline_code": "INVALID_CARD_NUMBER",
+    "method": "card",
+    "bank": "HDFC Bank",
+    "customer": {
+      "id": "cust_9763987c98c649",
+      "name": "Neha Mehta",
+      "email": "neha.mehta217@hotmail.com",
+      "phone": "+917284277889"
+    },
+    "timestamp": "2026-08-24T22:20:13+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_3782d34009bf40a4",
+    "event_type": "payment_failed",
+    "payment_id": "pay_5a2b26bdab9140",
+    "order_id": "order_761def62eec742",
+    "amount": 172.63,
+    "currency": "INR",
+    "decline_reason": "Card has been blocked by the issuer",
+    "decline_code": "CARD_BLOCKED",
+    "method": "netbanking",
+    "bank": "SBI",
+    "customer": {
+      "id": "cust_07deac476b3743",
+      "name": "Aditya Gupta",
+      "email": "aditya.gupta600@outlook.com",
+      "phone": "+919719043833"
+    },
+    "timestamp": "2026-08-24T22:20:24+00:00",
+    "metadata": {
+      "category": "Jewelry",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_03283990c9494df9",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_5efc3b2c60004f",
+    "plan_id": "plan_annual",
+    "amount": 4999,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 3,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "DEBIT_FAILED",
+    "customer": {
+      "id": "cust_1a7ecbebf34d44",
+      "name": "Vivaan Mehta",
+      "email": "vivaan.mehta263@hotmail.com",
+      "phone": "+918657324532"
+    },
+    "timestamp": "2026-08-24T23:18:01+00:00",
+    "metadata": {
+      "plan_name": "Annual Membership",
+      "billing_cycle": "monthly"
+    }
+  },
+  {
+    "event_id": "evt_77b3f6fb837c4e50",
+    "event_type": "payment_failed",
+    "payment_id": "pay_ca8271e75b6e43",
+    "order_id": "order_7c218c262e4644",
+    "amount": 25333.08,
+    "currency": "INR",
+    "decline_reason": "Additional authentication required",
+    "decline_code": "AUTHENTICATION_REQUIRED",
+    "method": "wallet",
+    "bank": "Bank of Baroda",
+    "customer": {
+      "id": "cust_c059e5f601e041",
+      "name": "Krishna Sharma",
+      "email": "krishna.sharma933@protonmail.com",
+      "phone": "+917210643427"
+    },
+    "timestamp": "2026-08-24T23:31:53+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_9f43656882d14deb",
+    "event_type": "payment_failed",
+    "payment_id": "pay_8ca210400e0244",
+    "order_id": "order_4a60667b3c9649",
+    "amount": 527.28,
+    "currency": "INR",
+    "decline_reason": "Issuer is not available for authorization",
+    "decline_code": "ISSUER_NOT_AVAILABLE",
+    "method": "netbanking",
+    "bank": "SBI",
+    "customer": {
+      "id": "cust_de15f745e40044",
+      "name": "Krishna Chatterjee",
+      "email": "krishna.chatterjee952@protonmail.com",
+      "phone": "+917909666337"
+    },
+    "timestamp": "2026-08-24T23:44:12+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_c5e02835b9214739",
+    "event_type": "payment_failed",
+    "payment_id": "pay_cd78386d62b941",
+    "order_id": "order_e00cd4d69d2544",
+    "amount": 3245.78,
+    "currency": "INR",
+    "decline_reason": "Card has expired",
+    "decline_code": "EXPIRED_CARD",
+    "method": "card",
+    "bank": "IDBI Bank",
+    "customer": {
+      "id": "cust_ae34eb46b7c545",
+      "name": "Vihaan Pillai",
+      "email": "vihaan.pillai889@outlook.com",
+      "phone": "+918816499958"
+    },
+    "timestamp": "2026-08-25T01:18:38+00:00",
+    "metadata": {
+      "category": "Health & Beauty",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_0a6ec028d1444a8c",
+    "event_type": "checkout_abandoned",
+    "order_id": "order_f6927e4bd0de49",
+    "cart_value": 2965.99,
+    "currency": "INR",
+    "time_to_abandon_seconds": 85,
+    "device_type": "mobile",
+    "channel": "web",
+    "items_count": 5,
+    "customer": {
+      "id": "cust_ed301a718fa940",
+      "name": "Deepak Das",
+      "email": "deepak.das620@outlook.com",
+      "phone": "+918790025237"
+    },
+    "timestamp": "2026-08-25T02:12:28+00:00",
+    "metadata": {
+      "category": "Books",
+      "page_views": 14
+    }
+  },
+  {
+    "event_id": "evt_36c8d33f24ab453b",
+    "event_type": "payment_failed",
+    "payment_id": "pay_be4f6ebd96e94b",
+    "order_id": "order_9c78c1f605304c",
+    "amount": 8944.93,
+    "currency": "INR",
+    "decline_reason": "Payment gateway encountered an error",
+    "decline_code": "GATEWAY_ERROR",
+    "method": "card",
+    "bank": "Union Bank",
+    "customer": {
+      "id": "cust_ffffcb5bbf844c",
+      "name": "Neha Gupta",
+      "email": "neha.gupta979@outlook.com",
+      "phone": "+918235362881"
+    },
+    "timestamp": "2026-08-25T02:22:59+00:00",
+    "metadata": {
+      "category": "Automotive",
+      "retry_eligible": true
+    }
+  },
+  {
+    "event_id": "evt_2ad0eb8d1b6b409f",
+    "event_type": "mandate_failed",
+    "subscription_id": "sub_d14b47fd64284d",
+    "plan_id": "plan_basic",
+    "amount": 199,
+    "currency": "INR",
+    "attempt_number": 1,
+    "days_overdue": 2,
+    "mandate_type": "upi_autopay",
+    "failure_reason": "MANDATE_NOT_APPROVED",
+    "customer": {
+      "id": "cust_bddd4bba810c4c",
+      "name": "Ananya Nair",
+      "email": "ananya.nair900@hotmail.com",
+      "phone": "+918152380087"
+    },
+    "timestamp": "2026-08-25T02:23:52+00:00",
+    "metadata": {
+      "plan_name": "Basic Plan",
+      "billing_cycle": "monthly"
+    }
+  }
+]

@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RecoupEvents",
+  "description": "Shared schema for ingestion events — from Razorpay webhooks or synthetic data generator.",
+  "definitions": {
+    "PaymentFailedEvent": {
+      "type": "object",
+      "required": ["event_id", "event_type", "payment_id", "amount", "currency", "decline_reason", "customer", "timestamp"],
+      "properties": {
+        "event_id": { "type": "string" },
+        "event_type": { "const": "payment_failed" },
+        "payment_id": { "type": "string" },
+        "order_id": { "type": "string" },
+        "amount": { "type": "number", "description": "Amount in INR (paise for Razorpay)" },
+        "currency": { "type": "string", "default": "INR" },
+        "decline_reason": { "type": "string", "description": "Raw bank/gateway decline reason" },
+        "decline_code": { "type": "string", "description": "Normalized decline code if available" },
+        "method": { "type": "string", "description": "Payment method: card, upi, netbanking, etc." },
+        "bank": { "type": "string" },
+        "customer": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "string" },
+            "email": { "type": "string" },
+            "phone": { "type": "string" },
+            "name": { "type": "string" }
+          }
+        },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "metadata": { "type": "object", "default": {} }
+      }
+    },
+    "CheckoutAbandonedEvent": {
+      "type": "object",
+      "required": ["event_id", "event_type", "cart_value", "customer", "timestamp"],
+      "properties": {
+        "event_id": { "type": "string" },
+        "event_type": { "const": "checkout_abandoned" },
+        "order_id": { "type": "string" },
+        "cart_value": { "type": "number" },
+        "currency": { "type": "string", "default": "INR" },
+        "time_to_abandon_seconds": { "type": "integer" },
+        "device_type": { "type": "string", "enum": ["mobile", "desktop", "tablet"] },
+        "channel": { "type": "string", "enum": ["web", "app", "social"] },
+        "items_count": { "type": "integer" },
+        "customer": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "string" },
+            "email": { "type": "string" },
+            "phone": { "type": "string" },
+            "name": { "type": "string" }
+          }
+        },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "metadata": { "type": "object", "default": {} }
+      }
+    },
+    "MandateFailedEvent": {
+      "type": "object",
+      "required": ["event_id", "event_type", "subscription_id", "amount", "customer", "timestamp"],
+      "properties": {
+        "event_id": { "type": "string" },
+        "event_type": { "const": "mandate_failed" },
+        "subscription_id": { "type": "string" },
+        "plan_id": { "type": "string" },
+        "amount": { "type": "number" },
+        "currency": { "type": "string", "default": "INR" },
+        "attempt_number": { "type": "integer" },
+        "days_overdue": { "type": "integer" },
+        "mandate_type": { "type": "string", "enum": ["emandate", "nach", "upi_autopay"] },
+        "failure_reason": { "type": "string" },
+        "customer": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "string" },
+            "email": { "type": "string" },
+            "phone": { "type": "string" },
+            "name": { "type": "string" }
+          }
+        },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "metadata": { "type": "object", "default": {} }
+      }
+    }
+  },
+  "oneOf": [
+    { "$ref": "#/definitions/PaymentFailedEvent" },
+    { "$ref": "#/definitions/CheckoutAbandonedEvent" },
+    { "$ref": "#/definitions/MandateFailedEvent" }
+  ]
+}

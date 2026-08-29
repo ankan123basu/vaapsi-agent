@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RecoveryCase",
+  "description": "Shared schema for a recovery case — the typed state object that flows through the entire LangGraph pipeline and serves as the audit trail.",
+  "type": "object",
+  "required": ["case_id", "event_id", "event_type", "raw_event", "customer_id", "created_at", "updated_at"],
+  "properties": {
+    "case_id": { "type": "string", "description": "Unique case identifier (UUID)" },
+    "event_id": { "type": "string", "description": "Original event ID (from Razorpay or synthetic)" },
+    "event_type": {
+      "type": "string",
+      "enum": ["payment_failed", "checkout_abandoned", "mandate_failed"],
+      "description": "Classification of the incoming event"
+    },
+    "raw_event": { "type": "object", "description": "The full raw event payload" },
+    "customer_id": { "type": "string" },
+    "customer_email": { "type": "string", "default": "" },
+    "customer_phone": { "type": "string", "default": "" },
+    "customer_opted_out": { "type": "boolean", "default": false },
+    "amount_at_risk": { "type": "number", "description": "₹ amount at risk of loss" },
+    "currency": { "type": "string", "default": "INR" },
+    "decline_reason_raw": { "type": "string", "default": "" },
+    "root_cause": { "type": "string", "default": "" },
+    "root_cause_confidence": { "type": "number", "minimum": 0, "maximum": 1, "default": 0 },
+    "diagnosis_method": {
+      "type": "string",
+      "enum": ["rule", "llm_fallback", ""],
+      "default": ""
+    },
+    "diagnosis_reasoning": { "type": "string", "default": "" },
+    "diagnosis_provider": { "type": "string", "default": "", "description": "e.g. 'groq/llama-3.3-70b' or 'gemini/gemini-2.0-flash'" },
+    "diagnosis_latency_ms": { "type": "number", "default": 0 },
+    "recovery_channel": { "type": "string", "default": "" },
+    "recovery_action": { "type": "string", "default": "" },
+    "message_content": { "type": "string", "default": "" },
+    "offer_details": { "type": "object", "default": {} },
+    "scheduled_at": { "type": "string", "format": "date-time", "default": "" },
+    "guardrail_status": {
+      "type": "string",
+      "enum": ["approved", "blocked", "needs_human_approval", ""],
+      "default": ""
+    },
+    "guardrail_violations": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "execution_status": { "type": "string", "default": "" },
+    "execution_result": { "type": "object", "default": {} },
+    "razorpay_payment_link_id": { "type": "string", "default": "" },
+    "recovery_amount": { "type": "number", "default": 0 },
+    "case_status": {
+      "type": "string",
+      "enum": ["detected", "diagnosed", "strategy_set", "guardrail_checked", "executing", "executed", "recovered", "failed", "blocked", "pending_approval"],
+      "default": "detected"
+    },
+    "retry_count": { "type": "integer", "default": 0 },
+    "idempotency_key": { "type": "string" },
+    "audit_trail": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "node_name": { "type": "string" },
+          "input_summary": { "type": "string" },
+          "output_summary": { "type": "string" },
+          "reasoning": { "type": "string" },
+          "provider": { "type": "string" },
+          "latency_ms": { "type": "number" },
+          "timestamp": { "type": "string", "format": "date-time" }
+        }
+      },
+      "default": []
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  }
+}

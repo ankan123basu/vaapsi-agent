@@ -1,0 +1,553 @@
+/* ============================================
+   Recoup — Design Token System
+   "Vault + Molten Metal" Neobrutalist
+   ============================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ============================================
+   COLOR TOKENS
+   ============================================ */
+:root {
+  /* Base palette — "Vault + Molten Metal" */
+  --ink: #0A0A0A;              /* near-black, primary dark surface */
+  --ink-soft: #161412;         /* secondary dark surface, cards-on-dark */
+  --vault: #F5F1E8;            /* warm cream, primary light surface */
+  --vault-soft: #EDE7D8;       /* secondary light surface */
+  --border: #0A0A0A;           /* all borders — always solid, always visible */
+  --border-light: rgba(10, 10, 10, 0.18);
+  --border-width: 2px;         /* desktop */
+  --border-width-lg: 3px;      /* hero-level elements */
+
+  /* Molten accent — used in EXACTLY these places: hero, recovery ticker,
+     primary CTA, active/success states. Nowhere else. */
+  --molten-core: #FF6A1A;
+  --molten-mid: #B24A1D;
+  --molten-deep: #2B140A;
+  --molten-highlight: #FFB066;
+  --molten-glow: rgba(255, 106, 26, 0.18);
+
+  /* Semantic (data states only, never decorative) */
+  --state-success: #1E7A4C;
+  --state-warning: #B8860B;
+  --state-danger: #B3261E;
+  --state-neutral: #6B6558;
+
+  --signal-green: var(--state-success);
+  --signal-green-bg: rgba(30, 122, 76, 0.1);
+  --alert-red: var(--state-danger);
+  --alert-red-bg: rgba(179, 38, 30, 0.1);
+  --signal-amber: var(--state-warning);
+  --signal-amber-bg: rgba(184, 134, 11, 0.1);
+
+  /* Surfaces */
+  --surface-primary: var(--vault);
+  --surface-secondary: var(--vault-soft);
+  --surface-ink: var(--ink);
+  --surface-card: #FFFFFF;
+
+  /* Text */
+  --text-primary: var(--ink);
+  --text-secondary: #4A463F;
+  --text-tertiary: #6B6558;
+  --text-inverse: var(--vault);
+
+  /* Shadows — hard offset only, NEVER blurred */
+  --shadow-brutal: 6px 6px 0px var(--ink);
+  --shadow-brutal-sm: 3px 3px 0px var(--ink);
+  --shadow-brutal-lg: 10px 10px 0px var(--ink);
+  --shadow-brutal-hover: 8px 8px 0px var(--ink);
+
+  /* Radius — brutalist strict */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-none: 0px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Typography */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Transitions */
+  --transition-fast: 120ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 350ms ease;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--vault);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+.text-display-xl {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-display-lg {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.text-display-md {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.text-body-sm {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.text-mono-lg {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.text-label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================
+   NEOBRUTALIST CARD
+   ============================================ */
+.card {
+  background: var(--surface-card);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-brutal);
+  padding: var(--space-lg);
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-brutal-hover);
+  transform: translate(-2px, -2px);
+}
+
+.card--flat {
+  box-shadow: none;
+}
+
+.card--flat:hover {
+  box-shadow: var(--shadow-brutal-sm);
+  transform: translate(-1px, -1px);
+}
+
+.card--ink {
+  background: var(--ink);
+  color: var(--text-inverse);
+  border-color: var(--ink);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1;
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--ink);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.btn--primary:hover {
+  box-shadow: var(--shadow-brutal);
+  transform: translate(-2px, -2px);
+}
+
+.btn--primary:active {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.btn--secondary {
+  background: var(--surface-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.btn--secondary:hover {
+  background: var(--vault-dim);
+  box-shadow: var(--shadow-brutal);
+  transform: translate(-1px, -1px);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-secondary);
+  box-shadow: none;
+}
+
+.btn--ghost:hover {
+  background: var(--vault-dim);
+  border-color: var(--border-light);
+}
+
+.btn--approve {
+  background: var(--signal-green);
+  color: white;
+  border-color: var(--signal-green);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.btn--reject {
+  background: var(--alert-red);
+  color: white;
+  border-color: var(--alert-red);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+/* ============================================
+   STATUS BADGES
+   ============================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge--recovered {
+  color: var(--signal-green);
+  background: var(--signal-green-bg);
+  border-color: var(--signal-green);
+}
+
+.badge--failed {
+  color: var(--alert-red);
+  background: var(--alert-red-bg);
+  border-color: var(--alert-red);
+}
+
+.badge--blocked {
+  color: var(--alert-red);
+  background: var(--alert-red-bg);
+  border-color: var(--alert-red);
+}
+
+.badge--pending {
+  color: var(--signal-amber);
+  background: var(--signal-amber-bg);
+  border-color: var(--signal-amber);
+}
+
+.badge--rule {
+  color: var(--ink);
+  background: rgba(14, 13, 12, 0.05);
+  border-color: var(--border-light);
+}
+
+.badge--llm {
+  color: var(--molten-mid);
+  background: var(--molten-glow);
+  border-color: var(--molten-mid);
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+.layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr;
+}
+
+.layout__header {
+  background: var(--ink);
+  color: var(--text-inverse);
+  border-bottom: var(--border-width-thick) solid var(--border);
+  padding: var(--space-md) var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.layout__main {
+  padding: 0 var(--space-xl) var(--space-xl) var(--space-xl);
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+@media (max-width: 1200px) {
+  .grid-dashboard {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .layout__main {
+    padding: var(--space-md);
+  }
+}
+
+/* ============================================
+   TABLE — Dense data display
+   ============================================ */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+}
+
+.data-table thead {
+  background: var(--vault-dim);
+  border-bottom: var(--border-width) solid var(--border);
+}
+
+.data-table th {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  color: var(--text-secondary);
+}
+
+.data-table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: middle;
+}
+
+.data-table tbody tr {
+  transition: background var(--transition-fast);
+}
+
+.data-table tbody tr:hover {
+  background: var(--vault-dim);
+}
+
+/* ============================================
+   METRIC CARD
+   ============================================ */
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.metric-card__label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+}
+
+.metric-card__value {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.metric-card__value--molten {
+  color: var(--molten-core);
+}
+
+.metric-card__value--green {
+  color: var(--signal-green);
+}
+
+.metric-card__delta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes digitRoll {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease forwards;
+}
+
+.animate-digit-roll {
+  animation: digitRoll 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Staggered animation delays */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.3s; }
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vault-dim);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}

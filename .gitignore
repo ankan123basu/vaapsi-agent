@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+venv/
+.venv/
+env/
+*.whl
+
+# Virtual environments
+apps/agent-service/venv/
+apps/agent-service/.venv/
+
+# IDE & Gemini / AI Agent workspace files
+.vscode/
+.idea/
+.gemini/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment variables — NEVER commit these
+.env
+.env*
+*.env
+apps/agent-service/.env
+apps/web/.env
+
+# Node & Build artifacts
+node_modules/
+apps/web/node_modules/
+apps/web/dist/
+.output/
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+recoup.db
+vaapsi.db
+
+# Docker
+.docker/
+
+# Coverage & Cache
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Generated reports
+evals/reports/*.html
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

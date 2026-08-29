@@ -1,0 +1,139 @@
+.approval-queue {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.approval-queue__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.approval-queue__title-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.approval-queue__pagination {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.approval-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.approval-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+  text-align: left;
+}
+
+.approval-table th {
+  background: var(--ink-light, #1A1A1E);
+  color: var(--text-tertiary);
+  font-weight: 500;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.approval-table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border-light, #2D2D32);
+  vertical-align: middle;
+}
+
+.approval-table tr:last-child td {
+  border-bottom: none;
+}
+
+.approval-table .customer-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.approval-table .amount {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.flags-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.flag-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.6875rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.flag-badge--high_value {
+  background: rgba(255, 184, 0, 0.15);
+  color: #FFB800;
+  border: 1px solid rgba(255, 184, 0, 0.3);
+}
+
+.flag-badge--dnd_window {
+  background: rgba(142, 68, 173, 0.15);
+  color: #AF7AC5;
+  border: 1px solid rgba(142, 68, 173, 0.3);
+}
+
+.flag-badge--max_retries_exceeded {
+  background: rgba(235, 87, 87, 0.15);
+  color: #EB5757;
+  border: 1px solid rgba(235, 87, 87, 0.3);
+}
+
+.action-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-xs);
+}
+
+.btn--approve-sm {
+  background: var(--signal-green);
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.btn--approve-sm:hover {
+  opacity: 0.85;
+}
+
+.btn--reject-sm {
+  background: transparent;
+  color: var(--alert-red);
+  border: 1px solid var(--alert-red);
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn--reject-sm:hover {
+  background: rgba(235, 87, 87, 0.1);
+}

@@ -1,0 +1,90 @@
+.live-feed-card {
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: var(--vault);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-brutal);
+}
+
+.live-feed-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.live-feed-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-feed-pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--signal-green);
+  box-shadow: 0 0 8px var(--signal-green);
+  animation: pulse-glow 1.2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from { opacity: 0.4; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.1); }
+}
+
+.live-feed-progress-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.live-feed-progress-fill {
+  height: 100%;
+  background: var(--molten-core);
+  transition: width 0.15s ease-out;
+}
+
+.live-feed-terminal {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  max-height: 240px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-xs);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius-xs);
+}
+
+.terminal-line {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
+.terminal-line--llm {
+  opacity: 1;
+  background: rgba(139, 92, 246, 0.15);
+  padding: 2px 4px;
+  border-radius: 2px;
+  border-left: 3px solid #8B5CF6;
+}
+
+.term-num { color: #888; }
+.term-case { color: var(--vault); font-weight: 600; }
+.term-reason { color: #FFAA00; }
+.term-arrow { color: #555; }
+.term-method--rule { color: var(--signal-green); font-weight: 600; }
+.term-method--llm { color: #A78BFA; font-weight: 700; }
+.term-cause { color: #38BDF8; }
+.term-lat { color: #666; font-size: 0.7rem; }
