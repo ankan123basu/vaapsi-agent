@@ -5,9 +5,9 @@
   <p><em>Autonomous, Explainable, Compliance-Bounded Revenue Recovery Agent for Indian Merchants</em></p>
 </div>
 
+[![LangGraph](https://img.shields.io/badge/LangGraph-StateGraph-FF6A1A?style=for-the-badge)](https://langchain.com)
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![LangGraph](https://img.shields.io/badge/LangGraph-StateGraph-FF6A1A?style=for-the-badge)](https://langchain.com)
 [![Java 17](https://img.shields.io/badge/Java-17-007396?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org)
 [![React 19](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
