@@ -26,6 +26,9 @@ from app.config import settings
 
 def test_groq_classification():
     """Test 1: Real classification calls through openai/gpt-oss-120b on Groq across 5 decline scenarios."""
+    if not settings.groq_api_key:
+        pytest.skip("GROQ_API_KEY not configured")
+
     print("=" * 60)
     print(f"TEST 1: Groq Multi-Scenario Classification (model: {settings.groq_model_id})")
     print("=" * 60)
@@ -61,6 +64,9 @@ def test_groq_classification():
 
 def test_gemini_fallback():
     """Test 2: Force Groq failure, verify Gemini catches it."""
+    if not settings.gemini_api_key:
+        pytest.skip("GEMINI_API_KEY not configured")
+
     print("=" * 60)
     print("TEST 2: Gemini Fallback (forcing Groq failure with bad model)")
     print("=" * 60)
