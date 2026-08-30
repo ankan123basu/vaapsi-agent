@@ -133,7 +133,7 @@ Vaapsi is powered by production-grade algorithms and software architecture patte
 
 ---
 
-### 💳 Empirical Razorpay Test-Mode Payment API Proof
+### 💳 **Empirical Razorpay Test-Mode Payment API Proof**
 
 Vaapsi executes real Razorpay Test API calls to generate active `rzp.io` payment links:
 
@@ -176,7 +176,7 @@ res = razorpay_client.create_payment_link(
 
 ---
 
-### 🏛️ Empirical Phase 6 Java Cryptographic Audit Ledger Proof
+### 🏛️ **Empirical Java Cryptographic Audit Ledger Proof**
 
 Vaapsi includes an enterprise **Java 17 / Spring Boot 3 standalone microservice (`apps/audit-ledger/` on port 8088)** that maintains an append-only, tamper-evident SHA-256 cryptographic hash-chain ledger for all recovery actions.
 
