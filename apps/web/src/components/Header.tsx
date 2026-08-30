@@ -51,6 +51,15 @@ export default function Header() {
         >
           System Health
         </a>
+        <a
+          href="http://localhost:8088/api/ledger/verify-chain"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-body-sm header__nav-item"
+          title="Cryptographic SHA-256 Audit Ledger Chain Verification Endpoint"
+        >
+          🔗 Java Ledger
+        </a>
       </nav>
     </header>
   );

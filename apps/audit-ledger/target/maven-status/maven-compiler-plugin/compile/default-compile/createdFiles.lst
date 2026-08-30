@@ -1,0 +1,4 @@
+com\vaapsi\ledger\LedgerEntry.class
+com\vaapsi\ledger\AuditLedgerApplication.class
+com\vaapsi\ledger\LedgerController.class
+com\vaapsi\ledger\LedgerService.class

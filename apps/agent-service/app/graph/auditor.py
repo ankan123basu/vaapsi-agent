@@ -3,16 +3,43 @@ Recoup — Auditor Node.
 
 Writes an immutable, timestamped record to the audit store.
 This is the final checkpoint — after this, the case is considered fully processed.
+Dispatches a fail-safe background audit record to Java Cryptographic Audit Ledger (Port 8080).
 """
 
 import json
+import logging
+import threading
 from datetime import datetime, timezone
 from pathlib import Path
-
-import aiosqlite
+import httpx
 
 from app.graph.state import RecoveryCase
 from app.database import DB_PATH
+
+logger = logging.getLogger(__name__)
+
+
+def _dispatch_java_ledger_async(case_id: str, action: str, amount: float, timestamp: str):
+    """
+    Fire-and-forget background dispatcher to Java Audit Ledger Microservice (Port 8080).
+    Enforces a strict 300ms max timeout and silently catches all exceptions.
+    Ensures zero latency impact or blocking on the Python agent pipeline.
+    """
+    def worker():
+        try:
+            payload = {
+                "case_id": case_id,
+                "action": action,
+                "amount": amount,
+                "timestamp": timestamp,
+            }
+            with httpx.Client(timeout=0.3) as client:
+                client.post("http://localhost:8088/api/ledger/record", json=payload)
+        except Exception as e:
+            # Silent fail-safe log: Java service is optional
+            logger.debug(f"Java Audit Ledger dispatch note (offline/skipped): {e}")
+
+    threading.Thread(target=worker, daemon=True).start()
 
 
 def auditor_node(state: RecoveryCase) -> dict:
@@ -26,17 +53,17 @@ def auditor_node(state: RecoveryCase) -> dict:
 
     case_id = state.get("case_id", "")
     case_status = state.get("case_status", "executed")
+    action = state.get("recovery_action", "recorded")
+    amount = state.get("amount_at_risk", 0.0)
 
     # Determine final status based on execution
     execution_status = state.get("execution_status", "")
     if execution_status == "success":
-        # Simulate recovery — in a real system, this would be confirmed by
-        # a payment_link.paid webhook or a payment.captured event
         import random
         recovery_chance = 0.65  # 65% simulated recovery rate
         recovered = random.random() < recovery_chance
         if recovered:
-            recovery_amount = state.get("amount_at_risk", 0)
+            recovery_amount = amount
             final_status = "recovered"
         else:
             recovery_amount = 0
@@ -57,6 +84,14 @@ def auditor_node(state: RecoveryCase) -> dict:
         "latency_ms": round(latency_ms, 2),
         "timestamp": end_time.isoformat(),
     }
+
+    # Dispatch fail-safe fire-and-forget payload to Java Cryptographic Audit Ledger
+    _dispatch_java_ledger_async(
+        case_id=case_id,
+        action=f"{action}:{final_status}",
+        amount=amount,
+        timestamp=end_time.isoformat(),
+    )
 
     return {
         "case_status": final_status,
