@@ -1,5 +1,3 @@
 [
-  {"index":1,"caseId":"case_42d5c743df7d","action":"auto_retry_with_link:failed","amount":924.74,"timestamp":"2026-08-30T00:34:53.116921+00:00","previousHash":"0000000000000000000000000000000000000000000000000000000000000000","currentHash":"f63a2f7061c2efa7de0013de7832269ee93a29474e2f49dde5197996a6bd7b11"},
-  {"index":2,"caseId":"case_e59189e4233b","action":"EXTERNAL_SILENT_EDIT_BY_ADMIN","amount":544.13,"timestamp":"2026-08-30T00:34:53.887120+00:00","previousHash":"f63a2f7061c2efa7de0013de7832269ee93a29474e2f49dde5197996a6bd7b11","currentHash":"979ea5574cbb588d3768843716264f1630fdaa02ef38381a0e7442002f290dde"},
-  {"index":3,"caseId":"case_8869a1ff2269","action":"auto_retry_with_link:recovered","amount":680.31,"timestamp":"2026-08-30T00:34:54.332332+00:00","previousHash":"979ea5574cbb588d3768843716264f1630fdaa02ef38381a0e7442002f290dde","currentHash":"ba1a60203fdc30744697c1ced61ef575cded6dde16e16dc94f8741c71fe149cc"}
+  {"index":1,"caseId":"case_unknown","action":"auto_retry_with_link:recovered","amount":4999.00,"timestamp":"2026-08-31T03:35:00Z","previousHash":"0000000000000000000000000000000000000000000000000000000000000000","currentHash":"ca23ef2a932fdd9a59a5dce66abd9a6d4904014b86cfcdeb38457cec7fe985bf"}
 ]
