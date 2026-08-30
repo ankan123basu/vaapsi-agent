@@ -168,22 +168,24 @@ res = razorpay_client.create_payment_link(
 
 Vaapsi includes an enterprise **Java 17 / Spring Boot 3 standalone microservice (`apps/audit-ledger/` on port 8088)** that maintains an append-only, tamper-evident SHA-256 cryptographic hash-chain ledger for all recovery actions.
 
-* **Fail-Safe Asynchronous Dispatcher (`auditor.py`)**: Fires non-blocking background audit records (`0.3s` timeout) with a silent `try/except` catch-all. If Java is offline, slow, or stopped, the Python agent, React dashboard, and 84ms latency operate with **zero impact, zero delay, and zero errors**.
+* **Fail-Safe Asynchronous Dispatcher (`auditor.py`)**: Fires non-blocking background daemon thread audit records (`0.3s` timeout) with a silent `try/except` catch-all. The Python agent response loop returns immediately with negligible non-blocking latency overhead (<0.1ms). If Java is offline or stopped, the Python agent and dashboard operate cleanly with zero errors.
+* **Disk Persistence (`target/ledger-chain.json`)**: Records are saved directly to disk. Calling `GET /api/ledger/verify-chain` reloads the raw file from disk and recomputes the SHA-256 chain.
 * **Live Cryptographic Integrity Verification (`GET http://localhost:8088/api/ledger/verify-chain`)**:
   ```json
   {
     "status": "TAMPER_PROOF_VERIFIED",
-    "total_records": 8,
+    "total_records": 3,
     "integrity": "100%",
-    "latest_block_hash": "271ce670cde1cc55481f706b984b29d3f9f0ef6c00955b02d3ff65e30cb4311a"
+    "latest_block_hash": "ba1a60203fdc30744697c1ced61ef575cded6dde16e16dc94f8741c71fe149cc",
+    "storage_source": "target/ledger-chain.json"
   }
   ```
-* **Deliberate Tamper Detection Proof (`POST http://localhost:8088/api/ledger/tamper-test?index=3`)**:
+* **True External Disk File Tamper Detection Proof**: Direct manual edit of `target/ledger-chain.json` on disk (modifying block 2 action to `EXTERNAL_SILENT_EDIT_BY_ADMIN`) without touching the app:
   ```json
   {
     "status": "TAMPERED",
-    "broken_at_record": 3,
-    "error": "SHA-256 data hash mismatch at index 3. Record content was modified!"
+    "broken_at_record": 2,
+    "error": "SHA-256 data hash mismatch at index 2. Record content on disk was modified!"
   }
   ```
 
