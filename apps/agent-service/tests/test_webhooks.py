@@ -62,8 +62,12 @@ def test_payload_conversion():
 @pytest.mark.asyncio
 async def test_idempotency_recording():
     """Test recording and checking idempotency keys."""
-    key = "test_key_unique_12345"
-    event_id = "evt_test_12345"
+    import uuid
+    from app.database import init_db
+    await init_db()
+
+    key = f"test_key_unique_{uuid.uuid4().hex[:8]}"
+    event_id = f"evt_test_{uuid.uuid4().hex[:8]}"
 
     is_dup, _ = await is_event_processed(key)
     assert is_dup is False

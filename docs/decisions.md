@@ -13,6 +13,7 @@
 - [ADR-004: gTTS Server-Side Speech Synthesis vs. Web Speech API](#adr-004-gtts-server-side-speech-synthesis-vs-web-speech-api)
 - [ADR-005: SQLite Event Fingerprinting vs. External Redis Store](#adr-005-sqlite-event-fingerprinting-vs-external-redis-store)
 - [ADR-006: Viewport-Scoped Custom Cursor for Financial Surfaces](#adr-006-viewport-scoped-custom-cursor-for-financial-surfaces)
+- [ADR-007: Empirical Engineering Incident — Root Directory `.env` Resolution Fix](#adr-007-empirical-engineering-incident--root-directory-env-resolution-fix)
 
 ---
 
@@ -110,3 +111,26 @@ Scope `TargetCursor.tsx` strictly to the landing hero section using an `Intersec
 ### Tradeoffs
 * **(+) Positives:** Preserves high-tech visual impact for first impressions while maintaining clean, calm precision on financial surfaces (case tables, approval queue).
 * **(-) Negatives:** Requires tracking hero section viewport intersection state.
+
+---
+
+## ADR-007: Empirical Engineering Incident — Root Directory `.env` Resolution Fix
+
+### Context ("What Broke")
+During initial local deployment of the FastAPI agent service (`apps/agent-service`), Pydantic's `BaseSettings` (`app/config.py`) failed to load `.env` environment variables when uvicorn was started from the subdirectory `apps/agent-service` instead of the repo root directory `e:\RECOUP`. This caused LLM API keys (`GROQ_API_KEY`, `GEMINI_API_KEY`) to silently resolve to empty strings. Rather than crashing with an explicit file missing error, the LLM classifier silently fell back to simulated responses, masking real API execution during live dashboard runs.
+
+### Root Cause Analysis
+Pydantic's default `env_file = ".env"` uses relative path resolution based on process Current Working Directory (CWD). When running `cd apps/agent-service && uvicorn app.main:app`, CWD became `e:\RECOUP\apps\agent-service`, where no `.env` file existed.
+
+### Resolution ("How We Fixed It")
+Updated `app/config.py` to enforce **deterministic relative-to-file root path resolution**:
+
+```python
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+env_file = ROOT_DIR / ".env"
+```
+
+Additionally added an explicit startup logger in `app.main:app` that verifies `GROQ_API_KEY` presence and prints an explicit warning banner if live keys are unconfigured.
+
+### Tradeoffs & Learnings
+* **(+) Positives:** 100% deterministic environment variable loading regardless of shell CWD, zero silent fallback masking, empirical verification across all startup scripts.

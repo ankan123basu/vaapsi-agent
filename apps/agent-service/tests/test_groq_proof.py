@@ -16,13 +16,15 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # Force UTF-8 output
 sys.stdout.reconfigure(encoding="utf-8")
 
+import pytest
+
 from dotenv import load_dotenv
 load_dotenv()
 
 from app.config import settings
 
 
-async def test_groq_classification():
+def test_groq_classification():
     """Test 1: Real classification calls through openai/gpt-oss-120b on Groq across 5 decline scenarios."""
     print("=" * 60)
     print(f"TEST 1: Groq Multi-Scenario Classification (model: {settings.groq_model_id})")
@@ -40,7 +42,7 @@ async def test_groq_classification():
 
     all_passed = True
     for idx, (reason, evt_type, method, bank) in enumerate(scenarios, 1):
-        res = await classify_with_llm(
+        res = classify_with_llm(
             decline_reason=reason,
             event_type=evt_type,
             method=method,
@@ -54,10 +56,10 @@ async def test_groq_classification():
         print(f"    -> Root Cause: {res.root_cause} (conf: {res.confidence}) | Provider: {res.provider} | Latency: {res.latency_ms}ms | Pass: {passed}")
 
     print()
-    return all_passed
+    assert all_passed
 
 
-async def test_gemini_fallback():
+def test_gemini_fallback():
     """Test 2: Force Groq failure, verify Gemini catches it."""
     print("=" * 60)
     print("TEST 2: Gemini Fallback (forcing Groq failure with bad model)")
@@ -69,7 +71,7 @@ async def test_gemini_fallback():
 
     from app.classifiers.llm_classifier import classify_with_llm
 
-    result = await classify_with_llm(
+    result = classify_with_llm(
         decline_reason="Payment declined due to insufficient funds in the account",
         event_type="payment_failed",
         method="upi",
