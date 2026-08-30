@@ -54,6 +54,9 @@ def _serialize_case(case: dict) -> dict:
         "execution_status": case.get("execution_status", ""),
         "execution_result": case.get("execution_result", {}),
         "recovery_amount": case.get("recovery_amount", 0),
+        "self_resolution_probability": case.get("self_resolution_probability", 0.0),
+        "contact_suppressed": case.get("contact_suppressed", False),
+        "suppression_reasoning": case.get("suppression_reasoning", ""),
         "case_status": case.get("case_status", ""),
         "retry_count": case.get("retry_count", 0),
         "audit_trail": case.get("audit_trail", []),
@@ -81,6 +84,8 @@ def _compute_metrics() -> dict:
             "llm_fallback_count": 0,
             "rule_hit_ratio": 0,
             "avg_latency_ms": 0,
+            "suppressed_cases": 0,
+            "suppression_rate": 0,
             "root_cause_distribution": {},
             "channel_distribution": {},
             "status_distribution": {},
@@ -135,6 +140,10 @@ def _compute_metrics() -> dict:
                 if v.startswith("OPTED_OUT") or v.startswith("MAX_RETRIES"):
                     violations += 1
 
+    # Count suppressed cases
+    suppressed_cases = sum(1 for c in cases if c.get("contact_suppressed", False))
+    suppression_rate = (suppressed_cases / total * 100) if total > 0 else 0
+
     return {
         "total_at_risk": round(total_at_risk, 2),
         "total_recovered": round(total_recovered, 2),
@@ -149,6 +158,8 @@ def _compute_metrics() -> dict:
         "llm_fallback_count": llm_hits,
         "rule_hit_ratio": round(rule_ratio, 2),
         "avg_latency_ms": round(avg_latency, 2),
+        "suppressed_cases": suppressed_cases,
+        "suppression_rate": round(suppression_rate, 2),
         "root_cause_distribution": root_cause_counts,
         "channel_distribution": channel_counts,
         "status_distribution": status_counts,

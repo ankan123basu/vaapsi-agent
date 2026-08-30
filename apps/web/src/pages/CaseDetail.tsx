@@ -33,6 +33,7 @@ const STATUS_BADGE: Record<string, string> = {
   failed: 'badge--failed',
   blocked: 'badge--blocked',
   pending_approval: 'badge--pending',
+  suppressed: 'badge--suppressed',
 };
 
 const formatINR = (n: number) =>
@@ -95,7 +96,9 @@ export default function CaseDetail() {
             <div className="metric-card">
               <span className="metric-card__label" style={{ color: 'var(--text-tertiary)' }}>Status</span>
               <span className={`badge ${STATUS_BADGE[caseData.case_status] || 'badge--rule'}`}>
-                {caseData.case_status.replace(/_/g, ' ')}
+                {caseData.case_status === 'suppressed'
+                  ? 'SUPPRESSED — Self-Resolving'
+                  : caseData.case_status.replace(/_/g, ' ')}
               </span>
             </div>
             <div className="metric-card">
@@ -146,6 +149,26 @@ export default function CaseDetail() {
                   {caseData.guardrail_violations.map((v, i) => (
                     <p key={`intervention-${i}`} className="text-body-sm" style={{ color: 'var(--text-primary)', marginTop: '4px' }}>✓ {v}</p>
                   ))}
+                </div>
+              )}
+
+              {/* Nuisance-Suppression Score Display */}
+              {caseData.self_resolution_probability > 0 && (
+                <div style={{ marginTop: 'var(--space-md)', padding: 'var(--space-md)', background: caseData.contact_suppressed ? 'rgba(245, 158, 11, 0.08)' : 'var(--vault-dim)', border: caseData.contact_suppressed ? '1px solid #D97706' : '1px solid var(--border-light)', borderRadius: 'var(--radius-sm)' }}>
+                  <span className="text-label" style={{ color: caseData.contact_suppressed ? '#D97706' : 'var(--text-tertiary)', display: 'block', marginBottom: '4px' }}>
+                    {caseData.contact_suppressed ? '🛡️ Nuisance Suppression — Contact Withheld' : '🔍 Self-Resolution Score'}
+                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                    <span className="text-mono" style={{ fontSize: '1.5rem', fontWeight: 700, color: caseData.contact_suppressed ? '#D97706' : 'var(--text-primary)' }}>
+                      {(caseData.self_resolution_probability * 100).toFixed(0)}%
+                    </span>
+                    <span className={`badge ${caseData.contact_suppressed ? 'badge--suppressed' : 'badge--rule'}`}>
+                      {caseData.contact_suppressed ? 'SUPPRESSED' : 'ACTIVE RECOVERY'}
+                    </span>
+                  </div>
+                  <p className="text-body-sm" style={{ color: 'var(--text-primary)' }}>
+                    {caseData.suppression_reasoning}
+                  </p>
                 </div>
               )}
 

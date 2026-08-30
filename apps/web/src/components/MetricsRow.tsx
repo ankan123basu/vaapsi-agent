@@ -43,6 +43,12 @@ export default function MetricsRow({ metrics }: Props) {
       variant: metrics.compliance_violations === 0 ? 'green' : 'red',
       sublabel: metrics.compliance_violations === 0 ? 'No violations' : 'Violations found',
     },
+    {
+      label: 'Suppressed',
+      value: `${metrics.suppressed_cases || 0}`,
+      variant: 'amber',
+      sublabel: `${(metrics.suppression_rate || 0).toFixed(1)}% nuisance avoided`,
+    },
   ];
 
   return (

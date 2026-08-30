@@ -219,7 +219,7 @@ export default function Dashboard() {
 
             <div style={{ marginTop: 'var(--space-md)' }}>
               <span className="hero__cta-helper" style={{ fontSize: '0.8125rem', color: 'rgba(245, 241, 232, 0.65)', fontFamily: 'var(--font-mono)' }}>
-                ⚡ Run this first to execute the 7-node LangGraph agent live
+                ⚡ Run this first to execute the 8-node LangGraph agent live
               </span>
             </div>
           </div>

@@ -1,7 +1,8 @@
 """
 Recoup — Evaluation Harness.
 
-Runs evaluation against held-out dataset and generates comparative report.
+Runs evaluation against held-out dataset and generates comparative report
+with confusion matrix, confidence calibration, and suppression metrics.
 
 Usage:
     python evals/harness.py --smoke-test
@@ -26,6 +27,7 @@ from data.generator.decline_codes import DECLINE_CODE_MAP
 from evals.metrics.calculator import (
     calculate_latency_percentiles,
     calculate_classification_metrics,
+    calculate_calibration_metrics,
     compare_baselines,
 )
 from evals.reports.report_generator import generate_markdown_report
@@ -78,10 +80,14 @@ def run_eval_harness(smoke_test: bool = False) -> dict:
     # 2. Run Recoup Agent Pipeline
     recoup_recovered = 0.0
     latencies = []
-    predictions = []
+    all_predictions = []
+    payment_predictions = []
+    checkout_predictions = []
+    calibration_data = []  # For LLM-fallback confidence calibration
     rule_hits = 0
     llm_hits = 0
     compliance_violations = 0
+    suppressed_count = 0
 
     print(f"[*] Running Recoup Agent Pipeline over {len(events)} test events...")
 
@@ -101,12 +107,35 @@ def run_eval_harness(smoke_test: bool = False) -> dict:
         else:
             llm_hits += 1
 
+        # Suppression tracking
+        if res.get("contact_suppressed", False):
+            suppressed_count += 1
+
         # Classification ground truth (expected root cause)
-        decline_code = event.get("decline_code", "").upper()
-        mapping = DECLINE_CODE_MAP.get(decline_code)
-        expected = mapping.root_cause.value if mapping else "unknown"
+        evt_type = event.get("event_type", "payment_failed")
+        expected = event.get("ground_truth_root_cause")
+        if not expected:
+            decline_code = event.get("decline_code", "").upper()
+            mapping = DECLINE_CODE_MAP.get(decline_code)
+            expected = mapping.root_cause.value if mapping else "unknown"
+
         predicted = res.get("root_cause", "unknown")
-        predictions.append({"expected": expected, "predicted": predicted})
+        pred_entry = {"expected": expected, "predicted": predicted}
+
+        all_predictions.append(pred_entry)
+        if evt_type == "checkout_abandoned":
+            checkout_predictions.append(pred_entry)
+        else:
+            payment_predictions.append(pred_entry)
+
+        # Confidence calibration — collect for LLM-fallback cases
+        confidence = res.get("root_cause_confidence", 0.0)
+        if method == "llm_fallback":
+            is_correct = (expected == predicted)
+            calibration_data.append({
+                "confidence": confidence,
+                "correct": is_correct,
+            })
 
         # Compliance
         if res.get("guardrail_status") == "approved":
@@ -116,9 +145,13 @@ def run_eval_harness(smoke_test: bool = False) -> dict:
 
     # 3. Calculate Metrics
     latency_stats = calculate_latency_percentiles(latencies)
-    classification_stats = calculate_classification_metrics(predictions)
+    payment_classification = calculate_classification_metrics(payment_predictions)
+    checkout_classification = calculate_classification_metrics(checkout_predictions)
+    overall_classification = calculate_classification_metrics(all_predictions)
+    calibration_stats = calculate_calibration_metrics(calibration_data)
     baseline_stats = compare_baselines(total_at_risk, recoup_recovered, naive_recovered)
     rule_ratio = (rule_hits / len(events) * 100) if events else 0.0
+    suppression_rate = (suppressed_count / len(events) * 100) if events else 0.0
 
     eval_summary = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -128,8 +161,13 @@ def run_eval_harness(smoke_test: bool = False) -> dict:
         "rule_hit_ratio": rule_ratio,
         "compliance_violations": compliance_violations,
         "latencies": latency_stats,
-        "classification": classification_stats,
+        "classification": payment_classification,
+        "checkout_classification": checkout_classification,
+        "overall_classification": overall_classification,
+        "calibration": calibration_stats,
         "baseline_comparison": baseline_stats,
+        "suppressed_count": suppressed_count,
+        "suppression_rate": suppression_rate,
     }
 
     return eval_summary

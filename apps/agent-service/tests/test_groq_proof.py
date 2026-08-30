@@ -92,7 +92,7 @@ def test_gemini_fallback():
 
     is_gemini = "gemini" in result.provider.lower()
     print(f"  [{'PASS' if is_gemini else 'FAIL'}] Fallback to Gemini: {is_gemini}")
-    return is_gemini
+    assert is_gemini
 
 
 async def main():

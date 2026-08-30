@@ -12,6 +12,7 @@ const STATUS_BADGE: Record<string, string> = {
   failed: 'badge--failed',
   blocked: 'badge--blocked',
   pending_approval: 'badge--pending',
+  suppressed: 'badge--suppressed',
 };
 
 const formatINR = (n: number) =>
@@ -65,7 +66,7 @@ export default function CaseTable({ cases, onCaseClick }: Props) {
       <div className="case-table-judge-tip" id="judge-tip-cases">
         <span className="case-table-judge-tip__icon">💡</span>
         <span className="text-body-sm">
-          <strong>JUDGE TIP:</strong> Click any case row below to inspect its 7-node LangGraph decision trace, Groq LLM model reasoning, compliance interventions, and live multi-language voice call synthesis (gTTS).
+          <strong>JUDGE TIP:</strong> Click any case row below to inspect its 8-node LangGraph decision trace, Groq LLM model reasoning, compliance interventions, and live multi-language voice call synthesis (gTTS).
         </span>
       </div>
 
@@ -120,7 +121,9 @@ export default function CaseTable({ cases, onCaseClick }: Props) {
                 <td>{c.recovery_channel || '—'}</td>
                 <td>
                   <span className={`badge ${STATUS_BADGE[c.case_status] || 'badge--rule'}`}>
-                    {c.case_status.replace(/_/g, ' ')}
+                    {c.case_status === 'suppressed'
+                      ? 'SUPPRESSED — Self-Resolving'
+                      : c.case_status.replace(/_/g, ' ')}
                   </span>
                 </td>
                 <td className="text-mono" style={{ textAlign: 'right', color: c.recovery_amount > 0 ? 'var(--signal-green)' : 'var(--text-tertiary)' }}>

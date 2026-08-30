@@ -8,6 +8,7 @@ Proves:
 4. Duplicate webhook delivery (same event_id) is SAFELY NO-OP'd (status: ignored, reason: duplicate_webhook).
 """
 
+import uuid
 import sys
 import os
 import json
@@ -69,7 +70,7 @@ async def run_webhook_proof():
             }
         },
         "created_at": 1740000000,
-        "event_id": "evt_proof_unique_999"
+        "event_id": f"evt_proof_{uuid.uuid4().hex[:8]}"
     }
 
     raw_body = json.dumps(payload, separators=(',', ':')).encode("utf-8")

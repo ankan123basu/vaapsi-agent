@@ -1,9 +1,9 @@
 """
-Recoup Agent Service — FastAPI Application Entry Point.
+Vaapsi (वापसी) Agent Service — FastAPI Application Entry Point.
 
 Exposes:
 - /api/* — Dashboard-consumed REST endpoints
-- /webhooks/razorpay — Razorpay webhook ingestion endpoint
+- /webhooks/razorpay — Razorpay webhook ingestion endpoint with HMAC-SHA256 & idempotency
 - /health — Health check
 """
 
@@ -26,9 +26,9 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="Recoup Agent Service",
-    description="Autonomous Revenue Recovery Agent — detects, diagnoses, and recovers failed payments.",
-    version="0.1.0",
+    title="Vaapsi (वापसी) Agent Service",
+    description="Autonomous Revenue Recovery Agent — 8-Node LangGraph StateGraph DAG Engine with Nuisance Suppression, Razorpay APIs & Hinglish Voice Synthesis.",
+    version="1.0.0",
     lifespan=lifespan,
 )
 

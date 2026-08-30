@@ -31,6 +31,9 @@ export interface RecoveryCase {
   execution_status: string;
   execution_result: Record<string, unknown>;
   recovery_amount: number;
+  self_resolution_probability: number;
+  contact_suppressed: boolean;
+  suppression_reasoning: string;
   case_status: string;
   retry_count: number;
   audit_trail: AuditEntry[];
@@ -62,6 +65,8 @@ export interface Metrics {
   llm_fallback_count: number;
   rule_hit_ratio: number;
   avg_latency_ms: number;
+  suppressed_cases: number;
+  suppression_rate: number;
   root_cause_distribution: Record<string, number>;
   channel_distribution: Record<string, number>;
   status_distribution: Record<string, number>;

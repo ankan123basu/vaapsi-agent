@@ -40,9 +40,10 @@ Payment method: {method}
 Bank: {bank}
 
 Guidance for generic decline strings:
-- "UNKNOWN_ERROR" or "SYSTEM_ERROR" for bank/netbanking -> classify as "issuer_unavailable" or "network_error" (confidence 0.65-0.75)
-- "DO_NOT_HONOR" -> classify as "risk_declined" or "customer_action_needed" (confidence 0.65-0.75)
-- NEVER return "unknown" — always choose the most plausible category from above based on the event type and payment method.
+- "UNKNOWN_ERROR" or "SYSTEM_ERROR" -> classify as "issuer_unavailable" (confidence 0.70)
+- "DO_NOT_HONOR" -> classify as "risk_declined" (confidence 0.70)
+- "GENERAL_DECLINE" or "PROCESSING_ERROR" -> classify as "issuer_unavailable" (confidence 0.70)
+- NEVER return "unknown" — always choose the single most plausible category from above.
 
 Respond ONLY with a JSON object:
 {{
@@ -112,7 +113,7 @@ def _call_groq(prompt: str) -> LLMClassifierResult:
         response = client.chat.completions.create(
             model=settings.groq_model_id,
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.1,
+            temperature=0.0,
             max_tokens=512,
         )
         latency_ms = (time.monotonic() - start) * 1000
@@ -162,7 +163,7 @@ def _call_gemini(prompt: str) -> LLMClassifierResult:
         llm = ChatGoogleGenerativeAI(
             model=settings.gemini_model_id,
             google_api_key=settings.gemini_api_key,
-            temperature=0.1,
+            temperature=0.0,
             max_output_tokens=1024,
         )
         response = llm.invoke(prompt)

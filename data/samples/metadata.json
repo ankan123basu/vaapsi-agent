@@ -1,6 +1,6 @@
 {
-  "batch_id": "batch_e983997a",
-  "generated_at": "2026-08-28T09:16:45.630526+00:00",
+  "batch_id": "batch_f0048e8f",
+  "generated_at": "2026-08-30T20:03:04.283286+00:00",
   "seed": 42,
   "total_events_raw": 300,
   "total_events_with_noise": 315,
@@ -9,23 +9,23 @@
   "duplicates_injected": 15,
   "distribution": {
     "all": {
-      "payment_failed": 156,
+      "payment_failed": 157,
       "checkout_abandoned": 96,
-      "mandate_failed": 63
+      "mandate_failed": 62
     },
     "tuning": {
-      "payment_failed": 109,
-      "checkout_abandoned": 59,
-      "mandate_failed": 43
+      "payment_failed": 112,
+      "checkout_abandoned": 60,
+      "mandate_failed": 39
     },
     "held_out": {
-      "payment_failed": 47,
-      "checkout_abandoned": 37,
-      "mandate_failed": 20
+      "payment_failed": 45,
+      "checkout_abandoned": 36,
+      "mandate_failed": 23
     }
   },
   "amount_stats": {
-    "total_at_risk": 2202044.57,
-    "avg_amount": 6990.62
+    "total_at_risk": 2325141.37,
+    "avg_amount": 7381.4
   }
 }

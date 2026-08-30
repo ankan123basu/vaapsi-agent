@@ -130,8 +130,18 @@ def strategist_node(state: RecoveryCase) -> dict:
     )
 
     # Calculate scheduled time
+    # Use event's own timestamp for reproducible batch evaluation;
+    # fall back to wall-clock for live webhook processing.
     delay = timedelta(hours=policy["delay_hours"])
-    scheduled_at = (start_time + delay).isoformat()
+    event_base_time_str = state.get("detected_at", "")
+    if event_base_time_str:
+        try:
+            event_base_time = datetime.fromisoformat(event_base_time_str)
+        except (ValueError, TypeError):
+            event_base_time = start_time
+    else:
+        event_base_time = start_time
+    scheduled_at = (event_base_time + delay).isoformat()
 
     # Check if this root cause might warrant an offer/discount
     offer_details = {}

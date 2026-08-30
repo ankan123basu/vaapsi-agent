@@ -14,6 +14,7 @@ class CaseStatus(str, Enum):
     """Forward-only state machine for recovery cases."""
     DETECTED = "detected"
     DIAGNOSED = "diagnosed"
+    SUPPRESSED = "suppressed"  # Nuisance-suppression: likely self-resolving
     STRATEGY_SET = "strategy_set"
     GUARDRAIL_CHECKED = "guardrail_checked"
     EXECUTING = "executing"
@@ -27,7 +28,8 @@ class CaseStatus(str, Enum):
 # Valid state transitions — forward only, never backward
 VALID_TRANSITIONS: dict[str, set[str]] = {
     "detected": {"diagnosed"},
-    "diagnosed": {"strategy_set"},
+    "diagnosed": {"strategy_set", "suppressed"},
+    "suppressed": set(),    # terminal state — monitored, no contact
     "strategy_set": {"guardrail_checked"},
     "guardrail_checked": {"executing", "blocked", "pending_approval"},
     "pending_approval": {"executing", "blocked"},
@@ -109,6 +111,11 @@ class RecoveryCase(TypedDict, total=False):
 
     # --- Reporter output ---
     recovery_amount: float
+
+    # --- Nuisance-Suppression Scorer output ---
+    self_resolution_probability: float
+    contact_suppressed: bool
+    suppression_reasoning: str
 
     # --- Case lifecycle ---
     case_status: str

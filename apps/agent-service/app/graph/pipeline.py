@@ -1,13 +1,15 @@
 """
-Recoup — LangGraph Pipeline Assembly.
+Vaapsi (वापसी) — 8-Node LangGraph Pipeline Assembly.
 
-Connects all 7 nodes into a StateGraph with conditional routing.
+Connects all 8 nodes into a stateful DAG pipeline with conditional routing.
 
 Flow:
-    Detector → Diagnoser → Strategist → Gate → (branch)
-        → approved: Executor → Auditor → Reporter
-        → blocked: Reporter (skip execution)
-        → needs_human_approval: Reporter (park in queue)
+    Detector → Diagnoser → Suppression Scorer → (branch)
+        → suppressed (> 55% self-resolution prob): Reporter (monitor only, no contact)
+        → active recovery: Strategist → Gate → (branch)
+            → approved: Executor → Auditor → Reporter
+            → blocked: Auditor → Reporter (skip execution)
+            → needs_human_approval: Auditor → Reporter (park in queue)
 """
 
 import uuid
@@ -18,6 +20,7 @@ from langgraph.graph import StateGraph, END
 from app.graph.state import RecoveryCase
 from app.graph.detector import detector_node
 from app.graph.diagnoser import diagnoser_node
+from app.graph.suppression import suppression_node
 from app.graph.strategist import strategist_node
 from app.graph.gate import gate_node
 from app.graph.executor import executor_node
@@ -41,6 +44,17 @@ def _route_after_gate(state: RecoveryCase) -> str:
         return "reporter"
 
 
+def _route_after_suppression(state: RecoveryCase) -> str:
+    """
+    Conditional routing after the Suppression Scorer.
+    - suppressed → reporter (monitor only, no contact)
+    - not suppressed → strategist (proceed with active recovery)
+    """
+    if state.get("contact_suppressed", False):
+        return "reporter"
+    return "strategist"
+
+
 def build_recovery_graph() -> StateGraph:
     """
     Build the full LangGraph recovery pipeline.
@@ -52,6 +66,7 @@ def build_recovery_graph() -> StateGraph:
     # Add all nodes
     graph.add_node("detector", detector_node)
     graph.add_node("diagnoser", diagnoser_node)
+    graph.add_node("suppression", suppression_node)
     graph.add_node("strategist", strategist_node)
     graph.add_node("gate", gate_node)
     graph.add_node("executor", executor_node)
@@ -61,9 +76,23 @@ def build_recovery_graph() -> StateGraph:
     # Set entry point
     graph.set_entry_point("detector")
 
-    # Linear flow: Detector → Diagnoser → Strategist → Gate
+    # Linear flow: Detector → Diagnoser → Suppression
     graph.add_edge("detector", "diagnoser")
-    graph.add_edge("diagnoser", "strategist")
+    graph.add_edge("diagnoser", "suppression")
+
+    # Conditional routing after Suppression:
+    # suppressed → reporter (monitor, no contact)
+    # not suppressed → strategist (active recovery)
+    graph.add_conditional_edges(
+        "suppression",
+        _route_after_suppression,
+        {
+            "reporter": "reporter",
+            "strategist": "strategist",
+        },
+    )
+
+    # Strategist → Gate
     graph.add_edge("strategist", "gate")
 
     # Conditional routing after Gate
@@ -130,6 +159,9 @@ def process_event(raw_event: dict) -> RecoveryCase:
         "execution_result": {},
         "razorpay_payment_link_id": "",
         "recovery_amount": 0.0,
+        "self_resolution_probability": 0.0,
+        "contact_suppressed": False,
+        "suppression_reasoning": "",
         "case_status": "detected",
         "retry_count": 0,
         "idempotency_key": raw_event.get("event_id", ""),

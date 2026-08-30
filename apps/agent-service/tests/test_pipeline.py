@@ -53,7 +53,6 @@ def test_single_payment_failed():
     print(f"  [OK] Payment failed: root_cause={result['root_cause']}, "
           f"method={result['diagnosis_method']}, status={result['case_status']}, "
           f"recovery=INR {result.get('recovery_amount', 0):,.2f}")
-    return result
 
 
 def test_checkout_abandoned():
@@ -84,7 +83,6 @@ def test_checkout_abandoned():
 
     print(f"  [OK] Checkout abandoned: root_cause={result['root_cause']}, "
           f"channel={result['recovery_channel']}, status={result['case_status']}")
-    return result
 
 
 def test_ambiguous_decline():
@@ -116,7 +114,6 @@ def test_ambiguous_decline():
     print(f"  [OK] Ambiguous decline: root_cause={result['root_cause']}, "
           f"method={result['diagnosis_method']}, provider={result['diagnosis_provider']}, "
           f"confidence={result['root_cause_confidence']:.2f}")
-    return result
 
 
 def test_opted_out_customer():
@@ -192,7 +189,6 @@ def test_opted_out_customer():
 
     print(f"  [OK] Opted-out customer: guardrail={result['guardrail_status']}, "
           f"violations={result['guardrail_violations']}")
-    return result
 
 
 def test_batch_from_synthetic_data():
@@ -201,7 +197,7 @@ def test_batch_from_synthetic_data():
 
     if not samples_path.exists():
         print("  [SKIP] Synthetic data not found, run generate.py first")
-        return None
+        return
 
     with open(samples_path, "r", encoding="utf-8") as f:
         all_events = json.load(f)
@@ -232,8 +228,6 @@ def test_batch_from_synthetic_data():
     print(f"       Statuses: {statuses}")
     print(f"       Rule hits: {methods['rule']}/{len(results)} ({rule_ratio:.0f}%)")
     print(f"       Recovery: INR {total_recovered:,.2f} / {total_at_risk:,.2f} ({recovery_rate:.1f}%)")
-
-    return results
 
 
 if __name__ == "__main__":

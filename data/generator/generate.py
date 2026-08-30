@@ -120,16 +120,44 @@ def generate_timestamp(rng: random.Random, base_time: datetime) -> str:
     return (base_time + offset).isoformat()
 
 
+AMBIGUOUS_GROUND_TRUTH = {
+    "DO_NOT_HONOR": "risk_declined",
+    "GENERAL_DECLINE": "issuer_unavailable",
+    "DECLINE": "issuer_unavailable",
+    "PROCESSING_ERROR": "network_error",
+    "SYSTEM_ERROR": "issuer_unavailable",
+    "UNKNOWN_ERROR": "issuer_unavailable",
+    "CONTACT_BANK": "customer_action_needed",
+    "REFER_TO_ISSUER": "customer_action_needed",
+    "TRY_AGAIN": "network_error",
+    "NOT_PERMITTED": "risk_declined",
+    "SERVICE_NOT_ALLOWED": "limit_exceeded",
+}
+
+MANDATE_GROUND_TRUTH = {
+    "INSUFFICIENT_FUNDS": "insufficient_funds",
+    "BANK_DOWN": "issuer_unavailable",
+    "MANDATE_NOT_APPROVED": "mandate_issue",
+    "DEBIT_FAILED": "mandate_issue",
+    "MANDATE_REVOKED": "mandate_issue",
+    "NETWORK_ERROR": "network_error",
+    "DO_NOT_HONOR": "risk_declined",
+    "GENERAL_DECLINE": "issuer_unavailable",
+}
+
+
 def generate_payment_failed_event(rng: random.Random, base_time: datetime) -> dict:
     """Generate a failed payment event."""
     # Decide if this is a known decline code or an ambiguous one
     if rng.random() < 0.10:  # 10% ambiguous — goes to LLM fallback
         decline_code = rng.choice(AMBIGUOUS_DECLINE_REASONS)
         decline_reason = f"Transaction declined: {decline_code}"
+        ground_truth = AMBIGUOUS_GROUND_TRUTH.get(decline_code, "issuer_unavailable")
     else:  # 90% known codes — rules engine handles
         decline_code = rng.choice(list(DECLINE_CODE_MAP.keys()))
         mapping = DECLINE_CODE_MAP[decline_code]
         decline_reason = mapping.description
+        ground_truth = mapping.root_cause.value
 
     # Realistic payment amounts
     amount_tiers = [
@@ -159,6 +187,7 @@ def generate_payment_failed_event(rng: random.Random, base_time: datetime) -> di
         "currency": "INR",
         "decline_reason": decline_reason,
         "decline_code": decline_code,
+        "ground_truth_root_cause": ground_truth,
         "method": method,
         "bank": rng.choice(INDIAN_BANKS),
         "customer": generate_customer(rng),
@@ -205,21 +234,40 @@ def generate_checkout_abandoned_event(rng: random.Random, base_time: datetime) -
             time_range = range_
             break
 
+    # Generate main fields using primary RNG stream first
+    time_to_abandon = rng.randint(*time_range)
+    device_type = rng.choice(["mobile", "mobile", "mobile", "desktop", "tablet"])
+    channel = rng.choice(["web", "web", "app", "social"])
+    items_count = rng.randint(1, 8)
+    customer = generate_customer(rng)
+    timestamp = generate_timestamp(rng, base_time)
+    category = rng.choice(PRODUCT_CATEGORIES)
+    page_views = rng.randint(1, 20)
+    event_id = generate_event_id()
+    order_id = generate_order_id()
+
+    # Synthetic ground-truth reason assigned via isolated RNG stream
+    # to preserve 100% main RNG stream invariance
+    gt_rng = random.Random(f"gt_{event_id}")
+    abandon_reasons = ["checkout_friction", "price_sensitivity", "comparison_shopping"]
+    ground_truth = gt_rng.choices(abandon_reasons, weights=[50, 30, 20])[0]
+
     return {
-        "event_id": generate_event_id(),
+        "event_id": event_id,
         "event_type": "checkout_abandoned",
-        "order_id": generate_order_id(),
+        "order_id": order_id,
         "cart_value": cart_value,
         "currency": "INR",
-        "time_to_abandon_seconds": rng.randint(*time_range),
-        "device_type": rng.choice(["mobile", "mobile", "mobile", "desktop", "tablet"]),
-        "channel": rng.choice(["web", "web", "app", "social"]),
-        "items_count": rng.randint(1, 8),
-        "customer": generate_customer(rng),
-        "timestamp": generate_timestamp(rng, base_time),
+        "ground_truth_root_cause": ground_truth,
+        "time_to_abandon_seconds": time_to_abandon,
+        "device_type": device_type,
+        "channel": channel,
+        "items_count": items_count,
+        "customer": customer,
+        "timestamp": timestamp,
         "metadata": {
-            "category": rng.choice(PRODUCT_CATEGORIES),
-            "page_views": rng.randint(1, 20),
+            "category": category,
+            "page_views": page_views,
         },
     }
 
@@ -236,6 +284,9 @@ def generate_mandate_failed_event(rng: random.Random, base_time: datetime) -> di
         "DO_NOT_HONOR", "GENERAL_DECLINE",
     ]
 
+    failure_reason = rng.choice(failure_reasons)
+    ground_truth = MANDATE_GROUND_TRUTH.get(failure_reason, "mandate_issue")
+
     return {
         "event_id": generate_event_id(),
         "event_type": "mandate_failed",
@@ -246,7 +297,8 @@ def generate_mandate_failed_event(rng: random.Random, base_time: datetime) -> di
         "attempt_number": attempt_number,
         "days_overdue": days_overdue,
         "mandate_type": rng.choice(["emandate", "nach", "upi_autopay"]),
-        "failure_reason": rng.choice(failure_reasons),
+        "failure_reason": failure_reason,
+        "ground_truth_root_cause": ground_truth,
         "customer": generate_customer(rng),
         "timestamp": generate_timestamp(rng, base_time),
         "metadata": {

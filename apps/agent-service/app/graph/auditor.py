@@ -60,8 +60,15 @@ def auditor_node(state: RecoveryCase) -> dict:
     execution_status = state.get("execution_status", "")
     if execution_status == "success":
         import random
+        # Seed pseudo-random recovery check deterministically with event_id + timestamp
+        # so benchmark runs are 100% deterministic and reproducible across runs.
+        raw_evt = state.get("raw_event", {})
+        evt_id = state.get("event_id") or raw_evt.get("event_id") or "default_evt"
+        evt_ts = raw_evt.get("timestamp") or state.get("created_at") or ""
+        seed_key = f"{evt_id}_{evt_ts}"
+        rng = random.Random(seed_key)
         recovery_chance = 0.65  # 65% simulated recovery rate
-        recovered = random.random() < recovery_chance
+        recovered = rng.random() < recovery_chance
         if recovered:
             recovery_amount = amount
             final_status = "recovered"
