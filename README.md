@@ -100,6 +100,10 @@ Vaapsi is powered by production-grade algorithms and software architecture patte
    - Custom bracket cursor snapping algorithm with mobile pointer detection (`pointer: coarse`).
    - Scoped strictly to hero CTA elements to preserve standard cursor precision on dashboard money-handling surfaces.
 
+7. **Cryptographic SHA-256 Hash Chaining Algorithm (`apps/audit-ledger`)**:
+   - Computes `SHA-256(index + caseId + action + amount + timestamp + previousHash)` linking every recovery action to its predecessor.
+   - Evaluates full chain integrity on `GET /api/ledger/verify-chain`. Any manual database alteration breaks the chain instantly, returning `TAMPERED` at the exact broken block index.
+
 ---
 
 ## ⚡ Key Differentiators
@@ -111,6 +115,7 @@ Vaapsi is powered by production-grade algorithms and software architecture patte
 | **Voice Recovery Channel** | Live Multi-Language voice call synthesis via `gTTS` (English, Hindi, Hinglish, Tamil, Bengali) with Groq Whisper STT | Plain text SMS or WhatsApp template spam |
 | **Compliance-by-Design** | Strict binding guardrails: DND hours (9 PM–8 AM IST), opt-outs, 3 retry cap, ₹5,000 threshold | No compliance checks; risks spam penalties |
 | **Explainable Audit Ledger** | Interactive 3D LangGraph decision-trace viewer (`TraceLedgerBlocks.tsx`) | Black-box automated retries |
+| **Cryptographic Audit Ledger** | Standalone Java 17 / Spring Boot microservice (`apps/audit-ledger`) with SHA-256 hash chaining & tamper detection (`GET /api/ledger/verify-chain`) | Standard mutable database tables; no tamper detection |
 | **Webhook Idempotency** | HMAC-SHA256 signature verification + SQLite deduplication store | Vulnerable to replay attacks and out-of-order duplicates |
 | **Baseline Evaluation** | Held-out 104-event test set evaluated against Do-Nothing and Naive Retry baselines | Unverified vanity numbers |
 
