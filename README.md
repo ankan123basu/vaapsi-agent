@@ -168,7 +168,7 @@ res = razorpay_client.create_payment_link(
 
 Vaapsi includes an enterprise **Java 17 / Spring Boot 3 standalone microservice (`apps/audit-ledger/` on port 8088)** that maintains an append-only, tamper-evident SHA-256 cryptographic hash-chain ledger for all recovery actions.
 
-* **Fail-Safe Asynchronous Dispatcher (`auditor.py`)**: Fires non-blocking background daemon thread audit records (`0.3s` timeout) with a silent `try/except` catch-all. The Python agent response loop returns immediately with negligible non-blocking latency overhead (<0.1ms). If Java is offline or stopped, the Python agent and dashboard operate cleanly with zero errors.
+* **Fail-Safe Asynchronous Dispatcher (`auditor.py`)**: Fires non-blocking background daemon thread audit records (`0.3s` timeout) with a silent `try/except` catch-all. Runs asynchronously on a daemon background thread, adding no measurable latency to the critical response path. If Java is offline or stopped, the Python agent and dashboard operate cleanly with zero errors.
 * **Disk Persistence (`target/ledger-chain.json`)**: Records are saved directly to disk. Calling `GET /api/ledger/verify-chain` reloads the raw file from disk and recomputes the SHA-256 chain.
 * **Live Cryptographic Integrity Verification (`GET http://localhost:8088/api/ledger/verify-chain`)**:
   ```json
