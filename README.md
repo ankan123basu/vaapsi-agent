@@ -643,7 +643,7 @@ recoup/
 
 - [ ] **Multi-Merchant SaaS Deployment**: Multi-tenant merchant isolation with custom guardrail thresholds.
 - [ ] **Real-time Web Speech API Voice Interaction**: Full duplex real-time Hinglish voice conversation.
-- [ ] **Java Spring Boot Double-Entry Ledger**: Ledger service microservice for high-throughput institutional settlement.
+- [x] **Java Spring Boot Audit Ledger Microservice**: Standalone microservice with SHA-256 hash-chaining and tamper-evident integrity verification.
 
 ---
 
@@ -651,4 +651,14 @@ recoup/
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-*Vaapsi (वापasi) — "Jo paisa gaya, wapas aayega."*
+---
+
+<div align="center">
+  <br />
+  <h2>❤️ Built with Love by</h2>
+  <h1><strong>Ankan Basu</strong></h1>
+  <p><strong>B.Tech Computer Science & Engineering (CSE) Student at Lovely Professional University (LPU)</strong></p>
+  <br />
+  <p><em>Vaapsi (वापसी) — "Jo paisa gaya, wapas aayega."</em></p>
+  <br />
+</div>
