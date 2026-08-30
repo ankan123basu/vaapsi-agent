@@ -58,7 +58,7 @@ export default function Header() {
           className="text-body-sm header__nav-item"
           title="Cryptographic SHA-256 Audit Ledger Chain Verification Endpoint"
         >
-          🔗 Java Ledger
+          Java Ledger
         </a>
       </nav>
     </header>
