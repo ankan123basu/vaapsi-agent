@@ -15,7 +15,7 @@
 [![Razorpay](https://img.shields.io/badge/Razorpay-Track_03-0C2340?style=for-the-badge&logo=razorpay&logoColor=white)](https://razorpay.com)
 [![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
 
-**Vaapsi (वापसी)** is an autonomous AI agent that detects revenue leaking out of a merchant's payment funnel — failed payments, abandoned checkouts, and failed subscription mandates — diagnoses *why* it leaked, chooses the right recovery intervention, executes it through Razorpay's test-mode APIs, synthesizes Hinglish voice calls, and proves in hard numbers how much money it got back.
+**Vaapsi (वापसी)** is an autonomous AI agent powered by a **7-Node LangGraph StateGraph DAG Engine** that detects revenue leaking out of a merchant's payment funnel — failed payments, abandoned checkouts, and failed subscription mandates — diagnoses *why* it leaked, chooses the right recovery intervention, executes it through Razorpay's test-mode APIs, synthesizes Hinglish voice calls, and proves in hard numbers how much money it got back.
 
 ## **Built for: Razorpay AI Buildathon — Track 03 (AI Revenue Recovery)**
 
@@ -110,6 +110,7 @@ Vaapsi is powered by production-grade algorithms and software architecture patte
 
 | Feature | Vaapsi (वापसी) Agent | Typical Recovery Tool |
 |---|---|---|
+| **Agent Core Architecture** | 7-Node **LangGraph StateGraph** Directed Acyclic Graph (DAG) for stateful, explainable AI decisions | Unstructured script loops or black-box LLM calls |
 | **Root Cause Diagnosis** | Hybrid Rules + Groq `openai/gpt-oss-120b` (92% deterministic, fallback to LLM) | Hardcoded strings or static error mapping |
 | **Model Diversity & Fallback** | Primary Groq (`openai/gpt-oss-120b`) $\rightarrow$ Automatic Gemini (`gemini-2.5-flash`) fallback | Single model; crashes on provider outages |
 | **Voice Recovery Channel** | Live Multi-Language voice call synthesis via `gTTS` (English, Hindi, Hinglish, Tamil, Bengali) with Groq Whisper STT | Plain text SMS or WhatsApp template spam |
