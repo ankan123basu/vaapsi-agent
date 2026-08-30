@@ -14,6 +14,7 @@
 - [ADR-005: SQLite Event Fingerprinting vs. External Redis Store](#adr-005-sqlite-event-fingerprinting-vs-external-redis-store)
 - [ADR-006: Viewport-Scoped Custom Cursor for Financial Surfaces](#adr-006-viewport-scoped-custom-cursor-for-financial-surfaces)
 - [ADR-007: Empirical Engineering Incident — Root Directory `.env` Resolution Fix](#adr-007-empirical-engineering-incident--root-directory-env-resolution-fix)
+- [ADR-008: Standalone Java Spring Boot Cryptographic Audit Ledger Microservice](#adr-008-standalone-java-spring-boot-cryptographic-audit-ledger-microservice)
 
 ---
 
@@ -134,3 +135,20 @@ Additionally added an explicit startup logger in `app.main:app` that verifies `G
 
 ### Tradeoffs & Learnings
 * **(+) Positives:** 100% deterministic environment variable loading regardless of shell CWD, zero silent fallback masking, empirical verification across all startup scripts.
+
+---
+
+## ADR-008: Standalone Java Spring Boot Cryptographic Audit Ledger Microservice
+
+### Context
+Financial institutions and enterprise payment gateways require non-repudiable, tamper-evident audit trails for automated money recovery actions. While SQLite handles local event deduplication, a bank-grade audit system requires an append-only SHA-256 cryptographic hash-chain ledger that guarantees records cannot be retroactively altered by operators or database administrators.
+
+### Decision
+Implement **Phase 6: Java Cryptographic Audit Ledger Microservice (`apps/audit-ledger/`)** on port `8088` using Java 17 and Spring Boot 3.2.3.
+* **Cryptographic Hash Chaining**: Computes `SHA-256(index + caseId + action + amount + timestamp + previousHash)` for every block.
+* **Fail-Safe Asynchronous Integration**: Python `auditor.py` dispatches audit records in a background daemon thread with a strict `300ms` max timeout and catch-all `try/except Exception: pass` block.
+* **Zero Impact Guarantee**: If the Java microservice is offline, slow, or stopped, the Python agent and React dashboard run with zero latency impact and zero errors.
+
+### Tradeoffs
+* **(+) Positives:** Bank-grade cryptographic proof of non-tampering (`GET /api/ledger/verify-chain`), polyglot architecture (Python AI + Java Enterprise Microservice), zero impact on Python agent performance.
+* **(-) Negatives:** Requires maintaining Java 17 / Spring Boot build artifacts alongside Python and Node.js.

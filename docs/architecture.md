@@ -42,7 +42,9 @@ graph TD
         GATE -->|Needs Approval| QUEUE["Human Approval Queue"]
         GATE -->|Approved| EXEC["Node 5: Executor"]
         EXEC -->|payment_link| RZP_API["Razorpay Payment Links API - rzp.io"]
+        EXEC -->|payment_link| RZP_API["Razorpay Payment Links API - rzp.io"]
         EXEC -->|voice| GTTS["gTTS Speech Synthesizer - en, hi, hinglish, ta, bn"]
+        DAG -->|Node 6: Auditor| JAVA_LEDGER["Java 17 Audit Ledger Microservice - Port 8088 SHA-256 Hash Chain"]
     end
 
     subgraph Presentation ["5. Frontend Presentation Layer"]
@@ -50,6 +52,7 @@ graph TD
         DB -->|REST / SSE| DASH["React 19 Neobrutalist Dashboard"]
         DASH --> THREE["MoltenHero3D WebGL Canvas"]
         DASH --> TRACE["3D Decision-Trace Viewer"]
+        JAVA_LEDGER -->|GET /verify-chain| DASH
     end
 ```
 
@@ -68,7 +71,7 @@ graph LR
         N4 -->|Approved| N5["5. Executor<br/><i>Razorpay API / gTTS</i>"]
         N4 -->|Needs Approval| QUEUE["Human Approval Queue"]
         QUEUE -->|Approved| N5
-        N5 --> N6["6. Auditor<br/><i>SQLite Ledger Logging</i>"]
+        N5 --> N6["6. Auditor<br/><i>SQLite + Java SHA-256 Ledger</i>"]
         N6 --> N7["7. Reporter<br/><i>Batch Metrics Aggregation</i>"]
     end
 ```

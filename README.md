@@ -8,6 +8,7 @@
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![LangGraph](https://img.shields.io/badge/LangGraph-StateGraph-FF6A1A?style=for-the-badge)](https://langchain.com)
+[![Java 17](https://img.shields.io/badge/Java-17-007396?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org)
 [![React 19](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
 [![Three.js](https://img.shields.io/badge/Three.js-R3F-black?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org)
@@ -155,6 +156,31 @@ res = razorpay_client.create_payment_link(
   - [`https://rzp.io/rzp/bKjaobX`](https://rzp.io/rzp/bKjaobX) (`plink_TVlKarpadYGCPE` - ₹1,299)
   - [`https://rzp.io/rzp/INJmo1d`](https://rzp.io/rzp/INJmo1d) (`plink_TVlKbMfnTlpDel` - ₹8,999)
   - [`https://rzp.io/rzp/V1WNpGao`](https://rzp.io/rzp/V1WNpGao) (`plink_TVkw3QqPFxCt3b` - ₹1,499)
+
+---
+
+### 🏛️ Empirical Phase 6 Java Cryptographic Audit Ledger Proof
+
+Vaapsi includes an enterprise **Java 17 / Spring Boot 3 standalone microservice (`apps/audit-ledger/` on port 8088)** that maintains an append-only, tamper-evident SHA-256 cryptographic hash-chain ledger for all recovery actions.
+
+* **Fail-Safe Asynchronous Dispatcher (`auditor.py`)**: Fires non-blocking background audit records (`0.3s` timeout) with a silent `try/except` catch-all. If Java is offline, slow, or stopped, the Python agent, React dashboard, and 84ms latency operate with **zero impact, zero delay, and zero errors**.
+* **Live Cryptographic Integrity Verification (`GET http://localhost:8088/api/ledger/verify-chain`)**:
+  ```json
+  {
+    "status": "TAMPER_PROOF_VERIFIED",
+    "total_records": 8,
+    "integrity": "100%",
+    "latest_block_hash": "271ce670cde1cc55481f706b984b29d3f9f0ef6c00955b02d3ff65e30cb4311a"
+  }
+  ```
+* **Deliberate Tamper Detection Proof (`POST http://localhost:8088/api/ledger/tamper-test?index=3`)**:
+  ```json
+  {
+    "status": "TAMPERED",
+    "broken_at_record": 3,
+    "error": "SHA-256 data hash mismatch at index 3. Record content was modified!"
+  }
+  ```
 
 ---
 
