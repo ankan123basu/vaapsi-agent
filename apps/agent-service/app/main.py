@@ -46,6 +46,19 @@ app.include_router(api_router, prefix="/api", tags=["Dashboard API"])
 app.include_router(webhook_router, prefix="/webhooks", tags=["Webhooks"])
 
 
+@app.get("/", tags=["System"])
+async def root():
+    """Root landing endpoint — returns system status and links to frontend & docs."""
+    return {
+        "service": "Vaapsi (वापsi) Revenue Recovery Agent Service",
+        "status": "running",
+        "web_dashboard_url": "http://localhost:5173",
+        "api_docs": "http://localhost:8005/docs",
+        "health_check": "http://localhost:8005/health",
+        "message": "Welcome to Vaapsi API. Open http://localhost:5173 in your browser to access the interactive web dashboard."
+    }
+
+
 @app.get("/health", tags=["System"])
 async def health_check():
     """Health check endpoint."""

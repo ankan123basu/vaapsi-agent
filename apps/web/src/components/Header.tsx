@@ -36,7 +36,7 @@ export default function Header() {
           Dashboard
         </span>
         <a
-          href="http://localhost:8000/docs"
+          href="http://localhost:8005/docs"
           target="_blank"
           rel="noopener noreferrer"
           className="text-body-sm header__nav-item"
@@ -44,7 +44,7 @@ export default function Header() {
           API Docs
         </a>
         <a
-          href="http://localhost:8000/health"
+          href="http://localhost:8005/health"
           target="_blank"
           rel="noopener noreferrer"
           className="text-body-sm header__nav-item"

@@ -43,7 +43,7 @@ class Settings(BaseSettings):
 
     # --- Server ---
     agent_service_host: str = Field(default="0.0.0.0", description="Agent service host")
-    agent_service_port: int = Field(default=8000, description="Agent service port")
+    agent_service_port: int = Field(default=8005, description="Agent service port")
 
     model_config = {
         "env_file": [str(ROOT_ENV), ".env"],

@@ -3,7 +3,7 @@
  * Communicates with the FastAPI agent-service backend.
  */
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8005';
 
 export interface RecoveryCase {
   case_id: string;
