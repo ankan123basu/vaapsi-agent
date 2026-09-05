@@ -19,6 +19,13 @@
 
 ## **Built for: Razorpay AI Buildathon — Track 03 (AI Revenue Recovery)**
 ---
+
+### 🎥 **Live Pitch & Control Room Demo Video**
+[![Watch Pitch Video](https://img.shields.io/badge/▶_Watch_Live_Pitch_%26_Demo_Video-Google_Drive-FF6A1A?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1ajor0uuE0Lg4bQUt1F3St3S6KjTFv2ZG/view?usp=sharing)
+
+> 🎬 **[Click Here to Watch the Live Pitch & Autonomous Agent Demo Video on Google Drive](https://drive.google.com/file/d/1ajor0uuE0Lg4bQUt1F3St3S6KjTFv2ZG/view?usp=sharing)**
+
+---
 <img width="1917" height="966" alt="image" src="https://github.com/user-attachments/assets/b7ba58d1-407a-4083-baec-f99ed479714f" />
 <img width="1917" height="970" alt="image" src="https://github.com/user-attachments/assets/b7224e89-6576-45c2-9ed6-bdb49519a716" />
 <img width="1915" height="967" alt="image" src="https://github.com/user-attachments/assets/2f7eb550-1abf-4dab-8eab-9d1389ad8025" />
