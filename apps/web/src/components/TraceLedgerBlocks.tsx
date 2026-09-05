@@ -1,12 +1,25 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, Component, type ReactNode } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Box, Edges, Environment, Line } from '@react-three/drei';
+import { Box, Edges, Line } from '@react-three/drei';
 import * as THREE from 'three';
 
 interface Props {
   trail: { node_name: string }[];
   activeIndex: number;
   onSelectNode?: (index: number) => void;
+}
+
+class ThreeErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
+  state = { hasError: false };
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  render() {
+    if (this.state.hasError) {
+      return null; // Gracefully degrade if WebGL or canvas fails
+    }
+    return this.props.children;
+  }
 }
 
 const NODE_COLORS: Record<string, string> = {
@@ -24,7 +37,7 @@ function ConnectionLine({ start, end, active }: { start: [number, number, number
   const lineRef = useRef<any>(null);
 
   useFrame(({ clock }) => {
-    if (lineRef.current) {
+    if (lineRef.current?.material) {
       lineRef.current.material.dashOffset = -clock.getElapsedTime() * 2;
     }
   });
@@ -107,7 +120,7 @@ export default function TraceLedgerBlocks({ trail, activeIndex, onSelectNode }: 
     return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }, []);
 
-  if (prefersReducedMotion || trail.length === 0) {
+  if (prefersReducedMotion || !trail || trail.length === 0) {
     return null;
   }
 
@@ -115,34 +128,35 @@ export default function TraceLedgerBlocks({ trail, activeIndex, onSelectNode }: 
   const startX = -((trail.length - 1) * blockSpacing) / 2;
 
   return (
-    <div style={{ width: '100%', height: '140px', marginBottom: '1.25rem', background: '#0A0A0A', border: '2px solid #0A0A0A', boxShadow: '6px 6px 0px #0A0A0A', overflow: 'hidden' }}>
-      <Canvas camera={{ position: [0, 4.5, 6.5], fov: 40 }} gl={{ antialias: true, alpha: true }}>
-        <ambientLight intensity={0.6} />
-        <directionalLight position={[5, 10, 5]} intensity={1.8} castShadow />
+    <ThreeErrorBoundary>
+      <div style={{ width: '100%', height: '140px', marginBottom: '1.25rem', background: '#0A0A0A', border: '2px solid #0A0A0A', boxShadow: '6px 6px 0px #0A0A0A', overflow: 'hidden' }}>
+        <Canvas camera={{ position: [0, 4.5, 6.5], fov: 40 }} gl={{ antialias: true, alpha: true }}>
+          <ambientLight intensity={0.8} />
+          <directionalLight position={[5, 10, 5]} intensity={2.0} castShadow />
+          <pointLight position={[-5, -5, -5]} intensity={0.5} />
 
-        {trail.map((entry, i) => {
-          const posX = startX + i * blockSpacing;
-          const pos: [number, number, number] = [posX, 0, 0];
-          const nextPos: [number, number, number] = [startX + (i + 1) * blockSpacing, 0, 0];
+          {trail.map((entry, i) => {
+            const posX = startX + i * blockSpacing;
+            const pos: [number, number, number] = [posX, 0, 0];
+            const nextPos: [number, number, number] = [startX + (i + 1) * blockSpacing, 0, 0];
 
-          return (
-            <group key={`${entry.node_name}-${i}`}>
-              <LedgerBlock
-                position={pos}
-                active={activeIndex === i}
-                color={NODE_COLORS[entry.node_name] || '#161412'}
-                onClick={() => onSelectNode?.(i)}
-              />
+            return (
+              <group key={`node-block-${entry.node_name}-${i}`}>
+                <LedgerBlock
+                  position={pos}
+                  active={activeIndex === i}
+                  color={NODE_COLORS[entry.node_name] || '#161412'}
+                  onClick={() => onSelectNode?.(i)}
+                />
 
-              {i < trail.length - 1 && (
-                <ConnectionLine start={pos} end={nextPos} active={activeIndex >= i} />
-              )}
-            </group>
-          );
-        })}
-
-        <Environment preset="city" />
-      </Canvas>
-    </div>
+                {i < trail.length - 1 && (
+                  <ConnectionLine start={pos} end={nextPos} active={activeIndex >= i} />
+                )}
+              </group>
+            );
+          })}
+        </Canvas>
+      </div>
+    </ThreeErrorBoundary>
   );
 }

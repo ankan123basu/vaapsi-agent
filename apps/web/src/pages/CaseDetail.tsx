@@ -244,7 +244,7 @@ export default function CaseDetail() {
                           setVoiceError('Synthesis failed. Check agent service.');
                         }
                       } catch (e) {
-                        setVoiceError('Could not connect to agent service on port 8000.');
+                        setVoiceError('Could not connect to agent service on port 8005.');
                       } finally {
                         setVoiceLoading(false);
                       }
@@ -278,7 +278,7 @@ export default function CaseDetail() {
               <div className="trace-timeline">
                 {trail.map((entry, i) => (
                   <motion.div
-                    key={i}
+                    key={`trace-step-${entry.node_name}-${i}`}
                     className={`trace-node ${activeNode === i ? 'trace-node--active' : ''}`}
                     onClick={() => setActiveNode(i)}
                     initial={{ opacity: 0, x: -10 }}
