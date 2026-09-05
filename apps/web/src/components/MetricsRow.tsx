@@ -35,7 +35,7 @@ export default function MetricsRow({ metrics }: Props) {
       label: 'Avg Latency',
       value: `${metrics.avg_latency_ms.toFixed(0)}ms`,
       variant: '',
-      sublabel: '~1040ms LLM · 0.4ms Rule',
+      sublabel: metrics.total_cases > 0 ? '~1040ms LLM · 0.4ms Rule' : 'Awaiting live run',
     },
     {
       label: 'Compliance',
